@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LGT_DRUG" Class="LINQ_DRUGDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.111.28.132;Initial Catalog=LGT_DRUG;User ID=fusion" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LGT_DRUGConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.LCN_EXTEND_LITE" Member="LCN_EXTEND_LITEs">
+    <Type Name="LCN_EXTEND_LITE">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lcnno" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pvncd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lcntpcd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CITIZEN_AUTHORIZE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thanm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thanm_address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="extend_year" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="app_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="lcnno_display_full" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcnno_pvnabbr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PROCESS_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PAY_L44_STAMP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PAY_STAMP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="U1_CODE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="licen" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="licen_address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="licen_time" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="grannm_lo" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="grannm_address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thaamphrnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="thachngwtnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="typee" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="GROUPNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="cncnm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="extra_pay" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="process_l44" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="process_l44_2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

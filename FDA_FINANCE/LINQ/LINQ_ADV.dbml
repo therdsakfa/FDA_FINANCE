@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FDA_ADV" Class="LINQ_ADVDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=164.115.28.145;Initial Catalog=FDA_ADV;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FDA_ADVConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.FDATransaction" Member="FDATransactions">
+    <Type Name="FDATransaction">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ApplicationNumber" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UpdateDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="AccountTypeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CreateBy" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AccountStatusId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AccountFileName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SendFDADate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FDAReceiveDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Citizen_id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Latitude" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Longitude" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DepartmentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Authorize_id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Officer_Infest" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="U1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Ownner_id" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="pvcode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

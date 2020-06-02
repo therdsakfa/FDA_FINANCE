@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_DRUG">
+  <DataContextMoniker Name="/LINQ_DRUGDataContext" />
+  <nestedChildShapes>
+    <classShape Id="4a9d978a-eb1c-4503-967c-5f1efca0eb89" isExpanded="false" absoluteBounds="0.5, 1, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_DRUGDataContext/LCN_EXTEND_LITE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ab86f7c4-5d59-4741-a4b4-42c69d9b1769" absoluteBounds="0.515, 1.46, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DS_FEE" targetNamespace="http://tempuri.org/DS_FEE.xsd" xmlns:mstns="http://tempuri.org/DS_FEE.xsd" xmlns="http://tempuri.org/DS_FEE.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Web.config)" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.ConnectionString.ConnectionString" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="feeTableAdapter" GeneratorDataComponentClassName="feeTableAdapter" Name="fee" UserDataComponentName="feeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        fda.fee.*
+FROM            fda.fee</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="pvncd" DataSetColumn="pvncd" />
+              <Mapping SourceColumn="dvcd" DataSetColumn="dvcd" />
+              <Mapping SourceColumn="feetpcd" DataSetColumn="feetpcd" />
+              <Mapping SourceColumn="feeno" DataSetColumn="feeno" />
+              <Mapping SourceColumn="feeabbr" DataSetColumn="feeabbr" />
+              <Mapping SourceColumn="feedate" DataSetColumn="feedate" />
+              <Mapping SourceColumn="ref01" DataSetColumn="ref01" />
+              <Mapping SourceColumn="lcnsid" DataSetColumn="lcnsid" />
+              <Mapping SourceColumn="lctnmcd" DataSetColumn="lctnmcd" />
+              <Mapping SourceColumn="lcnscd" DataSetColumn="lcnscd" />
+              <Mapping SourceColumn="lctcd" DataSetColumn="lctcd" />
+              <Mapping SourceColumn="prnfeest" DataSetColumn="prnfeest" />
+              <Mapping SourceColumn="rcptst" DataSetColumn="rcptst" />
+              <Mapping SourceColumn="rcptyear" DataSetColumn="rcptyear" />
+              <Mapping SourceColumn="rcptno" DataSetColumn="rcptno" />
+              <Mapping SourceColumn="rcptdate" DataSetColumn="rcptdate" />
+              <Mapping SourceColumn="feestfcd" DataSetColumn="feestfcd" />
+              <Mapping SourceColumn="remark" DataSetColumn="remark" />
+              <Mapping SourceColumn="expdate" DataSetColumn="expdate" />
+              <Mapping SourceColumn="enddate" DataSetColumn="enddate" />
+              <Mapping SourceColumn="cncstfcd" DataSetColumn="cncstfcd" />
+              <Mapping SourceColumn="cncdate" DataSetColumn="cncdate" />
+              <Mapping SourceColumn="pvnbookno" DataSetColumn="pvnbookno" />
+              <Mapping SourceColumn="pvnrcptno" DataSetColumn="pvnrcptno" />
+              <Mapping SourceColumn="feest" DataSetColumn="feest" />
+              <Mapping SourceColumn="lstfcd" DataSetColumn="lstfcd" />
+              <Mapping SourceColumn="lmdfdate" DataSetColumn="lmdfdate" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Insert_FEE" Modifier="Public" Name="Insert_FEE" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Insert_FEE">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO fda.fee
+                         (pvncd, dvcd, feetpcd, feeno, feeabbr, feedate, ref01, lcnsid, lctnmcd, lcnscd, lctcd, prnfeest, rcptst, rcptyear, rcptno, rcptdate, feestfcd, remark, expdate, enddate, cncstfcd, cncdate, pvnbookno, pvnrcptno, feest, 
+                         lstfcd, lmdfdate)
+VALUES        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="pvncd" DataSourceName="lgtcpn.fee" DataTypeServer="SMALLINT" DbType="Int32" Direction="Input" ParameterName="pvncd" Precision="0" Scale="0" Size="0" SourceColumn="pvncd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param2" ColumnName="dvcd" DataSourceName="lgtcpn.fee" DataTypeServer="SMALLINT" DbType="Int32" Direction="Input" ParameterName="dvcd" Precision="0" Scale="0" Size="0" SourceColumn="dvcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param3" ColumnName="feetpcd" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="feetpcd" Precision="0" Scale="0" Size="0" SourceColumn="feetpcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param4" ColumnName="feeno" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="feeno" Precision="0" Scale="0" Size="0" SourceColumn="feeno" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param5" ColumnName="feeabbr" DataSourceName="lgtcpn.fee" DataTypeServer="VARCHAR" DbType="AnsiString" Direction="Input" ParameterName="feeabbr" Precision="0" Scale="0" Size="1024" SourceColumn="feeabbr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param6" ColumnName="feedate" DataSourceName="lgtcpn.fee" DataTypeServer="DATETIME YEAR TO SECOND" DbType="DateTime" Direction="Input" ParameterName="feedate" Precision="0" Scale="0" Size="0" SourceColumn="feedate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param7" ColumnName="ref01" DataSourceName="lgtcpn.fee" DataTypeServer="VARCHAR" DbType="AnsiString" Direction="Input" ParameterName="ref01" Precision="0" Scale="0" Size="1024" SourceColumn="ref01" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param8" ColumnName="lcnsid" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="lcnsid" Precision="0" Scale="0" Size="0" SourceColumn="lcnsid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param9" ColumnName="lctnmcd" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="lctnmcd" Precision="0" Scale="0" Size="0" SourceColumn="lctnmcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param10" ColumnName="lcnscd" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="lcnscd" Precision="0" Scale="0" Size="0" SourceColumn="lcnscd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param11" ColumnName="lctcd" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="lctcd" Precision="0" Scale="0" Size="0" SourceColumn="lctcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param12" ColumnName="prnfeest" DataSourceName="lgtcpn.fee" DataTypeServer="SMALLINT" DbType="Int32" Direction="Input" ParameterName="prnfeest" Precision="0" Scale="0" Size="0" SourceColumn="prnfeest" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param13" ColumnName="rcptst" DataSourceName="lgtcpn.fee" DataTypeServer="SMALLINT" DbType="Int32" Direction="Input" ParameterName="rcptst" Precision="0" Scale="0" Size="0" SourceColumn="rcptst" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param14" ColumnName="rcptyear" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="rcptyear" Precision="0" Scale="0" Size="0" SourceColumn="rcptyear" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param15" ColumnName="rcptno" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="rcptno" Precision="0" Scale="0" Size="0" SourceColumn="rcptno" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param16" ColumnName="rcptdate" DataSourceName="lgtcpn.fee" DataTypeServer="DATE" DbType="Date" Direction="Input" ParameterName="rcptdate" Precision="0" Scale="0" Size="0" SourceColumn="rcptdate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param17" ColumnName="feestfcd" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="feestfcd" Precision="0" Scale="0" Size="0" SourceColumn="feestfcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param18" ColumnName="remark" DataSourceName="lgtcpn.fee" DataTypeServer="VARCHAR" DbType="AnsiString" Direction="Input" ParameterName="remark" Precision="0" Scale="0" Size="1024" SourceColumn="remark" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param19" ColumnName="expdate" DataSourceName="lgtcpn.fee" DataTypeServer="DATE" DbType="Date" Direction="Input" ParameterName="expdate" Precision="0" Scale="0" Size="0" SourceColumn="expdate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param20" ColumnName="enddate" DataSourceName="lgtcpn.fee" DataTypeServer="DATE" DbType="Date" Direction="Input" ParameterName="enddate" Precision="0" Scale="0" Size="0" SourceColumn="enddate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param21" ColumnName="cncstfcd" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="cncstfcd" Precision="0" Scale="0" Size="0" SourceColumn="cncstfcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param22" ColumnName="cncdate" DataSourceName="lgtcpn.fee" DataTypeServer="DATE" DbType="Date" Direction="Input" ParameterName="cncdate" Precision="0" Scale="0" Size="0" SourceColumn="cncdate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param23" ColumnName="pvnbookno" DataSourceName="lgtcpn.fee" DataTypeServer="VARCHAR" DbType="AnsiString" Direction="Input" ParameterName="pvnbookno" Precision="0" Scale="0" Size="1024" SourceColumn="pvnbookno" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param24" ColumnName="pvnrcptno" DataSourceName="lgtcpn.fee" DataTypeServer="VARCHAR" DbType="AnsiString" Direction="Input" ParameterName="pvnrcptno" Precision="0" Scale="0" Size="1024" SourceColumn="pvnrcptno" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param25" ColumnName="feest" DataSourceName="lgtcpn.fee" DataTypeServer="SMALLINT" DbType="Int32" Direction="Input" ParameterName="feest" Precision="0" Scale="0" Size="0" SourceColumn="feest" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param26" ColumnName="lstfcd" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="lstfcd" Precision="0" Scale="0" Size="0" SourceColumn="lstfcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param27" ColumnName="lmdfdate" DataSourceName="lgtcpn.fee" DataTypeServer="DATETIME YEAR TO SECOND" DbType="DateTime" Direction="Input" ParameterName="lmdfdate" Precision="0" Scale="0" Size="0" SourceColumn="lmdfdate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="InsertQuery">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO fda.fee
+                         (pvncd, dvcd, feetpcd, feeno, feeabbr, feedate, ref01, lcnsid, lctnmcd, lcnscd, lctcd, prnfeest, rcptst, rcptyear, rcptno, rcptdate, feestfcd, remark, expdate, enddate, cncstfcd, cncdate, pvnbookno, pvnrcptno, feest, 
+                         lstfcd, lmdfdate)
+VALUES        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="pvncd" DataSourceName="lgtcpn.fee" DataTypeServer="SMALLINT" DbType="Int32" Direction="Input" ParameterName="pvncd" Precision="0" Scale="0" Size="0" SourceColumn="pvncd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param2" ColumnName="dvcd" DataSourceName="lgtcpn.fee" DataTypeServer="SMALLINT" DbType="Int32" Direction="Input" ParameterName="dvcd" Precision="0" Scale="0" Size="0" SourceColumn="dvcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param3" ColumnName="feetpcd" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="feetpcd" Precision="0" Scale="0" Size="0" SourceColumn="feetpcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param4" ColumnName="feeno" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="feeno" Precision="0" Scale="0" Size="0" SourceColumn="feeno" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param5" ColumnName="feeabbr" DataSourceName="lgtcpn.fee" DataTypeServer="VARCHAR" DbType="AnsiString" Direction="Input" ParameterName="feeabbr" Precision="0" Scale="0" Size="1024" SourceColumn="feeabbr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param6" ColumnName="feedate" DataSourceName="lgtcpn.fee" DataTypeServer="DATETIME YEAR TO SECOND" DbType="DateTime" Direction="Input" ParameterName="feedate" Precision="0" Scale="0" Size="0" SourceColumn="feedate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param7" ColumnName="ref01" DataSourceName="lgtcpn.fee" DataTypeServer="VARCHAR" DbType="AnsiString" Direction="Input" ParameterName="ref01" Precision="0" Scale="0" Size="1024" SourceColumn="ref01" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param8" ColumnName="lcnsid" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="lcnsid" Precision="0" Scale="0" Size="0" SourceColumn="lcnsid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param9" ColumnName="lctnmcd" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="lctnmcd" Precision="0" Scale="0" Size="0" SourceColumn="lctnmcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param10" ColumnName="lcnscd" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="lcnscd" Precision="0" Scale="0" Size="0" SourceColumn="lcnscd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param11" ColumnName="lctcd" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="lctcd" Precision="0" Scale="0" Size="0" SourceColumn="lctcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param12" ColumnName="prnfeest" DataSourceName="lgtcpn.fee" DataTypeServer="SMALLINT" DbType="Int32" Direction="Input" ParameterName="prnfeest" Precision="0" Scale="0" Size="0" SourceColumn="prnfeest" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param13" ColumnName="rcptst" DataSourceName="lgtcpn.fee" DataTypeServer="SMALLINT" DbType="Int32" Direction="Input" ParameterName="rcptst" Precision="0" Scale="0" Size="0" SourceColumn="rcptst" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param14" ColumnName="rcptyear" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="rcptyear" Precision="0" Scale="0" Size="0" SourceColumn="rcptyear" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param15" ColumnName="rcptno" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="rcptno" Precision="0" Scale="0" Size="0" SourceColumn="rcptno" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param16" ColumnName="rcptdate" DataSourceName="lgtcpn.fee" DataTypeServer="DATE" DbType="Date" Direction="Input" ParameterName="rcptdate" Precision="0" Scale="0" Size="0" SourceColumn="rcptdate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param17" ColumnName="feestfcd" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="feestfcd" Precision="0" Scale="0" Size="0" SourceColumn="feestfcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param18" ColumnName="remark" DataSourceName="lgtcpn.fee" DataTypeServer="VARCHAR" DbType="AnsiString" Direction="Input" ParameterName="remark" Precision="0" Scale="0" Size="1024" SourceColumn="remark" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param19" ColumnName="expdate" DataSourceName="lgtcpn.fee" DataTypeServer="DATE" DbType="Date" Direction="Input" ParameterName="expdate" Precision="0" Scale="0" Size="0" SourceColumn="expdate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param20" ColumnName="enddate" DataSourceName="lgtcpn.fee" DataTypeServer="DATE" DbType="Date" Direction="Input" ParameterName="enddate" Precision="0" Scale="0" Size="0" SourceColumn="enddate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param21" ColumnName="cncstfcd" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="cncstfcd" Precision="0" Scale="0" Size="0" SourceColumn="cncstfcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param22" ColumnName="cncdate" DataSourceName="lgtcpn.fee" DataTypeServer="DATE" DbType="Date" Direction="Input" ParameterName="cncdate" Precision="0" Scale="0" Size="0" SourceColumn="cncdate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param23" ColumnName="pvnbookno" DataSourceName="lgtcpn.fee" DataTypeServer="VARCHAR" DbType="AnsiString" Direction="Input" ParameterName="pvnbookno" Precision="0" Scale="0" Size="1024" SourceColumn="pvnbookno" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param24" ColumnName="pvnrcptno" DataSourceName="lgtcpn.fee" DataTypeServer="VARCHAR" DbType="AnsiString" Direction="Input" ParameterName="pvnrcptno" Precision="0" Scale="0" Size="1024" SourceColumn="pvnrcptno" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param25" ColumnName="feest" DataSourceName="lgtcpn.fee" DataTypeServer="SMALLINT" DbType="Int32" Direction="Input" ParameterName="feest" Precision="0" Scale="0" Size="0" SourceColumn="feest" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param26" ColumnName="lstfcd" DataSourceName="lgtcpn.fee" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="lstfcd" Precision="0" Scale="0" Size="0" SourceColumn="lstfcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param27" ColumnName="lmdfdate" DataSourceName="lgtcpn.fee" DataTypeServer="DATETIME YEAR TO SECOND" DbType="DateTime" Direction="Input" ParameterName="lmdfdate" Precision="0" Scale="0" Size="0" SourceColumn="lmdfdate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="feehisTableAdapter" GeneratorDataComponentClassName="feehisTableAdapter" Name="feehis" UserDataComponentName="feehisTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        fda.feehis.*
+FROM            fda.feehis</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="lcnsid" DataSetColumn="lcnsid" />
+              <Mapping SourceColumn="lcnscd" DataSetColumn="lcnscd" />
+              <Mapping SourceColumn="txcqty" DataSetColumn="txcqty" />
+              <Mapping SourceColumn="fexpdate" DataSetColumn="fexpdate" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO fda.feehis
+                         (lcnsid, lcnscd, txcqty, fexpdate)
+VALUES        (?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="lcnsid" DataSourceName="lgtcpn.feehis" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="lcnsid" Precision="0" Scale="0" Size="0" SourceColumn="lcnsid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param2" ColumnName="lcnscd" DataSourceName="lgtcpn.feehis" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="lcnscd" Precision="0" Scale="0" Size="0" SourceColumn="lcnscd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param3" ColumnName="txcqty" DataSourceName="lgtcpn.feehis" DataTypeServer="DECIMAL" DbType="Decimal" Direction="Input" ParameterName="txcqty" Precision="10" Scale="2" Size="0" SourceColumn="txcqty" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param4" ColumnName="fexpdate" DataSourceName="lgtcpn.feehis" DataTypeServer="DATE" DbType="Date" Direction="Input" ParameterName="fexpdate" Precision="0" Scale="0" Size="0" SourceColumn="fexpdate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="feebankTableAdapter" GeneratorDataComponentClassName="feebankTableAdapter" Name="feebank" UserDataComponentName="feebankTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM fda.feebank</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="pvncd" DataSetColumn="pvncd" />
+              <Mapping SourceColumn="dvcd" DataSetColumn="dvcd" />
+              <Mapping SourceColumn="ref01" DataSetColumn="ref01" />
+              <Mapping SourceColumn="ref02" DataSetColumn="ref02" />
+              <Mapping SourceColumn="feedate" DataSetColumn="feedate" />
+              <Mapping SourceColumn="enddate" DataSetColumn="enddate" />
+              <Mapping SourceColumn="lcnprnst" DataSetColumn="lcnprnst" />
+              <Mapping SourceColumn="lstfcd" DataSetColumn="lstfcd" />
+              <Mapping SourceColumn="lmdfdate" DataSetColumn="lmdfdate" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO fda.feebank
+                         (pvncd, dvcd, ref01, ref02, feedate, enddate, lcnprnst, lstfcd, lmdfdate)
+VALUES        (?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="pvncd" DataSourceName="lgtcpn.feebank" DataTypeServer="SMALLINT" DbType="Int32" Direction="Input" ParameterName="pvncd" Precision="0" Scale="0" Size="0" SourceColumn="pvncd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param2" ColumnName="dvcd" DataSourceName="lgtcpn.feebank" DataTypeServer="SMALLINT" DbType="Int32" Direction="Input" ParameterName="dvcd" Precision="0" Scale="0" Size="0" SourceColumn="dvcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param3" ColumnName="ref01" DataSourceName="lgtcpn.feebank" DataTypeServer="VARCHAR" DbType="AnsiString" Direction="Input" ParameterName="ref01" Precision="0" Scale="0" Size="1024" SourceColumn="ref01" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param4" ColumnName="ref02" DataSourceName="lgtcpn.feebank" DataTypeServer="VARCHAR" DbType="AnsiString" Direction="Input" ParameterName="ref02" Precision="0" Scale="0" Size="1024" SourceColumn="ref02" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param5" ColumnName="feedate" DataSourceName="lgtcpn.feebank" DataTypeServer="DATETIME YEAR TO SECOND" DbType="DateTime" Direction="Input" ParameterName="feedate" Precision="0" Scale="0" Size="0" SourceColumn="feedate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param6" ColumnName="enddate" DataSourceName="lgtcpn.feebank" DataTypeServer="DATE" DbType="Date" Direction="Input" ParameterName="enddate" Precision="0" Scale="0" Size="0" SourceColumn="enddate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param7" ColumnName="lcnprnst" DataSourceName="lgtcpn.feebank" DataTypeServer="SMALLINT" DbType="Int32" Direction="Input" ParameterName="lcnprnst" Precision="0" Scale="0" Size="0" SourceColumn="lcnprnst" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param8" ColumnName="lstfcd" DataSourceName="lgtcpn.feebank" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="lstfcd" Precision="0" Scale="0" Size="0" SourceColumn="lstfcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param9" ColumnName="lmdfdate" DataSourceName="lgtcpn.feebank" DataTypeServer="DATETIME YEAR TO SECOND" DbType="DateTime" Direction="Input" ParameterName="lmdfdate" Precision="0" Scale="0" Size="0" SourceColumn="lmdfdate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="feedtlTableAdapter" GeneratorDataComponentClassName="feedtlTableAdapter" Name="feedtl" UserDataComponentName="feedtlTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT * FROM fda.feedtl</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="pvncd" DataSetColumn="pvncd" />
+              <Mapping SourceColumn="dvcd" DataSetColumn="dvcd" />
+              <Mapping SourceColumn="feetpcd" DataSetColumn="feetpcd" />
+              <Mapping SourceColumn="feeno" DataSetColumn="feeno" />
+              <Mapping SourceColumn="rid" DataSetColumn="rid" />
+              <Mapping SourceColumn="rcvabbr" DataSetColumn="rcvabbr" />
+              <Mapping SourceColumn="rcvcd" DataSetColumn="rcvcd" />
+              <Mapping SourceColumn="rcvno" DataSetColumn="rcvno" />
+              <Mapping SourceColumn="apppvncd" DataSetColumn="apppvncd" />
+              <Mapping SourceColumn="appabbr" DataSetColumn="appabbr" />
+              <Mapping SourceColumn="appvcd" DataSetColumn="appvcd" />
+              <Mapping SourceColumn="appvno" DataSetColumn="appvno" />
+              <Mapping SourceColumn="timeno" DataSetColumn="timeno" />
+              <Mapping SourceColumn="amt" DataSetColumn="amt" />
+              <Mapping SourceColumn="finevalue" DataSetColumn="finevalue" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQuery" Modifier="Public" Name="InsertQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="InsertQuery">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO fda.feedtl
+                         (pvncd, dvcd, feetpcd, feeno, rid, rcvabbr, rcvcd, rcvno, apppvncd, appabbr, appvcd, appvno, timeno, amt, finevalue)
+VALUES        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="pvncd" DataSourceName="lgtcpn.feedtl" DataTypeServer="SMALLINT" DbType="Int32" Direction="Input" ParameterName="pvncd" Precision="0" Scale="0" Size="0" SourceColumn="pvncd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param2" ColumnName="dvcd" DataSourceName="lgtcpn.feedtl" DataTypeServer="SMALLINT" DbType="Int32" Direction="Input" ParameterName="dvcd" Precision="0" Scale="0" Size="0" SourceColumn="dvcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param3" ColumnName="feetpcd" DataSourceName="lgtcpn.feedtl" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="feetpcd" Precision="0" Scale="0" Size="0" SourceColumn="feetpcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param4" ColumnName="feeno" DataSourceName="lgtcpn.feedtl" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="feeno" Precision="0" Scale="0" Size="0" SourceColumn="feeno" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param5" ColumnName="rid" DataSourceName="lgtcpn.feedtl" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="rid" Precision="0" Scale="0" Size="0" SourceColumn="rid" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param6" ColumnName="rcvabbr" DataSourceName="lgtcpn.feedtl" DataTypeServer="VARCHAR" DbType="AnsiString" Direction="Input" ParameterName="rcvabbr" Precision="0" Scale="0" Size="1024" SourceColumn="rcvabbr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param7" ColumnName="rcvcd" DataSourceName="lgtcpn.feedtl" DataTypeServer="VARCHAR" DbType="AnsiString" Direction="Input" ParameterName="rcvcd" Precision="0" Scale="0" Size="1024" SourceColumn="rcvcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param8" ColumnName="rcvno" DataSourceName="lgtcpn.feedtl" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="rcvno" Precision="0" Scale="0" Size="0" SourceColumn="rcvno" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param9" ColumnName="apppvncd" DataSourceName="lgtcpn.feedtl" DataTypeServer="SMALLINT" DbType="Int32" Direction="Input" ParameterName="apppvncd" Precision="0" Scale="0" Size="0" SourceColumn="apppvncd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param10" ColumnName="appabbr" DataSourceName="lgtcpn.feedtl" DataTypeServer="VARCHAR" DbType="AnsiString" Direction="Input" ParameterName="appabbr" Precision="0" Scale="0" Size="1024" SourceColumn="appabbr" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param11" ColumnName="appvcd" DataSourceName="lgtcpn.feedtl" DataTypeServer="VARCHAR" DbType="AnsiString" Direction="Input" ParameterName="appvcd" Precision="0" Scale="0" Size="1024" SourceColumn="appvcd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param12" ColumnName="appvno" DataSourceName="lgtcpn.feedtl" DataTypeServer="DECIMAL" DbType="Decimal" Direction="Input" ParameterName="appvno" Precision="14" Scale="0" Size="0" SourceColumn="appvno" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param13" ColumnName="timeno" DataSourceName="lgtcpn.feedtl" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="timeno" Precision="0" Scale="0" Size="0" SourceColumn="timeno" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param14" ColumnName="amt" DataSourceName="lgtcpn.feedtl" DataTypeServer="DECIMAL" DbType="Decimal" Direction="Input" ParameterName="amt" Precision="12" Scale="2" Size="0" SourceColumn="amt" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param15" ColumnName="finevalue" DataSourceName="lgtcpn.feedtl" DataTypeServer="INTEGER" DbType="Int32" Direction="Input" ParameterName="finevalue" Precision="0" Scale="0" Size="0" SourceColumn="finevalue" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="feetypeTableAdapter" GeneratorDataComponentClassName="feetypeTableAdapter" Name="feetype" UserDataComponentName="feetypeTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT * FROM fda.feetype</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="pvncd" DataSetColumn="pvncd" />
+              <Mapping SourceColumn="dvcd" DataSetColumn="dvcd" />
+              <Mapping SourceColumn="feetpcd" DataSetColumn="feetpcd" />
+              <Mapping SourceColumn="feetpnm" DataSetColumn="feetpnm" />
+              <Mapping SourceColumn="feest" DataSetColumn="feest" />
+              <Mapping SourceColumn="value" DataSetColumn="value" />
+              <Mapping SourceColumn="feeabbr" DataSetColumn="feeabbr" />
+              <Mapping SourceColumn="feedtl" DataSetColumn="feedtl" />
+              <Mapping SourceColumn="feegpcd" DataSetColumn="feegpcd" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DS_FEE" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DS_FEE" msprop:Generator_UserDSName="DS_FEE">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="fee" msprop:Generator_TableClassName="feeDataTable" msprop:Generator_TableVarName="tablefee" msprop:Generator_RowChangedName="feeRowChanged" msprop:Generator_TablePropName="fee" msprop:Generator_RowDeletingName="feeRowDeleting" msprop:Generator_RowChangingName="feeRowChanging" msprop:Generator_RowEvHandlerName="feeRowChangeEventHandler" msprop:Generator_RowDeletedName="feeRowDeleted" msprop:Generator_RowClassName="feeRow" msprop:Generator_UserTableName="fee" msprop:Generator_RowEvArgName="feeRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="pvncd" msprop:Generator_ColumnVarNameInTable="columnpvncd" msprop:Generator_ColumnPropNameInRow="pvncd" msprop:Generator_ColumnPropNameInTable="pvncdColumn" msprop:Generator_UserColumnName="pvncd" type="xs:short" />
+              <xs:element name="dvcd" msprop:Generator_ColumnVarNameInTable="columndvcd" msprop:Generator_ColumnPropNameInRow="dvcd" msprop:Generator_ColumnPropNameInTable="dvcdColumn" msprop:Generator_UserColumnName="dvcd" type="xs:short" />
+              <xs:element name="feetpcd" msprop:Generator_ColumnVarNameInTable="columnfeetpcd" msprop:Generator_ColumnPropNameInRow="feetpcd" msprop:Generator_ColumnPropNameInTable="feetpcdColumn" msprop:Generator_UserColumnName="feetpcd" type="xs:int" />
+              <xs:element name="feeno" msprop:Generator_ColumnVarNameInTable="columnfeeno" msprop:Generator_ColumnPropNameInRow="feeno" msprop:Generator_ColumnPropNameInTable="feenoColumn" msprop:Generator_UserColumnName="feeno" type="xs:int" />
+              <xs:element name="feeabbr" msprop:Generator_ColumnVarNameInTable="columnfeeabbr" msprop:Generator_ColumnPropNameInRow="feeabbr" msprop:Generator_ColumnPropNameInTable="feeabbrColumn" msprop:Generator_UserColumnName="feeabbr">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="feedate" msprop:Generator_ColumnVarNameInTable="columnfeedate" msprop:Generator_ColumnPropNameInRow="feedate" msprop:Generator_ColumnPropNameInTable="feedateColumn" msprop:Generator_UserColumnName="feedate" type="xs:dateTime" />
+              <xs:element name="ref01" msprop:Generator_ColumnVarNameInTable="columnref01" msprop:Generator_ColumnPropNameInRow="ref01" msprop:Generator_ColumnPropNameInTable="ref01Column" msprop:Generator_UserColumnName="ref01">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="17" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="lcnsid" msprop:Generator_ColumnVarNameInTable="columnlcnsid" msprop:Generator_ColumnPropNameInRow="lcnsid" msprop:Generator_ColumnPropNameInTable="lcnsidColumn" msprop:Generator_UserColumnName="lcnsid" type="xs:int" />
+              <xs:element name="lctnmcd" msprop:Generator_ColumnVarNameInTable="columnlctnmcd" msprop:Generator_ColumnPropNameInRow="lctnmcd" msprop:Generator_ColumnPropNameInTable="lctnmcdColumn" msprop:Generator_UserColumnName="lctnmcd" type="xs:int" minOccurs="0" />
+              <xs:element name="lcnscd" msprop:Generator_ColumnVarNameInTable="columnlcnscd" msprop:Generator_ColumnPropNameInRow="lcnscd" msprop:Generator_ColumnPropNameInTable="lcnscdColumn" msprop:Generator_UserColumnName="lcnscd" type="xs:int" minOccurs="0" />
+              <xs:element name="lctcd" msprop:Generator_ColumnVarNameInTable="columnlctcd" msprop:Generator_ColumnPropNameInRow="lctcd" msprop:Generator_ColumnPropNameInTable="lctcdColumn" msprop:Generator_UserColumnName="lctcd" type="xs:int" minOccurs="0" />
+              <xs:element name="prnfeest" msprop:Generator_ColumnVarNameInTable="columnprnfeest" msprop:Generator_ColumnPropNameInRow="prnfeest" msprop:Generator_ColumnPropNameInTable="prnfeestColumn" msprop:Generator_UserColumnName="prnfeest" type="xs:short" minOccurs="0" />
+              <xs:element name="rcptst" msprop:Generator_ColumnVarNameInTable="columnrcptst" msprop:Generator_ColumnPropNameInRow="rcptst" msprop:Generator_ColumnPropNameInTable="rcptstColumn" msprop:Generator_UserColumnName="rcptst" type="xs:short" />
+              <xs:element name="rcptyear" msprop:Generator_ColumnVarNameInTable="columnrcptyear" msprop:Generator_ColumnPropNameInRow="rcptyear" msprop:Generator_ColumnPropNameInTable="rcptyearColumn" msprop:Generator_UserColumnName="rcptyear" type="xs:int" minOccurs="0" />
+              <xs:element name="rcptno" msprop:Generator_ColumnVarNameInTable="columnrcptno" msprop:Generator_ColumnPropNameInRow="rcptno" msprop:Generator_ColumnPropNameInTable="rcptnoColumn" msprop:Generator_UserColumnName="rcptno" type="xs:int" minOccurs="0" />
+              <xs:element name="rcptdate" msprop:Generator_ColumnVarNameInTable="columnrcptdate" msprop:Generator_ColumnPropNameInRow="rcptdate" msprop:Generator_ColumnPropNameInTable="rcptdateColumn" msprop:Generator_UserColumnName="rcptdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="feestfcd" msprop:Generator_ColumnVarNameInTable="columnfeestfcd" msprop:Generator_ColumnPropNameInRow="feestfcd" msprop:Generator_ColumnPropNameInTable="feestfcdColumn" msprop:Generator_UserColumnName="feestfcd" type="xs:int" />
+              <xs:element name="remark" msprop:Generator_ColumnVarNameInTable="columnremark" msprop:Generator_ColumnPropNameInRow="remark" msprop:Generator_ColumnPropNameInTable="remarkColumn" msprop:Generator_UserColumnName="remark" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="expdate" msprop:Generator_ColumnVarNameInTable="columnexpdate" msprop:Generator_ColumnPropNameInRow="expdate" msprop:Generator_ColumnPropNameInTable="expdateColumn" msprop:Generator_UserColumnName="expdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="enddate" msprop:Generator_ColumnVarNameInTable="columnenddate" msprop:Generator_ColumnPropNameInRow="enddate" msprop:Generator_ColumnPropNameInTable="enddateColumn" msprop:Generator_UserColumnName="enddate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="cncstfcd" msprop:Generator_ColumnVarNameInTable="columncncstfcd" msprop:Generator_ColumnPropNameInRow="cncstfcd" msprop:Generator_ColumnPropNameInTable="cncstfcdColumn" msprop:Generator_UserColumnName="cncstfcd" type="xs:int" minOccurs="0" />
+              <xs:element name="cncdate" msprop:Generator_ColumnVarNameInTable="columncncdate" msprop:Generator_ColumnPropNameInRow="cncdate" msprop:Generator_ColumnPropNameInTable="cncdateColumn" msprop:Generator_UserColumnName="cncdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="pvnbookno" msprop:Generator_ColumnVarNameInTable="columnpvnbookno" msprop:Generator_ColumnPropNameInRow="pvnbookno" msprop:Generator_ColumnPropNameInTable="pvnbooknoColumn" msprop:Generator_UserColumnName="pvnbookno" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pvnrcptno" msprop:Generator_ColumnVarNameInTable="columnpvnrcptno" msprop:Generator_ColumnPropNameInRow="pvnrcptno" msprop:Generator_ColumnPropNameInTable="pvnrcptnoColumn" msprop:Generator_UserColumnName="pvnrcptno" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="feest" msprop:Generator_ColumnVarNameInTable="columnfeest" msprop:Generator_ColumnPropNameInRow="feest" msprop:Generator_ColumnPropNameInTable="feestColumn" msprop:Generator_UserColumnName="feest" type="xs:short" minOccurs="0" />
+              <xs:element name="lstfcd" msprop:Generator_ColumnVarNameInTable="columnlstfcd" msprop:Generator_ColumnPropNameInRow="lstfcd" msprop:Generator_ColumnPropNameInTable="lstfcdColumn" msprop:Generator_UserColumnName="lstfcd" type="xs:int" />
+              <xs:element name="lmdfdate" msprop:Generator_ColumnVarNameInTable="columnlmdfdate" msprop:Generator_ColumnPropNameInRow="lmdfdate" msprop:Generator_ColumnPropNameInTable="lmdfdateColumn" msprop:Generator_UserColumnName="lmdfdate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="feehis" msprop:Generator_TableClassName="feehisDataTable" msprop:Generator_TableVarName="tablefeehis" msprop:Generator_RowChangedName="feehisRowChanged" msprop:Generator_TablePropName="feehis" msprop:Generator_RowDeletingName="feehisRowDeleting" msprop:Generator_RowChangingName="feehisRowChanging" msprop:Generator_RowEvHandlerName="feehisRowChangeEventHandler" msprop:Generator_RowDeletedName="feehisRowDeleted" msprop:Generator_RowClassName="feehisRow" msprop:Generator_UserTableName="feehis" msprop:Generator_RowEvArgName="feehisRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="lcnsid" msprop:Generator_ColumnVarNameInTable="columnlcnsid" msprop:Generator_ColumnPropNameInRow="lcnsid" msprop:Generator_ColumnPropNameInTable="lcnsidColumn" msprop:Generator_UserColumnName="lcnsid" type="xs:int" />
+              <xs:element name="lcnscd" msprop:Generator_ColumnVarNameInTable="columnlcnscd" msprop:Generator_ColumnPropNameInRow="lcnscd" msprop:Generator_ColumnPropNameInTable="lcnscdColumn" msprop:Generator_UserColumnName="lcnscd" type="xs:int" />
+              <xs:element name="txcqty" msprop:Generator_ColumnVarNameInTable="columntxcqty" msprop:Generator_ColumnPropNameInRow="txcqty" msprop:Generator_ColumnPropNameInTable="txcqtyColumn" msprop:Generator_UserColumnName="txcqty" type="xs:decimal" />
+              <xs:element name="fexpdate" msprop:Generator_ColumnVarNameInTable="columnfexpdate" msprop:Generator_ColumnPropNameInRow="fexpdate" msprop:Generator_ColumnPropNameInTable="fexpdateColumn" msprop:Generator_UserColumnName="fexpdate" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="feebank" msprop:Generator_TableClassName="feebankDataTable" msprop:Generator_TableVarName="tablefeebank" msprop:Generator_RowChangedName="feebankRowChanged" msprop:Generator_TablePropName="feebank" msprop:Generator_RowDeletingName="feebankRowDeleting" msprop:Generator_RowChangingName="feebankRowChanging" msprop:Generator_RowEvHandlerName="feebankRowChangeEventHandler" msprop:Generator_RowDeletedName="feebankRowDeleted" msprop:Generator_RowClassName="feebankRow" msprop:Generator_UserTableName="feebank" msprop:Generator_RowEvArgName="feebankRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="pvncd" msprop:Generator_ColumnVarNameInTable="columnpvncd" msprop:Generator_ColumnPropNameInRow="pvncd" msprop:Generator_ColumnPropNameInTable="pvncdColumn" msprop:Generator_UserColumnName="pvncd" type="xs:short" />
+              <xs:element name="dvcd" msprop:Generator_ColumnVarNameInTable="columndvcd" msprop:Generator_ColumnPropNameInRow="dvcd" msprop:Generator_ColumnPropNameInTable="dvcdColumn" msprop:Generator_UserColumnName="dvcd" type="xs:short" />
+              <xs:element name="ref01" msprop:Generator_ColumnVarNameInTable="columnref01" msprop:Generator_ColumnPropNameInRow="ref01" msprop:Generator_ColumnPropNameInTable="ref01Column" msprop:Generator_UserColumnName="ref01">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="17" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ref02" msprop:Generator_ColumnVarNameInTable="columnref02" msprop:Generator_ColumnPropNameInRow="ref02" msprop:Generator_ColumnPropNameInTable="ref02Column" msprop:Generator_UserColumnName="ref02" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="17" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="feedate" msprop:Generator_ColumnVarNameInTable="columnfeedate" msprop:Generator_ColumnPropNameInRow="feedate" msprop:Generator_ColumnPropNameInTable="feedateColumn" msprop:Generator_UserColumnName="feedate" type="xs:dateTime" />
+              <xs:element name="enddate" msprop:Generator_ColumnVarNameInTable="columnenddate" msprop:Generator_ColumnPropNameInRow="enddate" msprop:Generator_ColumnPropNameInTable="enddateColumn" msprop:Generator_UserColumnName="enddate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="lcnprnst" msprop:Generator_ColumnVarNameInTable="columnlcnprnst" msprop:Generator_ColumnPropNameInRow="lcnprnst" msprop:Generator_ColumnPropNameInTable="lcnprnstColumn" msprop:Generator_UserColumnName="lcnprnst" type="xs:short" minOccurs="0" />
+              <xs:element name="lstfcd" msprop:Generator_ColumnVarNameInTable="columnlstfcd" msprop:Generator_ColumnPropNameInRow="lstfcd" msprop:Generator_ColumnPropNameInTable="lstfcdColumn" msprop:Generator_UserColumnName="lstfcd" type="xs:int" />
+              <xs:element name="lmdfdate" msprop:Generator_ColumnVarNameInTable="columnlmdfdate" msprop:Generator_ColumnPropNameInRow="lmdfdate" msprop:Generator_ColumnPropNameInTable="lmdfdateColumn" msprop:Generator_UserColumnName="lmdfdate" type="xs:dateTime" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="feedtl" msprop:Generator_TableClassName="feedtlDataTable" msprop:Generator_TableVarName="tablefeedtl" msprop:Generator_RowChangedName="feedtlRowChanged" msprop:Generator_TablePropName="feedtl" msprop:Generator_RowDeletingName="feedtlRowDeleting" msprop:Generator_RowChangingName="feedtlRowChanging" msprop:Generator_RowEvHandlerName="feedtlRowChangeEventHandler" msprop:Generator_RowDeletedName="feedtlRowDeleted" msprop:Generator_RowClassName="feedtlRow" msprop:Generator_UserTableName="feedtl" msprop:Generator_RowEvArgName="feedtlRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="pvncd" msprop:Generator_ColumnVarNameInTable="columnpvncd" msprop:Generator_ColumnPropNameInRow="pvncd" msprop:Generator_ColumnPropNameInTable="pvncdColumn" msprop:Generator_UserColumnName="pvncd" type="xs:short" />
+              <xs:element name="dvcd" msprop:Generator_ColumnVarNameInTable="columndvcd" msprop:Generator_ColumnPropNameInRow="dvcd" msprop:Generator_ColumnPropNameInTable="dvcdColumn" msprop:Generator_UserColumnName="dvcd" type="xs:short" />
+              <xs:element name="feetpcd" msprop:Generator_ColumnVarNameInTable="columnfeetpcd" msprop:Generator_ColumnPropNameInRow="feetpcd" msprop:Generator_ColumnPropNameInTable="feetpcdColumn" msprop:Generator_UserColumnName="feetpcd" type="xs:int" />
+              <xs:element name="feeno" msprop:Generator_ColumnVarNameInTable="columnfeeno" msprop:Generator_ColumnPropNameInRow="feeno" msprop:Generator_ColumnPropNameInTable="feenoColumn" msprop:Generator_UserColumnName="feeno" type="xs:int" />
+              <xs:element name="rid" msprop:Generator_ColumnVarNameInTable="columnrid" msprop:Generator_ColumnPropNameInRow="rid" msprop:Generator_ColumnPropNameInTable="ridColumn" msprop:Generator_UserColumnName="rid" type="xs:int" />
+              <xs:element name="rcvabbr" msprop:Generator_ColumnVarNameInTable="columnrcvabbr" msprop:Generator_ColumnPropNameInRow="rcvabbr" msprop:Generator_ColumnPropNameInTable="rcvabbrColumn" msprop:Generator_UserColumnName="rcvabbr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="rcvcd" msprop:Generator_ColumnVarNameInTable="columnrcvcd" msprop:Generator_ColumnPropNameInRow="rcvcd" msprop:Generator_ColumnPropNameInTable="rcvcdColumn" msprop:Generator_UserColumnName="rcvcd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="rcvno" msprop:Generator_ColumnVarNameInTable="columnrcvno" msprop:Generator_ColumnPropNameInRow="rcvno" msprop:Generator_ColumnPropNameInTable="rcvnoColumn" msprop:Generator_UserColumnName="rcvno" type="xs:int" minOccurs="0" />
+              <xs:element name="apppvncd" msprop:Generator_ColumnVarNameInTable="columnapppvncd" msprop:Generator_ColumnPropNameInRow="apppvncd" msprop:Generator_ColumnPropNameInTable="apppvncdColumn" msprop:Generator_UserColumnName="apppvncd" type="xs:short" minOccurs="0" />
+              <xs:element name="appabbr" msprop:Generator_ColumnVarNameInTable="columnappabbr" msprop:Generator_ColumnPropNameInRow="appabbr" msprop:Generator_ColumnPropNameInTable="appabbrColumn" msprop:Generator_UserColumnName="appabbr" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="appvcd" msprop:Generator_ColumnVarNameInTable="columnappvcd" msprop:Generator_ColumnPropNameInRow="appvcd" msprop:Generator_ColumnPropNameInTable="appvcdColumn" msprop:Generator_UserColumnName="appvcd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="appvno" msprop:Generator_ColumnVarNameInTable="columnappvno" msprop:Generator_ColumnPropNameInRow="appvno" msprop:Generator_ColumnPropNameInTable="appvnoColumn" msprop:Generator_UserColumnName="appvno" type="xs:decimal" minOccurs="0" />
+              <xs:element name="timeno" msprop:Generator_ColumnVarNameInTable="columntimeno" msprop:Generator_ColumnPropNameInRow="timeno" msprop:Generator_ColumnPropNameInTable="timenoColumn" msprop:Generator_UserColumnName="timeno" type="xs:int" minOccurs="0" />
+              <xs:element name="amt" msprop:Generator_ColumnVarNameInTable="columnamt" msprop:Generator_ColumnPropNameInRow="amt" msprop:Generator_ColumnPropNameInTable="amtColumn" msprop:Generator_UserColumnName="amt" type="xs:decimal" />
+              <xs:element name="finevalue" msprop:Generator_ColumnVarNameInTable="columnfinevalue" msprop:Generator_ColumnPropNameInRow="finevalue" msprop:Generator_ColumnPropNameInTable="finevalueColumn" msprop:Generator_UserColumnName="finevalue" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="feetype" msprop:Generator_TableClassName="feetypeDataTable" msprop:Generator_TableVarName="tablefeetype" msprop:Generator_RowChangedName="feetypeRowChanged" msprop:Generator_TablePropName="feetype" msprop:Generator_RowDeletingName="feetypeRowDeleting" msprop:Generator_RowChangingName="feetypeRowChanging" msprop:Generator_RowEvHandlerName="feetypeRowChangeEventHandler" msprop:Generator_RowDeletedName="feetypeRowDeleted" msprop:Generator_RowClassName="feetypeRow" msprop:Generator_UserTableName="feetype" msprop:Generator_RowEvArgName="feetypeRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="pvncd" msprop:Generator_ColumnVarNameInTable="columnpvncd" msprop:Generator_ColumnPropNameInRow="pvncd" msprop:Generator_ColumnPropNameInTable="pvncdColumn" msprop:Generator_UserColumnName="pvncd" type="xs:short" />
+              <xs:element name="dvcd" msprop:Generator_ColumnVarNameInTable="columndvcd" msprop:Generator_ColumnPropNameInRow="dvcd" msprop:Generator_ColumnPropNameInTable="dvcdColumn" msprop:Generator_UserColumnName="dvcd" type="xs:short" />
+              <xs:element name="feetpcd" msprop:Generator_ColumnVarNameInTable="columnfeetpcd" msprop:Generator_ColumnPropNameInRow="feetpcd" msprop:Generator_ColumnPropNameInTable="feetpcdColumn" msprop:Generator_UserColumnName="feetpcd" type="xs:int" />
+              <xs:element name="feetpnm" msprop:Generator_ColumnVarNameInTable="columnfeetpnm" msprop:Generator_ColumnPropNameInRow="feetpnm" msprop:Generator_ColumnPropNameInTable="feetpnmColumn" msprop:Generator_UserColumnName="feetpnm">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="feest" msprop:Generator_ColumnVarNameInTable="columnfeest" msprop:Generator_ColumnPropNameInRow="feest" msprop:Generator_ColumnPropNameInTable="feestColumn" msprop:Generator_UserColumnName="feest" type="xs:short" />
+              <xs:element name="value" msprop:Generator_ColumnVarNameInTable="columnvalue" msprop:Generator_ColumnPropNameInRow="value" msprop:Generator_ColumnPropNameInTable="valueColumn" msprop:Generator_UserColumnName="value" type="xs:decimal" />
+              <xs:element name="feeabbr" msprop:Generator_ColumnVarNameInTable="columnfeeabbr" msprop:Generator_ColumnPropNameInRow="feeabbr" msprop:Generator_ColumnPropNameInTable="feeabbrColumn" msprop:Generator_UserColumnName="feeabbr">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="feedtl" msprop:Generator_ColumnVarNameInTable="columnfeedtl" msprop:Generator_ColumnPropNameInRow="feedtl" msprop:Generator_ColumnPropNameInTable="feedtlColumn" msprop:Generator_UserColumnName="feedtl" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="feegpcd" msprop:Generator_ColumnVarNameInTable="columnfeegpcd" msprop:Generator_ColumnPropNameInRow="feegpcd" msprop:Generator_ColumnPropNameInTable="feegpcdColumn" msprop:Generator_UserColumnName="feegpcd" type="xs:short" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:fee" />
+      <xs:field xpath="mstns:pvncd" />
+      <xs:field xpath="mstns:dvcd" />
+      <xs:field xpath="mstns:feetpcd" />
+      <xs:field xpath="mstns:feeno" />
+    </xs:unique>
+    <xs:unique name="feehis_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:feehis" />
+      <xs:field xpath="mstns:lcnsid" />
+    </xs:unique>
+    <xs:unique name="feebank_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:feebank" />
+      <xs:field xpath="mstns:pvncd" />
+      <xs:field xpath="mstns:dvcd" />
+      <xs:field xpath="mstns:ref01" />
+    </xs:unique>
+    <xs:unique name="feedtl_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:feedtl" />
+      <xs:field xpath="mstns:pvncd" />
+      <xs:field xpath="mstns:dvcd" />
+      <xs:field xpath="mstns:feetpcd" />
+      <xs:field xpath="mstns:feeno" />
+      <xs:field xpath="mstns:rid" />
+    </xs:unique>
+    <xs:unique name="feetype_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:feetype" />
+      <xs:field xpath="mstns:pvncd" />
+      <xs:field xpath="mstns:dvcd" />
+      <xs:field xpath="mstns:feetpcd" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

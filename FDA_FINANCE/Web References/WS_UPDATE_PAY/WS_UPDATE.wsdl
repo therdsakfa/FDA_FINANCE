@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Update_Status_Pay">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ref1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ref2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Status_PayResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Update_Status_Pay_Repeat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ref1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ref2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="is_repeat" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Status_Pay_RepeatResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Update_Status_Pay_RepeatOnly">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ref1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ref2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Status_Pay_RepeatOnlyResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Update_Status_Pay_by_Ref02">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ref2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Status_Pay_by_Ref02Response">
+        <s:complexType />
+      </s:element>
+      <s:element name="Update_Status_Pay_by_Ref01">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ref1" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_Status_Pay_by_Ref01Response">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Update_Status_PaySoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Status_Pay" />
+  </wsdl:message>
+  <wsdl:message name="Update_Status_PaySoapOut">
+    <wsdl:part name="parameters" element="tns:Update_Status_PayResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_Status_Pay_RepeatSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Status_Pay_Repeat" />
+  </wsdl:message>
+  <wsdl:message name="Update_Status_Pay_RepeatSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_Status_Pay_RepeatResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_Status_Pay_RepeatOnlySoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Status_Pay_RepeatOnly" />
+  </wsdl:message>
+  <wsdl:message name="Update_Status_Pay_RepeatOnlySoapOut">
+    <wsdl:part name="parameters" element="tns:Update_Status_Pay_RepeatOnlyResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_Status_Pay_by_Ref02SoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Status_Pay_by_Ref02" />
+  </wsdl:message>
+  <wsdl:message name="Update_Status_Pay_by_Ref02SoapOut">
+    <wsdl:part name="parameters" element="tns:Update_Status_Pay_by_Ref02Response" />
+  </wsdl:message>
+  <wsdl:message name="Update_Status_Pay_by_Ref01SoapIn">
+    <wsdl:part name="parameters" element="tns:Update_Status_Pay_by_Ref01" />
+  </wsdl:message>
+  <wsdl:message name="Update_Status_Pay_by_Ref01SoapOut">
+    <wsdl:part name="parameters" element="tns:Update_Status_Pay_by_Ref01Response" />
+  </wsdl:message>
+  <wsdl:portType name="WS_UPDATE_STATUS_PAYSoap">
+    <wsdl:operation name="Update_Status_Pay">
+      <wsdl:input message="tns:Update_Status_PaySoapIn" />
+      <wsdl:output message="tns:Update_Status_PaySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Status_Pay_Repeat">
+      <wsdl:input message="tns:Update_Status_Pay_RepeatSoapIn" />
+      <wsdl:output message="tns:Update_Status_Pay_RepeatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Status_Pay_RepeatOnly">
+      <wsdl:input message="tns:Update_Status_Pay_RepeatOnlySoapIn" />
+      <wsdl:output message="tns:Update_Status_Pay_RepeatOnlySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Status_Pay_by_Ref02">
+      <wsdl:input message="tns:Update_Status_Pay_by_Ref02SoapIn" />
+      <wsdl:output message="tns:Update_Status_Pay_by_Ref02SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_Status_Pay_by_Ref01">
+      <wsdl:input message="tns:Update_Status_Pay_by_Ref01SoapIn" />
+      <wsdl:output message="tns:Update_Status_Pay_by_Ref01SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_UPDATE_STATUS_PAYSoap" type="tns:WS_UPDATE_STATUS_PAYSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Update_Status_Pay">
+      <soap:operation soapAction="http://tempuri.org/Update_Status_Pay" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Status_Pay_Repeat">
+      <soap:operation soapAction="http://tempuri.org/Update_Status_Pay_Repeat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Status_Pay_RepeatOnly">
+      <soap:operation soapAction="http://tempuri.org/Update_Status_Pay_RepeatOnly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Status_Pay_by_Ref02">
+      <soap:operation soapAction="http://tempuri.org/Update_Status_Pay_by_Ref02" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Status_Pay_by_Ref01">
+      <soap:operation soapAction="http://tempuri.org/Update_Status_Pay_by_Ref01" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_UPDATE_STATUS_PAYSoap12" type="tns:WS_UPDATE_STATUS_PAYSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Update_Status_Pay">
+      <soap12:operation soapAction="http://tempuri.org/Update_Status_Pay" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Status_Pay_Repeat">
+      <soap12:operation soapAction="http://tempuri.org/Update_Status_Pay_Repeat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Status_Pay_RepeatOnly">
+      <soap12:operation soapAction="http://tempuri.org/Update_Status_Pay_RepeatOnly" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Status_Pay_by_Ref02">
+      <soap12:operation soapAction="http://tempuri.org/Update_Status_Pay_by_Ref02" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_Status_Pay_by_Ref01">
+      <soap12:operation soapAction="http://tempuri.org/Update_Status_Pay_by_Ref01" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_UPDATE_STATUS_PAY">
+    <wsdl:port name="WS_UPDATE_STATUS_PAYSoap" binding="tns:WS_UPDATE_STATUS_PAYSoap">
+      <soap:address location="http://10.111.28.129/ws_update_stat/WS_UPDATE.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_UPDATE_STATUS_PAYSoap12" binding="tns:WS_UPDATE_STATUS_PAYSoap12">
+      <soap12:address location="http://10.111.28.129/ws_update_stat/WS_UPDATE.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

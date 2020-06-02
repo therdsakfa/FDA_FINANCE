@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="QR_CODE_B64">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="URLs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QR_CODE_B64Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QR_CODE_B64Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QR_CODE_BYTES">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="URLS" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="QR_CODE_BYTESResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="QR_CODE_BYTESResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="QR_CODE_B64SoapIn">
+    <wsdl:part name="parameters" element="tns:QR_CODE_B64" />
+  </wsdl:message>
+  <wsdl:message name="QR_CODE_B64SoapOut">
+    <wsdl:part name="parameters" element="tns:QR_CODE_B64Response" />
+  </wsdl:message>
+  <wsdl:message name="QR_CODE_BYTESSoapIn">
+    <wsdl:part name="parameters" element="tns:QR_CODE_BYTES" />
+  </wsdl:message>
+  <wsdl:message name="QR_CODE_BYTESSoapOut">
+    <wsdl:part name="parameters" element="tns:QR_CODE_BYTESResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_QRSoap">
+    <wsdl:operation name="QR_CODE_B64">
+      <wsdl:input message="tns:QR_CODE_B64SoapIn" />
+      <wsdl:output message="tns:QR_CODE_B64SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="QR_CODE_BYTES">
+      <wsdl:input message="tns:QR_CODE_BYTESSoapIn" />
+      <wsdl:output message="tns:QR_CODE_BYTESSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_QRSoap" type="tns:WS_QRSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QR_CODE_B64">
+      <soap:operation soapAction="http://tempuri.org/QR_CODE_B64" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QR_CODE_BYTES">
+      <soap:operation soapAction="http://tempuri.org/QR_CODE_BYTES" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_QRSoap12" type="tns:WS_QRSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="QR_CODE_B64">
+      <soap12:operation soapAction="http://tempuri.org/QR_CODE_B64" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="QR_CODE_BYTES">
+      <soap12:operation soapAction="http://tempuri.org/QR_CODE_BYTES" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_QR">
+    <wsdl:port name="WS_QRSoap" binding="tns:WS_QRSoap">
+      <soap:address location="http://10.111.28.108/WS_FDA_QR/WS_QR.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_QRSoap12" binding="tns:WS_QRSoap12">
+      <soap12:address location="http://10.111.28.108/WS_FDA_QR/WS_QR.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

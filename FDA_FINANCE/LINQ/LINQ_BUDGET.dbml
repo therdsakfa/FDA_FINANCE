@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FDA_BG" Class="LINQ_BUDGETDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=FDA_BG;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DTAMConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="BUDGETS.BUDGET_ADJUST" Member="BUDGET_ADJUSTs">
+    <Type Name="BUDGET_ADJUST">
+      <Column Name="BUDGET_ADJUST_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BUDGET_PLAN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_DEPARTMENT_MONEY" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DEPARTMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="BUDGETS.MAS_BUDGET_TYPE" Member="MAS_BUDGET_TYPEs">
+    <Type Name="MAS_BUDGET_TYPE">
+      <Column Name="BUDGET_TYPE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BUDGET_TYPE_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BUDGET_YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_TYPE_AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="BUDGETS.BUDGET_ADJUST_DETAIL" Member="BUDGET_ADJUST_DETAILs">
+    <Type Name="BUDGET_ADJUST_DETAIL">
+      <Column Name="ADJUST_DETAIL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BUDGET_ADJUST_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOC_NUMBER" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DOC_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SUB_DEPARTMENT_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EXPORT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PERIOD_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="APPROVE_AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="ACTIVE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="BUDGETS.BUDGET_TRANSFER_DETAIL" Member="BUDGET_TRANSFER_DETAILs">
+    <Type Name="BUDGET_TRANSFER_DETAIL">
+      <Column Name="TRANSFER_OUT_DETAIL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BUDGET_TRANSFER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TYPE_TRANSFER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="BUDGETS.BUDGET_PO_OVERLAP" Member="BUDGET_PO_OVERLAPs">
+    <Type Name="BUDGET_PO_OVERLAP">
+      <Column Name="OVERLAP_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BUDGET_DISBURSE_BILL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_USE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OVERLAP_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IS_OVERLAP_ADD" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OVERLAP_ADD_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IS_USE_OVERLAP_ADD" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="BUDGETS.BUDGET_TRANSFER" Member="BUDGET_TRANSFERs">
+    <Type Name="BUDGET_TRANSFER">
+      <Column Name="BUDGET_TRANSFER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BUDGET_TRANSFER_BUDGET_YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_TRANSFER_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BUDGET_TRANSFER_DOC_NUMBER" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BUDGET_TRANSFER_DOC_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BUDGET_TRANSFER_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FROM_BUDGET_PLAN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TO_BUDGET_PLAN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FROM_DEPARTMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_FROM_TRANSFER_DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TO_DEPARTMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_TO_TRANSFER_DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BUDGET_TRANSFER_AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TRANSFER_TYPE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_TRANSFER_IS_ENABLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_APPROVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="APPROVE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

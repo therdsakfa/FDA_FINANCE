@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_FOLLOW_BG">
+  <DataContextMoniker Name="/LINQ_FOLLOW_BGDataContext" />
+  <nestedChildShapes>
+    <classShape Id="230ce266-f759-480d-968d-8fd1a3b05283" isExpanded="false" absoluteBounds="0.75, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FOLLOW_BGDataContext/MAS_PROJECT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1f76d316-be7e-4d20-b3b1-31e37e3d2211" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="77c91038-bdb8-4927-80f9-803dc2db0716" isExpanded="false" absoluteBounds="2.75, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FOLLOW_BGDataContext/TBL_PROJECT_ACTIVITY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dcb299be-5e2b-463c-a088-332450094ed8" absoluteBounds="2.765, 1.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="860433e8-8a39-4286-8b7f-ee3c419483fd" isExpanded="false" absoluteBounds="5.125, 0.875, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FOLLOW_BGDataContext/MAS_DEPARTMENT_F" />
+      <nestedChildShapes>
+        <elementListCompartment Id="10c3a5b6-8317-4fb4-9c4d-c6058c2804de" absoluteBounds="5.14, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

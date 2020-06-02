@@ -1,0 +1,78 @@
+﻿.body {
+	WIDTH: 1165px;
+	height:100px;
+}
+.colour {
+	background-color:#FCFCFC;
+}
+.Bleft {
+	background-image:url('../images/bg_02.png');
+	width:22px;
+}
+.Bright {
+	background-image:url('../images/bg_04.png');
+	width:24px;
+}
+.layoutIn {
+	width:1139px;
+	background-color:#f5f5f5;
+}
+.PicH {
+	background-image:url('../images/bannerHeader_06.png');
+	width:1139px;
+	height:118px;	
+}
+.layoutContent {
+	background-image:url('../images/picL_11.png');
+	width: 298px;
+	height: 350px;
+	text-align:left;
+	background-repeat:no-repeat;
+}
+.L1 {
+	background-image:url('../images/bgL_10.png');
+	width: 9px;
+	height:9px;
+}
+.L2 {
+	background-image:url('../images/bgL_11.png');
+	width: 1112px;
+	height: 9px;
+}
+.L3 {
+	background-image:url('../images/bgL_13.png');
+	width: 8px;
+	height:9px;
+}
+.L4 {
+	background-image:url('../images/bgL_14.png');
+	width: 9px;
+	height:8px;
+}
+.L5 {
+	background-image:url('../images/bgL_16.png');
+	width: 8px;
+	height:8px;
+}
+.L6 {
+	background-image:url('../images/bgL_22.png');
+	width:  9px;
+	height:11px;
+}
+.L7 {
+	background-image:url('../images/bgL_23.png');
+	width: 15px;
+	height:11px;
+}
+.L8 {
+	background-image:url('../images/picL_21.png');
+	width:  8px;
+	height:11px;
+}
+.picGraph {
+	background-image:url('../images/graph_03.png');
+	background-position:right;
+	background-repeat:no-repeat;
+	padding-right:20px;
+}
+

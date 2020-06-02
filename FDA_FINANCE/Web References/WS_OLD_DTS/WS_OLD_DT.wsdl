@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="get_dvcd_auto">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="feeno" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="feeabbr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_dvcd_autoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_dvcd_autoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_get_receipt_by_feeabbr_and_feeno_group_sum_old2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="feeno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dvcd" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="feeabbr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_get_receipt_by_feeabbr_and_feeno_group_sum_old2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SP_get_receipt_by_feeabbr_and_feeno_group_sum_old2Result">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_lcn_name_type1">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lcnsid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="lcnscd" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_lcn_name_type1Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_lcn_name_type1Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_lcn_name_type2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="lcnsid" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="lcnscd" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_lcn_name_type2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_lcn_name_type2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_GET_FEEDTL_OLD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="feeno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="dvcd" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="pvncd" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="feeabbr" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SP_GET_FEEDTL_OLDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SP_GET_FEEDTL_OLDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="get_dvcd_autoSoapIn">
+    <wsdl:part name="parameters" element="tns:get_dvcd_auto" />
+  </wsdl:message>
+  <wsdl:message name="get_dvcd_autoSoapOut">
+    <wsdl:part name="parameters" element="tns:get_dvcd_autoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SP_get_receipt_by_feeabbr_and_feeno_group_sum_old2SoapIn">
+    <wsdl:part name="parameters" element="tns:SP_get_receipt_by_feeabbr_and_feeno_group_sum_old2" />
+  </wsdl:message>
+  <wsdl:message name="SP_get_receipt_by_feeabbr_and_feeno_group_sum_old2SoapOut">
+    <wsdl:part name="parameters" element="tns:SP_get_receipt_by_feeabbr_and_feeno_group_sum_old2Response" />
+  </wsdl:message>
+  <wsdl:message name="get_lcn_name_type1SoapIn">
+    <wsdl:part name="parameters" element="tns:get_lcn_name_type1" />
+  </wsdl:message>
+  <wsdl:message name="get_lcn_name_type1SoapOut">
+    <wsdl:part name="parameters" element="tns:get_lcn_name_type1Response" />
+  </wsdl:message>
+  <wsdl:message name="get_lcn_name_type2SoapIn">
+    <wsdl:part name="parameters" element="tns:get_lcn_name_type2" />
+  </wsdl:message>
+  <wsdl:message name="get_lcn_name_type2SoapOut">
+    <wsdl:part name="parameters" element="tns:get_lcn_name_type2Response" />
+  </wsdl:message>
+  <wsdl:message name="SP_GET_FEEDTL_OLDSoapIn">
+    <wsdl:part name="parameters" element="tns:SP_GET_FEEDTL_OLD" />
+  </wsdl:message>
+  <wsdl:message name="SP_GET_FEEDTL_OLDSoapOut">
+    <wsdl:part name="parameters" element="tns:SP_GET_FEEDTL_OLDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_OLD_DTSoap">
+    <wsdl:operation name="get_dvcd_auto">
+      <wsdl:input message="tns:get_dvcd_autoSoapIn" />
+      <wsdl:output message="tns:get_dvcd_autoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_get_receipt_by_feeabbr_and_feeno_group_sum_old2">
+      <wsdl:input message="tns:SP_get_receipt_by_feeabbr_and_feeno_group_sum_old2SoapIn" />
+      <wsdl:output message="tns:SP_get_receipt_by_feeabbr_and_feeno_group_sum_old2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_lcn_name_type1">
+      <wsdl:input message="tns:get_lcn_name_type1SoapIn" />
+      <wsdl:output message="tns:get_lcn_name_type1SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_lcn_name_type2">
+      <wsdl:input message="tns:get_lcn_name_type2SoapIn" />
+      <wsdl:output message="tns:get_lcn_name_type2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SP_GET_FEEDTL_OLD">
+      <wsdl:input message="tns:SP_GET_FEEDTL_OLDSoapIn" />
+      <wsdl:output message="tns:SP_GET_FEEDTL_OLDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_OLD_DTSoap" type="tns:WS_OLD_DTSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="get_dvcd_auto">
+      <soap:operation soapAction="http://tempuri.org/get_dvcd_auto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_get_receipt_by_feeabbr_and_feeno_group_sum_old2">
+      <soap:operation soapAction="http://tempuri.org/SP_get_receipt_by_feeabbr_and_feeno_group_sum_old2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_lcn_name_type1">
+      <soap:operation soapAction="http://tempuri.org/get_lcn_name_type1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_lcn_name_type2">
+      <soap:operation soapAction="http://tempuri.org/get_lcn_name_type2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_GET_FEEDTL_OLD">
+      <soap:operation soapAction="http://tempuri.org/SP_GET_FEEDTL_OLD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_OLD_DTSoap12" type="tns:WS_OLD_DTSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="get_dvcd_auto">
+      <soap12:operation soapAction="http://tempuri.org/get_dvcd_auto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_get_receipt_by_feeabbr_and_feeno_group_sum_old2">
+      <soap12:operation soapAction="http://tempuri.org/SP_get_receipt_by_feeabbr_and_feeno_group_sum_old2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_lcn_name_type1">
+      <soap12:operation soapAction="http://tempuri.org/get_lcn_name_type1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_lcn_name_type2">
+      <soap12:operation soapAction="http://tempuri.org/get_lcn_name_type2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SP_GET_FEEDTL_OLD">
+      <soap12:operation soapAction="http://tempuri.org/SP_GET_FEEDTL_OLD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_OLD_DT">
+    <wsdl:port name="WS_OLD_DTSoap" binding="tns:WS_OLD_DTSoap">
+      <soap:address location="http://164.115.28.103/fda_budget/WS_OLD_DT.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_OLD_DTSoap12" binding="tns:WS_OLD_DTSoap12">
+      <soap12:address location="http://164.115.28.103/fda_budget/WS_OLD_DT.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_PROCUREMENT">
+  <DataContextMoniker Name="/LINQ_PROCUREMENTDataContext" />
+  <nestedChildShapes>
+    <classShape Id="8d3c5646-18d9-4df2-9bc0-24ab60da69a3" isExpanded="false" absoluteBounds="0.75, 1, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_PROCUREMENTDataContext/PROCUREMENT_GUARANTEE_HEAD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f6b1110f-6e75-4e61-b582-ab1be904ba7e" absoluteBounds="0.76500000000000012, 1.46, 1.9700000000000002, 9.6721598307291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

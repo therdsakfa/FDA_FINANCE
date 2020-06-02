@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DTAM" Class="LINQ_WELFAREDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=DTAM;Persist Security Info=True;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DTAMConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="WELFARES.ALL_WELFARE_BILL" Member="ALL_WELFARE_BILLs">
+    <Type Name="ALL_WELFARE_BILL">
+      <Column Name="ALL_WELFARE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CURE_STUDY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WELFARE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="WELFARE_CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BUDGET_YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PERSONAL_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DEPARTMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="WELFARE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MONTH_LIVE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MONTH_DIS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IS_PAY_HOME" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_ENABLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="USER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

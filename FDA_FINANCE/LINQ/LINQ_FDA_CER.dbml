@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FDA_CFS_CENTER" Class="LINQ_FDA_CERDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.111.28.124;Initial Catalog=FDA_CFS_CENTER;Persist Security Info=True;User ID=fusion" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="FDA_CFS_CENTERConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CER_DRUG_HEAD" Member="CER_DRUG_HEADs">
+    <Type Name="CER_DRUG_HEAD">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RCVNO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RCVDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CITIZEN_UPLOAD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CITIZEN_DOWNLOAD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CITIZEN_AUTHORIZE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LCNSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ADDRESS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_PROCESS_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REF_CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="COMMENT_ADMIN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="COMMENT_BUSINESS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UNTIL_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CITIZEN_APPROVED" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IMPORT_TO_COUNTRY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TRADNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FORMULA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EXPORT_FROM_COUNTRY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="YN_STATUS_LICENSE_HOLDER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REGISTER_NEWCODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="YN_SUMMARY_APPENDED" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="YN_WITH_THE_LICENSE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="YN_FROM_IS_PROCESS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="YN_FROM_BEEN_INSPECTED" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="YN_BY_ANOTHER_PARTY" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="INPUT_IF_NO_EXPLAIN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="YN_AUTHORIZATION_LACKING" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPP_YN_V_I_II" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPP_YN_V_I_III" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPP_YN_V_IIA_IIII" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPP_YN_V_IIA_V" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPP_YN_V_IIB_II" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPP_YN_V_IIB_III_I" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPP_YN_V_III" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPP_YN_V_III_I" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPP_YN_V_III_II" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPP_YN_V_III_III" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPP_YN_V_IIII" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPP_V_IF_NO_EXPLAIN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CPP_YN_IIA_III" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPP_YN_IIB_III_II" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPP_YN_IIB_III_III" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPP_YN_IIB_III_IIII" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="XML_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="YN_Health_Organization" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="INPUT_Applicant_for_certificate" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="INPUT_Status_of_applicant" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="INPUT_name_and_address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UNIT_CER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="APPROVED_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UTIL_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CPP_V_DOSAGE_FORM_ARE_2A31_1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CPP_V_DOSAGE_FORM_ARE_2A31_2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CPP_V_LICENSE_HOLDER_2A6_1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CPP_V_LICENSE_HOLDER_2A6_2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CPP_V_FOR_CERTIFICATE_2B1_1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CPP_V_FOR_CERTIFICATE_2B1_2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CPP_V_DOSAGE_FORM_ARE_2B21_1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CPP_V_DOSAGE_FORM_ARE_2B21_2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CPP_V_REMARKS_1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CPP_V_REMARKS_2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TRANS_ATTRIBUTE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PRODUCT_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="COMPANY_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CPP_I_NAME_IF_APPLICABLE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CPP_I_YN_EXPORT_COUNTRY_I_II" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CPP_I_YN_EXPORT_COUNTRY_I_III" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LCNNO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NAME_FOR_EXPORT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CER_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DATE_PRINT_PAYMENT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RGTNO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RGTTPCD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PVNCD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EACH_CONTAIN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EDIT_EACH_CONTAIN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REG_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REG_DATE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="OrganizationList">
+        <s:complexType />
+      </s:element>
+      <s:element name="OrganizationListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrganizationListResult" type="tns:ArrayOfOrganization" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfOrganization">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Organization" nillable="true" type="tns:Organization" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Organization">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Priority" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="UnitCode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Type" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="BudgetOrgID" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="Department" type="tns:Organization" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ministry" type="tns:Organization" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetOrganizationDetail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OrgID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrganizationDetailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Organization" nillable="true" type="tns:Organization" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrganizationPerson">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OrgID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OrganizationPersonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrganizationPersonResult" type="tns:ArrayOfProfile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfProfile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Profile" nillable="true" type="tns:Profile" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Profile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CitizenID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Prefix" type="tns:Prefix" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UserType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="BloodType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Organization" type="tns:Organization" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gmail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FullAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Telephone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobilePhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Position" type="tns:Position" />
+          <s:element minOccurs="0" maxOccurs="1" name="PositionOCSC" type="tns:Position" />
+          <s:element minOccurs="1" maxOccurs="1" name="PersonType" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Prefix">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Position">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Priority" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="CategoryID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="CategoryName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PositionLevelID" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PositionLevelName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Organization" type="tns:Organization" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CitizenID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Profile" nillable="true" type="tns:Profile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPrefix">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PrefixID" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPrefixResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Prefix" nillable="true" type="tns:Prefix" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileSearch">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OrgID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Search" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProfileSearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProfileSearchResult" type="tns:ArrayOfProfile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="OrganizationListSoapIn">
+    <wsdl:part name="parameters" element="tns:OrganizationList" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationListSoapOut">
+    <wsdl:part name="parameters" element="tns:OrganizationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrganizationDetailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrganizationDetail" />
+  </wsdl:message>
+  <wsdl:message name="GetOrganizationDetailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrganizationDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationPersonSoapIn">
+    <wsdl:part name="parameters" element="tns:OrganizationPerson" />
+  </wsdl:message>
+  <wsdl:message name="OrganizationPersonSoapOut">
+    <wsdl:part name="parameters" element="tns:OrganizationPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfile" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPrefixSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPrefix" />
+  </wsdl:message>
+  <wsdl:message name="GetPrefixSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPrefixResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileSearchSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProfileSearch" />
+  </wsdl:message>
+  <wsdl:message name="GetProfileSearchSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProfileSearchResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDEMServiceSoap">
+    <wsdl:operation name="OrganizationList">
+      <wsdl:input message="tns:OrganizationListSoapIn" />
+      <wsdl:output message="tns:OrganizationListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationDetail">
+      <wsdl:input message="tns:GetOrganizationDetailSoapIn" />
+      <wsdl:output message="tns:GetOrganizationDetailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OrganizationPerson">
+      <wsdl:input message="tns:OrganizationPersonSoapIn" />
+      <wsdl:output message="tns:OrganizationPersonSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <wsdl:input message="tns:GetProfileSoapIn" />
+      <wsdl:output message="tns:GetProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrefix">
+      <wsdl:input message="tns:GetPrefixSoapIn" />
+      <wsdl:output message="tns:GetPrefixSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileSearch">
+      <wsdl:input message="tns:GetProfileSearchSoapIn" />
+      <wsdl:output message="tns:GetProfileSearchSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IDEMServiceSoap" type="tns:IDEMServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OrganizationList">
+      <soap:operation soapAction="http://tempuri.org/OrganizationList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationDetail">
+      <soap:operation soapAction="http://tempuri.org/GetOrganizationDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrganizationPerson">
+      <soap:operation soapAction="http://tempuri.org/OrganizationPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <soap:operation soapAction="http://tempuri.org/GetProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrefix">
+      <soap:operation soapAction="http://tempuri.org/GetPrefix" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileSearch">
+      <soap:operation soapAction="http://tempuri.org/GetProfileSearch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IDEMServiceSoap12" type="tns:IDEMServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="OrganizationList">
+      <soap12:operation soapAction="http://tempuri.org/OrganizationList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganizationDetail">
+      <soap12:operation soapAction="http://tempuri.org/GetOrganizationDetail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrganizationPerson">
+      <soap12:operation soapAction="http://tempuri.org/OrganizationPerson" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfile">
+      <soap12:operation soapAction="http://tempuri.org/GetProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrefix">
+      <soap12:operation soapAction="http://tempuri.org/GetPrefix" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileSearch">
+      <soap12:operation soapAction="http://tempuri.org/GetProfileSearch" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IDEMService">
+    <wsdl:port name="IDEMServiceSoap" binding="tns:IDEMServiceSoap">
+      <soap:address location="https://ephemeris.fda.moph.go.th/IDEM/Service/IDEMService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IDEMServiceSoap12" binding="tns:IDEMServiceSoap12">
+      <soap12:address location="https://ephemeris.fda.moph.go.th/IDEM/Service/IDEMService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

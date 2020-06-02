@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_FDA_CER">
+  <DataContextMoniker Name="/LINQ_FDA_CERDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a2784534-7a4f-452e-978b-99d7a822e818" isExpanded="false" absoluteBounds="0.5, 0.625, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_CERDataContext/CER_DRUG_HEAD" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c3d05f35-45f5-4fe4-bb7b-acb8214af7d2" absoluteBounds="0.51500000000000012, 1.085, 1.9700000000000002, 15.633504231770832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

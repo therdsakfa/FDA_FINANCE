@@ -1,0 +1,49 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="BG_Master2.master.vb" Inherits="FDA_FINANCE.BG_Master2" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="user-scalable=0,initial-scale=1.0, maximum-scale=1, minimum-scale=1" />
+<%--     <link href="Content/bootstrap-theme.min.css" rel="stylesheet" />   
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+   <link href="css/plugins/morris.css" rel="stylesheet" />
+    <link href="css/sb-admin5.css" rel="stylesheet" />
+
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="js/custom.js"></script>
+    <script src="js/jquery.js"></script>
+     
+    <script src="Html5/html5shiv.min.js"></script>
+    <script src="Html5/respond.min.js"></script>
+    <link href="css/Theme.css" rel="stylesheet" />
+     <link href="css/Custom.css" rel="stylesheet" />
+    <link href="css/Custom3.css" rel="stylesheet" />
+    	
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />	
+	<link href="css/font.css" rel="stylesheet" type="text/css" />
+	<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+	<link href="css/custom-bootstrap.css" rel="stylesheet" type="text/css" />
+	<link href="css/style.css" rel="stylesheet" type="text/css" />  
+    <link href="css/sb-admin5.css" rel="stylesheet" />
+    <link href="css/Theme.css" rel="stylesheet" />--%>
+    <link href="css/css_main.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

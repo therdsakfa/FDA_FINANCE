@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_MAINTAIN">
+  <DataContextMoniker Name="/LINQ_MAINTAINDataContext" />
+  <nestedChildShapes>
+    <classShape Id="bbe95cdf-27de-4d15-a5c6-4d9ef4528568" isExpanded="false" absoluteBounds="2.125, 1.5, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_MAINTAINDataContext/RECEIVE_MONEY_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6eaf3ca1-6b43-4e8d-bfc5-d84daa99d47e" absoluteBounds="2.14, 1.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="95e6c512-04ec-4a73-89ad-36f468fa4700" isExpanded="false" absoluteBounds="2.125, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_MAINTAINDataContext/REPORT_R3_009_1" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ec3e6622-af0a-4a51-9deb-098bf0c929dd" absoluteBounds="2.14, 3.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="267223c5-ba92-4eba-a5f5-9aa2fd120d9a" isExpanded="false" absoluteBounds="4.25, 0.875, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_MAINTAINDataContext/RETURN_MONEY_DEBTOR_DEPOSIT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca22da1c-a868-4905-a1fd-665ffc908f23" absoluteBounds="4.265, 1.335, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ed989696-c660-4907-9d93-4e8ff8f16ed8" isExpanded="false" absoluteBounds="4.25, 1.5, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_MAINTAINDataContext/DEPOSIT_BALANCE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ce6a0b1-f739-4f70-a094-9106a6f8801f" absoluteBounds="4.265, 1.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e10f4f83-799f-42d7-aebb-4e3c0aa165a0" isExpanded="false" absoluteBounds="2.125, 2.125, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_MAINTAINDataContext/RETURN_MONEY_DEBTOR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bf38cd29-46ff-4bd6-8305-a2fe9f09a578" absoluteBounds="2.14, 2.585, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="79f10581-531e-489f-9fe5-bbaa6489aa69" isExpanded="false" absoluteBounds="4.25, 2.125, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_MAINTAINDataContext/TBL_OTHER_PAY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bee2de45-1d61-4266-a7c7-e380130b5fea" absoluteBounds="4.265, 2.585, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ffcc483f-1d8a-4b8a-abe2-01683ff55230" isExpanded="false" absoluteBounds="4.25, 3.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_MAINTAINDataContext/SEND_MONEY_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b4eb6808-edde-437d-99ca-a2f43b91e10a" absoluteBounds="4.265, 3.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7d13100a-9790-4182-8d22-392ac0539605" isExpanded="false" absoluteBounds="2.125, 3.875, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_MAINTAINDataContext/SEND_MONEY_SUM_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b58803e8-fe04-4a15-b7dd-50ddf1f84127" absoluteBounds="2.14, 4.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="529fd238-27fb-4ecd-ab8f-17fcfc6abbca" isExpanded="false" absoluteBounds="2.125, 3.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_MAINTAINDataContext/SEND_MONEY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bcb0735c-f744-4cc4-991f-f37923081a71" absoluteBounds="2.14, 3.71, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="98838587-6677-4341-b67b-5f9a9da58307" isExpanded="false" absoluteBounds="4.25, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_MAINTAINDataContext/RECEIVE_MONEY_DETAIL2" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f85925ff-5787-46ac-817a-6f393024b043" absoluteBounds="4.265, 3.21, 1.9700000000000002, 3.7108154296875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2f6e48f1-a43c-43c0-b300-efcb886a639a" isExpanded="false" absoluteBounds="2.125, 0.875, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_MAINTAINDataContext/RECEIVE_MONEY" />
+      <nestedChildShapes>
+        <elementListCompartment Id="49555eb1-7e01-4368-8e5e-ecbc126d605d" absoluteBounds="2.1399999999999997, 1.335, 1.9700000000000002, 10.441365559895832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

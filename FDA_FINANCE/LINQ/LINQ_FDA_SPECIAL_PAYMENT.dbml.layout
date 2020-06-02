@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_FDA_SPECIAL_PAYMENT">
+  <DataContextMoniker Name="/LINQ_FDA_SPECIAL_PAYMENTDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9e50094f-5560-4166-9eaa-f3b9e4c96415" isExpanded="false" absoluteBounds="0.75, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_SPECIAL_PAYMENTDataContext/PAYMENT_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d931c2d8-e27a-4a70-b641-741be0ec624c" absoluteBounds="0.765, 1.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="26029c1d-0db7-4b54-aaea-180f163afdd1" isExpanded="false" absoluteBounds="2.75, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_SPECIAL_PAYMENTDataContext/SYSTEMS_PAYMENT_DETAIL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="847f0ada-e79e-4907-9095-405235c9428d" absoluteBounds="2.765, 1.21, 1.9700000000000002, 9.0952555338541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cab20162-0103-47db-9e29-114ab780af1e" isExpanded="false" absoluteBounds="4.75, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_SPECIAL_PAYMENTDataContext/SPD_LOG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7b929faf-a1d6-4b47-bf81-d13af17c00bd" absoluteBounds="4.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

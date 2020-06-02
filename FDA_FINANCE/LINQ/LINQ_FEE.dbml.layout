@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_FEE">
+  <DataContextMoniker Name="/LINQ_FEEDataContext" />
+  <nestedChildShapes>
+    <classShape Id="9a80407d-ba16-4b9e-9e82-9d1b086d9670" isExpanded="false" absoluteBounds="0.75, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FEEDataContext/feegenno" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b1c55f06-fc92-49db-bd02-f03c8003f189" absoluteBounds="0.76500000000000012, 2.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d16fad8f-b294-468c-974d-fafc2265a4a6" isExpanded="false" absoluteBounds="2.875, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FEEDataContext/feebank" />
+      <nestedChildShapes>
+        <elementListCompartment Id="71518758-042e-4985-b82a-a5938ae448e1" absoluteBounds="2.89, 1.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bd0d1346-0bc6-48d7-971f-008cd5defcd0" isExpanded="false" absoluteBounds="2.875, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FEEDataContext/feetype" />
+      <nestedChildShapes>
+        <elementListCompartment Id="177db725-81fe-4da3-a0ce-6a1f19876ab2" absoluteBounds="2.89, 2.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aca135be-e46c-4d9d-9425-5456f6d086be" isExpanded="false" absoluteBounds="0.75, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FEEDataContext/feegenref01" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b7f48c6c-9d54-415e-8121-628cb33ce50f" absoluteBounds="0.765, 2.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="cf490041-369c-408e-bda7-e0228da97e84" isExpanded="false" absoluteBounds="0.75, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FEEDataContext/fee_log" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d63c9f04-2ff7-40f7-8c1c-af90b5777e28" absoluteBounds="0.765, 1.71, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4a90c2b7-0914-45f1-9da1-d0ce54a0edaa" isExpanded="false" absoluteBounds="2.75, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FEEDataContext/feedtl_fine" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9eaac635-91dc-4af3-b5ee-8bf3fd02ef8d" absoluteBounds="2.7649999999999997, 2.71, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1d92466b-b9a4-4d9c-bc48-c883a916a473" isExpanded="false" absoluteBounds="2.875, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FEEDataContext/feedtl" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3eb8d9b0-441d-4728-834e-5e2093b1c453" absoluteBounds="2.89, 1.71, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eb3f0e73-c2d0-4652-a05c-e467cbb59669" isExpanded="false" absoluteBounds="0.75, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FEEDataContext/fee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ca339a77-6d29-44f7-8aa3-0866241364b6" absoluteBounds="0.76499999999999968, 1.21, 1.9700000000000002, 7.556844075520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

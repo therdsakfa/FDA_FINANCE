@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DTAM_USER" Class="LINQ_USERDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.0.1.8;Initial Catalog=DTAM_USER;Persist Security Info=True;User ID=dtam-depot" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DTAM_USERConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tbl_USER_GROUP" Member="tbl_USER_GROUPs">
+    <Type Name="tbl_USER_GROUP">
+      <Column Name="GROUP_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GROUP_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GROUP_POSITION" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_USER_MANAGE" Member="tbl_USER_MANAGEs">
+    <Type Name="tbl_USER_MANAGE">
+      <Column Name="USER_MANAGE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="USER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GROUP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_USER_PERMISSION" Member="tbl_USER_PERMISSIONs">
+    <Type Name="tbl_USER_PERMISSION">
+      <Column Name="PERMISSION_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PERMISSION_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tbl_USER" Member="tbl_USERs">
+    <Type Name="tbl_USER">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PREFIX" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SURNAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GENDER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDENTITY_NUMBER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BIRTHDATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="PERSONAL_TYPE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DEPARTMENT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="POSITION" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TELEPHONE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TELEPHONE_TABLE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ADDRESS" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="AD_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="USERNAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PASSWORD" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DEPARTMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERMISSION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GROUP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERMISSION_P" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PERMISSION_A" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SELECT_DEPT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

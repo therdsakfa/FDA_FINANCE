@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FDA_BG" Class="LINQ_SALARYDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.111.28.160;Initial Catalog=FDA_BG;Persist Security Info=True;User ID=sa;Connect Timeout=2000" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DTAMConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.SALARY" Member="SALARies">
+    <Type Name="SALARY">
+      <Column Name="IDRUN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PERSON_FK_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Month_number" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PER_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SALARY_DETAIL_ID" Member="SALARY_DETAIL_IDs">
+    <Type Name="SALARY_DETAIL_ID">
+      <Column Name="SALARY_DETAIL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SALARY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SALARY_PAYLIST_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

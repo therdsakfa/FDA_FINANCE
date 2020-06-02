@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LGTCPN" Class="LINQ_CPNDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.111.28.103;Initial Catalog=LGTCPN;User ID=fusion" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LGTCPNConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="fda.syslcnsid" Member="syslcnsids">
+    <Type Name="syslcnsid">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="identify" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="crtlct" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="birthdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="chngwtcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="ntcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="taxno" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="trdregno" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ctzno" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="remark" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="idst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="phrno" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="stfcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nmprnst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="cncdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="lstfcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lcnsidst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="scridst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lmdfdate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="url" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="cncremark" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="otaxno" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="email_sro" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="email_contract_real" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ID_main" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="person_status_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="person_status" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="sex" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="standard_description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="register_capital" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="fda.syslcnsnm" Member="syslcnsnms">
+    <Type Name="syslcnsnm">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="identify" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="lcnsid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lcnscd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prefixcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="prefixnm" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="thanm" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="engnm" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="lctcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thalnm" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="englnm" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="suffixcd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="lcnsst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="grplcnscd" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="bsncd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lstfcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="lmdfdate" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="lcnsidst" Type="System.Int16" DbType="SmallInt" CanBeNull="true" />
+      <Column Name="validdate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="oldid" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="create_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="update_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sysemail" Member="sysemails">
+    <Type Name="sysemail">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CITIZEN_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EMAIL_EGA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="EMAIL_FDA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UPDATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TEL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MOBILE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TEL_WORK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

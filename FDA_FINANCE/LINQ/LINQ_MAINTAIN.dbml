@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FDA_BG" Class="LINQ_MAINTAINDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.111.28.160;Initial Catalog=FDA_BG;User ID=fusion;Connect Timeout=1000" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DTAMConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="MAINTAINS.RECEIVE_MONEY_DETAIL" Member="RECEIVE_MONEY_DETAILs">
+    <Type Name="RECEIVE_MONEY_DETAIL">
+      <Column Name="RECEIVE_MONEY_DETAIL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RECEIVE_MONEY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEPOSIT_DETAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DEPOSIT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GF_NUMBER" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="MAINTAINS.REPORT_R3_009_1" Member="REPORT_R3_009_1s">
+    <Type Name="REPORT_R3_009_1">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="REPORT_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MONEY_BANK" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="MONEY_COIN" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="MONEY_CHECK" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CHECK_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MONEY_TOTAL" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="MONEY_TOTAL_TEXT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BANK_1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BANK_2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BANK_3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="USER_MONEY" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="USER_MONEY_POSITION" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="USER_STORE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="USER_STORE_POSITION" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BOARDNAME_1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BOARDPOSITION_1" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BOARDNAME_2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BOARDPOSITION_2" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BOARDNAME_3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BOARDPOSITION_3" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="EDIT_DATE" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="MAINTAINS.RETURN_MONEY_DEBTOR_DEPOSIT" Member="RETURN_MONEY_DEBTOR_DEPOSITs">
+    <Type Name="RETURN_MONEY_DEBTOR_DEPOSIT">
+      <Column Name="RECEIVE_MONEY_DETAIL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RETURN_MONEY_DEBTOR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEPOSIT_DETAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DEPOSIT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GF_NUMBER" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="MAINTAINS.DEPOSIT_BALANCE" Member="DEPOSIT_BALANCEs">
+    <Type Name="DEPOSIT_BALANCE">
+      <Column Name="DEPOSIT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ACCOUNT_NUMBER" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SAVE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ACCOUNT_BALANCE_AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CHECK_NUMBER" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CHECK_AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="INTEREST_AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="MAINTAINS.RETURN_MONEY_DEBTOR" Member="RETURN_MONEY_DEBTORs">
+    <Type Name="RETURN_MONEY_DEBTOR">
+      <Column Name="RETURN_MONEY_DEBTOR_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BUDGET_DISBURSE_DEBTOR_BILL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DOC_NUMBER" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DOC_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PAY_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DISBURSE_VOLUME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DISBURSE_NUMBER" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RETURN_DESCRIPTION" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="RETURN_AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="IS_ENABLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RECEIVER_MONEY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MONEY_RETURN_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RECEIPT_NUMBER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ADD_BILL_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SUB_PAY_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_TRANSFER" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BT_NUMBER" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="CHANGE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IS_CHANGE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CHANGE_DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IS_APPROVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="APPROVE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="HEAD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REBILL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MOVEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DEPOSIT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="WITHDRAW_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RETURN_SUB_DESCRIPTION" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OVERLAP_REASON" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OVERLAP_FLAG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_USE_OUTBUDGET" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MAIN_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_NO_USE_IN_REPORT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_OTHER_PAY" Member="TBL_OTHER_PAYs">
+    <Type Name="TBL_OTHER_PAY">
+      <Column Name="ID_RUN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DO_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DO_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CHECK_NUMBER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CHECK_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CHECK_APPROVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CHECK_APPROVE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IS_CHECK_READY" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CHECK_READY_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IS_CHECK_RECEIVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CHECK_RECEIVE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NAME_IN_CHECK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BUDGET_YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="MAINTAINS.SEND_MONEY_DETAIL" Member="SEND_MONEY_DETAILs">
+    <Type Name="SEND_MONEY_DETAIL">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RECEIVE_MONEY_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_RECEIVE_MONEY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="INCOME_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="MAINTAINS.SEND_MONEY_SUM_DETAIL" Member="SEND_MONEY_SUM_DETAILs">
+    <Type Name="SEND_MONEY_SUM_DETAIL">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="INCOME_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="INCOME_CODE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SUM_AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="RECEIVE_TYPE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RECEIVE_TYPE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SEND_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FULL_RUNNING" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DECREASE_AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="INCOME_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="MAINTAINS.SEND_MONEY" Member="SEND_MONEYs">
+    <Type Name="SEND_MONEY">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RUNNING_NO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FULL_RUNNING" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SEND_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SEND_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RECEIPT_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RECEIVER_MONEY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="MAINTAINS.RECEIVE_MONEY_DETAIL2" Member="RECEIVE_MONEY_DETAIL2s">
+    <Type Name="RECEIVE_MONEY_DETAIL2">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FEEABBR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TABEAN_NUMBER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LCNNO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TXT_LCNNO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DEEKA_NUMBER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SUB_PAY_TYPE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CODE_TXT" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rcvcd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rcvabbr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="rcvno" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="appabbr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="appvcd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DESCRIPTIONS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="dvcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pvncd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="MAINTAINS.RECEIVE_MONEY" Member="RECEIVE_MONEYs">
+    <Type Name="RECEIVE_MONEY">
+      <Column Name="RECEIVE_MONEY_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DISBURSE_BUDGET_BILL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_PLAN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RECEIPT_VOLUME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RECEIPT_NUMBER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MONEY_RECEIVE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RECEIVE_MONEY_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PREFIX_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FULLNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RECEIVE_MONEY_DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RECEIVE_AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="RECEIVER_MONEY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BANK_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BANK_BRANCH_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CHECK_NUMBER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CHECK_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IS_ENABLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MONEY_TYPE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CUSTOMER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEPARTMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_CHECK_OUT_PROVINCE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_SEND_TO_BANK" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ORDER_PAY1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ORDER_PAY2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FULL_RECEIVE_NUMBER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IS_CANCEL" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CANCEL_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SINBON_AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="IS_SINBON" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SINBON_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="INCOME_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LCNSID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FEENO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PVNCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DVCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FEETPCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FEEABBR" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RECEIPT_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REF01" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REF02" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RUNNING_RECEIPT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="E_RUNNING_RECEIPT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_APPROVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="APPROVE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STAFF_IDEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CUSTOMER_IDENTIFY" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BANK_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_PREVIOUS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_L44" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="QR_IMAGE_BYTE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REMARK_RECEIVER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

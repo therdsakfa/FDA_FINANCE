@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_WELFARE">
+  <DataContextMoniker Name="/LINQ_WELFAREDataContext" />
+  <nestedChildShapes>
+    <classShape Id="81054f5d-acdf-439e-a16b-2ba9d2eb673d" absoluteBounds="3.25, 1.875, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/LINQ_WELFAREDataContext/ALL_WELFARE_BILL" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6324a853-4507-4e5a-90d0-9468969ed9ae" absoluteBounds="3.265, 2.335, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

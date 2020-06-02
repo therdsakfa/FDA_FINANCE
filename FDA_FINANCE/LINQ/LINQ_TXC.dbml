@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LGT_TXC" Class="LINQ_TXCDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=164.115.28.128;Initial Catalog=LGT_TXC;Persist Security Info=True;User ID=fusion" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LGT_TXCConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.RECIVE" Member="RECIVEs">
+    <Type Name="RECIVE">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RCVNO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CITIZ_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FEE_NO" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LCNSID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LCNNO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LCTCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RGNO" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FEEABBR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AMT" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="LCNTPCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DB_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RCVNO_CUST" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RCVCUST_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RCVEMP_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FEE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PAY_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PRESENT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="APPV_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BOSS_APPR_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CLOSE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SIGN_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PRESENT_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REQ_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SIGN_POSITION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PAY_BOOK" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PAY_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PROCESS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SIGN_NAME_TABEAN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PRESENT_NAME_TABEAN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SIGN_POSITION_TABEAN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pvncd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="pvncd_staff" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

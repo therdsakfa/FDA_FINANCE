@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SERVICE_CAL_DATE">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IDA" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="payment" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SERVICE_CAL_DATEResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="WS_UPDATE_STATUS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ida" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="status_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="process" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WS_UPDATE_STATUSResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SERVICE_CAL_DATESoapIn">
+    <wsdl:part name="parameters" element="tns:SERVICE_CAL_DATE" />
+  </wsdl:message>
+  <wsdl:message name="SERVICE_CAL_DATESoapOut">
+    <wsdl:part name="parameters" element="tns:SERVICE_CAL_DATEResponse" />
+  </wsdl:message>
+  <wsdl:message name="WS_UPDATE_STATUSSoapIn">
+    <wsdl:part name="parameters" element="tns:WS_UPDATE_STATUS" />
+  </wsdl:message>
+  <wsdl:message name="WS_UPDATE_STATUSSoapOut">
+    <wsdl:part name="parameters" element="tns:WS_UPDATE_STATUSResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SV_UPDATE_DATESoap">
+    <wsdl:operation name="SERVICE_CAL_DATE">
+      <wsdl:input message="tns:SERVICE_CAL_DATESoapIn" />
+      <wsdl:output message="tns:SERVICE_CAL_DATESoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WS_UPDATE_STATUS">
+      <wsdl:input message="tns:WS_UPDATE_STATUSSoapIn" />
+      <wsdl:output message="tns:WS_UPDATE_STATUSSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SV_UPDATE_DATESoap" type="tns:SV_UPDATE_DATESoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SERVICE_CAL_DATE">
+      <soap:operation soapAction="http://tempuri.org/SERVICE_CAL_DATE" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UPDATE_STATUS">
+      <soap:operation soapAction="http://tempuri.org/WS_UPDATE_STATUS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="SV_UPDATE_DATESoap12" type="tns:SV_UPDATE_DATESoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SERVICE_CAL_DATE">
+      <soap12:operation soapAction="http://tempuri.org/SERVICE_CAL_DATE" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WS_UPDATE_STATUS">
+      <soap12:operation soapAction="http://tempuri.org/WS_UPDATE_STATUS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SV_UPDATE_DATE">
+    <wsdl:port name="SV_UPDATE_DATESoap" binding="tns:SV_UPDATE_DATESoap">
+      <soap:address location="http://164.115.28.133/FDA_MDC/WEBSERVICE/SV_UPDATE_DATE.asmx" />
+    </wsdl:port>
+    <wsdl:port name="SV_UPDATE_DATESoap12" binding="tns:SV_UPDATE_DATESoap12">
+      <soap12:address location="http://164.115.28.133/FDA_MDC/WEBSERVICE/SV_UPDATE_DATE.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

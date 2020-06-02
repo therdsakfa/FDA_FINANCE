@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SERVICE_RCVNO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IDA" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="payment" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SERVICE_RCVNOResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SERVICE_RCVNOSoapIn">
+    <wsdl:part name="parameters" element="tns:SERVICE_RCVNO" />
+  </wsdl:message>
+  <wsdl:message name="SERVICE_RCVNOSoapOut">
+    <wsdl:part name="parameters" element="tns:SERVICE_RCVNOResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UPDATE_RCVNOSoap">
+    <wsdl:operation name="SERVICE_RCVNO">
+      <wsdl:input message="tns:SERVICE_RCVNOSoapIn" />
+      <wsdl:output message="tns:SERVICE_RCVNOSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UPDATE_RCVNOSoap" type="tns:UPDATE_RCVNOSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SERVICE_RCVNO">
+      <soap:operation soapAction="http://tempuri.org/SERVICE_RCVNO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UPDATE_RCVNOSoap12" type="tns:UPDATE_RCVNOSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SERVICE_RCVNO">
+      <soap12:operation soapAction="http://tempuri.org/SERVICE_RCVNO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UPDATE_RCVNO">
+    <wsdl:port name="UPDATE_RCVNOSoap" binding="tns:UPDATE_RCVNOSoap">
+      <soap:address location="http://164.115.28.133/FDA_MDC_DEMO/WEBSERVICE/UPDATE_RCVNO.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UPDATE_RCVNOSoap12" binding="tns:UPDATE_RCVNOSoap12">
+      <soap12:address location="http://164.115.28.133/FDA_MDC_DEMO/WEBSERVICE/UPDATE_RCVNO.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

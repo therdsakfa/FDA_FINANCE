@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="FDA_BG" Class="LINQ_MASDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=10.111.28.160;Initial Catalog=FDA_BG;User ID=fusion;Connect Timeout=1000" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DTAMConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.MAS_OPERATION_TYPE" Member="MAS_OPERATION_TYPEs">
+    <Type Name="MAS_OPERATION_TYPE">
+      <Column Name="OPERATION_TYPE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OPERATION_TYPE_CODE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OPERATION_TYPE_DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_SEND_MONEY_DEPARTMENT" Member="MAS_SEND_MONEY_DEPARTMENTs">
+    <Type Name="MAS_SEND_MONEY_DEPARTMENT">
+      <Column Name="SEND_MONEY_DEPARTMENT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BANK_ACCOUNT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DEPARTMENT_OR_BANK_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BRANCH_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SHORT_DEPARTMENT_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_USER_PERMISSION_DETAIL" Member="MAS_USER_PERMISSION_DETAILs">
+    <Type Name="MAS_USER_PERMISSION_DETAIL">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Parent_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Child_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ModuleID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="bitenable" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="USER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="MAS_USER_MAS_USER_PERMISSION_DETAIL" Member="MAS_USER" ThisKey="USER_ID" OtherKey="USER_ID" Type="MAS_USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OVERLAP_DETAIL" Member="OVERLAP_DETAILs">
+    <Type Name="OVERLAP_DETAIL">
+      <Column Name="OVERLAP_DETAIL_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OVERLAP_HEAD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OVERLAP_DETAIL_AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="OVERLAP_DETAIL_IS_ENABLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_PAYLIST" Member="MAS_PAYLISTs">
+    <Type Name="MAS_PAYLIST">
+      <Column Name="PATLIST_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PAYLIST_DESCRIPTION" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_WELFARE" Member="MAS_WELFAREs">
+    <Type Name="MAS_WELFARE">
+      <Column Name="WELFARE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WELFARE_TYPE_CODE" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="WELFARE_TYPE_DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="WELFARE_TYPE_SHORT_DESCRIPTION" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_USER" Member="MAS_USERs">
+    <Type Name="MAS_USER">
+      <Column Name="USER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PERSONAL_ID" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PREFIX_NAME" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SURNAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="USER_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEPARTMENT_DESCRIPTION" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PERMISSION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="USER_AD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="MAS_USER_MAS_USER_PERMISSION_DETAIL" Member="MAS_USER_PERMISSION_DETAILs" ThisKey="USER_ID" OtherKey="USER_ID" Type="MAS_USER_PERMISSION_DETAIL" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_MONEY_TYPE_NODE" Member="MAS_MONEY_TYPE_NODEs">
+    <Type Name="MAS_MONEY_TYPE_NODE">
+      <Column Name="MONEY_TYPE_NODE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HEAD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CHILD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_ENABLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_MONEY_TYPE" Member="MAS_MONEY_TYPEs">
+    <Type Name="MAS_MONEY_TYPE">
+      <Column Name="MONEY_TYPE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HEAD_MONEY_TYPE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MONEY_TYPE_CODE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MONEY_TYPE_DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MONEY_TYPE_SHORT_DESCRIPTION" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BANK_ACCOUNT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MONEY_AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="TYPE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_K_TYPE" Member="MAS_K_TYPEs">
+    <Type Name="MAS_K_TYPE">
+      <Column Name="K_TYPE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="K_TYPE_NAME" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="K_TYPE_CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="K_TYPE_EX1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="K_TYPE_EX2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_DEPARTMENT_NODE" Member="MAS_DEPARTMENT_NODEs">
+    <Type Name="MAS_DEPARTMENT_NODE">
+      <Column Name="DEPARTMENT_NODE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HEAD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CHILD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_ENABLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_DEPARTMENT" Member="MAS_DEPARTMENTs">
+    <Type Name="MAS_DEPARTMENT">
+      <Column Name="DEPARTMENT_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DEPARTMENT_HEAD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEPARTMENT_CHILD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEPARTMENT_CODE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DEPARTMENT_DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DEPARTMENT_SHORT_DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DEPARTMENT_IS_OUTSIDE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DEPARTMENT_PLACE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DEPARTMENT_TYPE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OVERLAP_HEAD" Member="OVERLAP_HEADs">
+    <Type Name="OVERLAP_HEAD">
+      <Column Name="OVERLAP_HEAD_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BUDGET_YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEPARTMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SUB_ACTIVITY_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OVERLAP_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DOC_RECIEVE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DOC_NUMBER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DOC_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EXPAND_AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="EXPAND_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IS_OVERLAP_EXPAND" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BUDGET_PLAN_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_ENABLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OVERLAP_APPROVE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OVERLAP_TYPE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PATLIST_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BILL_AND_DEBTOR_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_RETURN_DESCRIPTION" Member="MAS_RETURN_DESCRIPTIONs">
+    <Type Name="MAS_RETURN_DESCRIPTION">
+      <Column Name="RETURN_DESCRIPTION_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RETURN_DESCRIPTION" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_SUB_BUDGET" Member="MAS_SUB_BUDGETs">
+    <Type Name="MAS_SUB_BUDGET">
+      <Column Name="SUB_BUDGET_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SUB_BUDGET_CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SUB_BUDGET_DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_IMPORTANT_USER" Member="MAS_IMPORTANT_USERs">
+    <Type Name="MAS_IMPORTANT_USER">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PREFIX" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SURNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="POSITION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SEQ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_MENU" Member="MAS_MENUs">
+    <Type Name="MAS_MENU">
+      <Column Name="MENU_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MENU_PARENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MENU_CHILD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MENU_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MENU_SEQ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MENU_URL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MENU_TARGET" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MENU_PERMISSION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MENU_GROUP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_PRINT_CHECK_HISTORY" Member="TBL_PRINT_CHECK_HISTORies">
+    <Type Name="TBL_PRINT_CHECK_HISTORY">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BILL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CHECK_NUMBER" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PRINT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="PRINT_DATE_STR" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BILL_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRINT_COUNT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_CUSTOMER_TYPE" Member="MAS_CUSTOMER_TYPEs">
+    <Type Name="MAS_CUSTOMER_TYPE">
+      <Column Name="CUSTOMER_TYPE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CUSTOMER_TYPE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TAX_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TAX" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="CAL_FLAG" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_LOG" Member="TBL_LOGs">
+    <Type Name="TBL_LOG">
+      <Column Name="Log_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="USER_AD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PAGE_URL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PAGE_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LOG_DETAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TABLE_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TABLE_KEY_REF" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_TEMP_BG" Member="TBL_TEMP_BGs">
+    <Type Name="TBL_TEMP_BG">
+      <Column Name="BG_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Head_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DES" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TYPE_SELECT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Type_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_MARGIN_RECEIVE" Member="MAS_MARGIN_RECEIVEs">
+    <Type Name="MAS_MARGIN_RECEIVE">
+      <Column Name="ID_RUN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DESCRIPITON" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="DO_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DO_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BUDGET_PLAN_NODE" Member="BUDGET_PLAN_NODEs">
+    <Type Name="BUDGET_PLAN_NODE">
+      <Column Name="BUDGET_PLAN_Detail_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HEAD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CHILD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IS_ENABLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BUDGET_YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BUDGET_PLAN" Member="BUDGET_PLANs">
+    <Type Name="BUDGET_PLAN">
+      <Column Name="BUDGET_PLAN_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BUDGET_CHILD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_MANAGE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_CODE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BUDGET_DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BUDGET_AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="BUDGET_YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_MAIN_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_IS_OVERLAP" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BUDGET_IS_ENABLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BUDGET_ORDER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_TYPE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_IS_SUPPORT_DEPT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBL_PERSON_IN_REPORT" Member="TBL_PERSON_IN_REPORTs">
+    <Type Name="TBL_PERSON_IN_REPORT">
+      <Column Name="R_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="R_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="R_TYPE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IS_USE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_FOUNDATION" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_NORMAL" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_SPSC" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_SSS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IS_BENEFITS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_LEVEL" Member="MAS_LEVELs">
+    <Type Name="MAS_LEVEL">
+      <Column Name="LEVEL_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LEVEL_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_PERSON_TYPE" Member="MAS_PERSON_TYPEs">
+    <Type Name="MAS_PERSON_TYPE">
+      <Column Name="PERSON_TYPE_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PERSON_TYPE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_PERSONAL_Tb2" Member="MAS_PERSONAL_Tb2s">
+    <Type Name="MAS_PERSONAL_Tb2">
+      <Column Name="IDRUN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NATIONAL_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PREFIX_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SURNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DEPARTMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POSITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LEVEL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BANK_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PERSON_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_PERSON" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COOPERATE_NUMBER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ADDRESS" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BANK_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_POSITION" Member="MAS_POSITIONs">
+    <Type Name="MAS_POSITION">
+      <Column Name="POSITION_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="POSITION_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IS_USE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_PREFIX" Member="MAS_PREFIXes">
+    <Type Name="MAS_PREFIX">
+      <Column Name="PREFIX_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PREFIX_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_STATUS" Member="MAS_STATUS">
+    <Type Name="MAS_STATUS">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="STATUS_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="STATUS_SEQ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_GROUP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SYSTEM_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRANSACTION_DOWNLOAD" Member="TRANSACTION_DOWNLOADs">
+    <Type Name="TRANSACTION_DOWNLOAD">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CITIEZEN_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CITIEZEN_ID_AUTHORIZE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DOWNLOAD_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PROCESS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRANSACTION_UPLOAD" Member="TRANSACTION_UPLOADs">
+    <Type Name="TRANSACTION_UPLOAD">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CITIEZEN_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CITIEZEN_ID_AUTHORIZE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UPLOAD_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PROCESS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REF_NO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DOWNLOAD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YEAR" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_FAMILY" Member="MAS_FAMILies">
+    <Type Name="MAS_FAMILY">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FAMILY_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PREFIX_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SURNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CUSTOMER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BIRTH_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_MENU_AUTO" Member="MAS_MENU_AUTOs">
+    <Type Name="MAS_MENU_AUTO">
+      <Column Name="MENU_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MENU_PARENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MENU_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MENU_SEQ" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MENU_URL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="MENU_TARGET" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MENU_PERMISSION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MENU_GROUP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_STATUS_BILL_DETAIL" Member="MAS_STATUS_BILL_DETAILs">
+    <Type Name="MAS_STATUS_BILL_DETAIL">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_BILL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BILL_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATE_ADD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDENTITY_NUMBER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_REASON_REJECT_BILL" Member="MAS_REASON_REJECT_BILLs">
+    <Type Name="MAS_REASON_REJECT_BILL">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REASON" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REASON_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BILL_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATE_ADD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IDENTITY_NUMBER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GROUP_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TRANSFER_PAYMENT_LOG" Member="TRANSFER_PAYMENT_LOGs">
+    <Type Name="TRANSFER_PAYMENT_LOG">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="REF01" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REF02" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="INSERT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_INCOME" Member="MAS_INCOMEs">
+    <Type Name="MAS_INCOME">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="INCOME_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IS_USE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OLD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="HEAD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="INCOME_CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_BANK" Member="MAS_BANKs">
+    <Type Name="MAS_BANK">
+      <Column Name="BANK_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BANK_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BANK_CODE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BANK_SHORT_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_CHECKER" Member="MAS_CHECKERs">
+    <Type Name="MAS_CHECKER">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CTZID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FULLNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IS_ENABLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UPDATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_CUSTOMER" Member="MAS_CUSTOMERs">
+    <Type Name="MAS_CUSTOMER">
+      <Column Name="CUSTOMER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CUSTOMER_TYPE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TAX_NUMBER" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PERSONAL_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CUSTOMER_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PAYABLE_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="H_NUMBER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MOO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SOI" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ROAD_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DISTICT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PREFECTURE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PROVINCE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ZIP_CODE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TEL_NUMBER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FAX" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FLAG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PERSONAL_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CUSTOMER_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="POSITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROVINCE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEPARTMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OLD_KEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="flgdlr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="flgvat" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="flgincm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="prefixcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="suffix" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thmblcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="amphrcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="chngwtcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cer_Number" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Full_Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_PRE_CUSTOMER" Member="MAS_PRE_CUSTOMERs">
+    <Type Name="MAS_PRE_CUSTOMER">
+      <Column Name="CUSTOMER_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CUSTOMER_TYPE_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TAX_NUMBER" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PERSONAL_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CUSTOMER_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PAYABLE_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="H_NUMBER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MOO" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SOI" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ROAD_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="DISTICT" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PREFECTURE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PROVINCE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ZIP_CODE" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TEL_NUMBER" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FAX" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FLAG" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PERSONAL_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CUSTOMER_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="POSITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROVINCE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DEPARTMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OLD_KEY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="flgdlr" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="flgvat" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="flgincm" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="prefixcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="suffix" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="thmblcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="amphrcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="chngwtcd" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cer_Number" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Full_Address" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_PREFIX_v2" Member="MAS_PREFIX_v2s">
+    <Type Name="MAS_PREFIX_v2">
+      <Column Name="PREFIX_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PREFIX_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_CUSTOMER_ADD_CER" Member="MAS_CUSTOMER_ADD_CERs">
+    <Type Name="MAS_CUSTOMER_ADD_CER">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CUS_FK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cer_Number" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cer_Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Cer_DateEnd" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DEPARTMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="isEnabled" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Cer_Date_Num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cer_DateEnd_Num" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Cer_Cancel" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Cer_Install" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOG_PAY_FROM_SCB" Member="LOG_PAY_FROM_SCBs">
+    <Type Name="LOG_PAY_FROM_SCB">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="COL1" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="COL2" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="COL3" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="COL4" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="COL5" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CHECK_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CHECK_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DATA_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="CHECKER_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UPLOAD_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CITIZEN_UPLOAD" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PRINT_STAMP" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PRINT_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BUDGET_PLAN_ACTIVITY" Member="BUDGET_PLAN_ACTIVITies">
+    <Type Name="BUDGET_PLAN_ACTIVITY">
+      <Column Name="BUDGET_PLAN_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BUDGET_CHILD_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_MANAGE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_CODE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BUDGET_DESCRIPTION" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BUDGET_AMOUNT" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="BUDGET_YEAR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_MAIN_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_IS_OVERLAP" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BUDGET_IS_ENABLE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BUDGET_ORDER" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_TYPE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BUDGET_IS_SUPPORT_DEPT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="START_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="END_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_GL" Member="MAS_GLs">
+    <Type Name="MAS_GL">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GL_CODE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="GL_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IS_USE" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MONEY_SOURCE_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="expcd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="subexpcd" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOG_PAY_HOST_TO_HOST" Member="LOG_PAY_HOST_TO_HOSTs">
+    <Type Name="LOG_PAY_HOST_TO_HOST">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ref01" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ref02" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="pay_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pay_amount" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="acc_type" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOG_RE_UPDATE" Member="LOG_RE_UPDATEs">
+    <Type Name="LOG_RE_UPDATE">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CITIZEN_ID_RE_UPDATE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REF01" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REF02" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_RE_UPDATE_USER" Member="MAS_RE_UPDATE_USERs">
+    <Type Name="MAS_RE_UPDATE_USER">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CITIZEN_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ACTIVE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOG_RECEIPT_ERROR" Member="LOG_RECEIPT_ERRORs">
+    <Type Name="LOG_RECEIPT_ERROR">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ERROR_MSG" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FK_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="REF01" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REF02" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_ACCOUNT_BANK" Member="MAS_ACCOUNT_BANKs">
+    <Type Name="MAS_ACCOUNT_BANK">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FK_BANK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ACCOUNT_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ACCOUNT_TYPE" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ACCOUNT_NUMBER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_PERSONAL" Member="MAS_PERSONALs">
+    <Type Name="MAS_PERSONAL">
+      <Column Name="IDRUN" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NATIONAL_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PREFIX_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SURNAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DEPARTMENT_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="POSITION_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LEVEL_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BANK_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PERSON_TYPE" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_PERSON" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="COOPERATE_NUMBER" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FK_BANK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOG_H2H_ERROR" Member="LOG_H2H_ERRORs">
+    <Type Name="LOG_H2H_ERROR">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ref01" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ref02" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="error_msg" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="create_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RESULT" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="update_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOG_CONFIRM" Member="LOG_CONFIRMs">
+    <Type Name="LOG_CONFIRM">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="REF01" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REF02" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_PURCHASE" Member="MAS_PURCHASEs">
+    <Type Name="MAS_PURCHASE">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="PURCHASE_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BgYear" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_DEKA_DETAIL_BUDGET" Member="MAS_DEKA_DETAIL_BUDGETs">
+    <Type Name="MAS_DEKA_DETAIL_BUDGET">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="HEAD_ID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SUB_CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DETAIL_NAME" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MAS_MONEY_RECEIVER" Member="MAS_MONEY_RECEIVERs">
+    <Type Name="MAS_MONEY_RECEIVER">
+      <Column Name="RECEIVER_MONEY_ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IS_RECEIVER" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RECEIVER_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="POSITION_NAME" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="IDEN" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IS_SHOW" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.genno_temp" Member="genno_temps">
+    <Type Name="genno_temp">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GENNO" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="create_date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOG_11PM" Member="LOG_11PMs">
+    <Type Name="LOG_11PM">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="REF01" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REF02" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TEMP_UPDATE_QR" Member="TEMP_UPDATE_QRs">
+    <Type Name="TEMP_UPDATE_QR">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="R_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOG_CONFIRM_SCB" Member="LOG_CONFIRM_SCBs">
+    <Type Name="LOG_CONFIRM_SCB">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="REF01" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REF02" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

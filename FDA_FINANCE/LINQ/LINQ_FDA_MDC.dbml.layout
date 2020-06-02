@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQ_FDA_MDC">
+  <DataContextMoniker Name="/LINQ_FDA_MDCDataContext" />
+  <nestedChildShapes>
+    <classShape Id="2d20f761-eeea-4b01-bc57-d7245aa10714" isExpanded="false" absoluteBounds="0.75, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_MDCDataContext/irgt" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e389d3e-f6ac-465c-a83f-646fb63b4fa2" absoluteBounds="0.765, 1.21, 1.9700000000000002, 17.364217122395832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fa133c1e-dc99-43ab-94c9-557cc97f046c" isExpanded="false" absoluteBounds="2.875, 0.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_MDCDataContext/ONESTOP_REQUEST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e6fe7cc4-b3be-474d-a831-37932aa303a4" absoluteBounds="2.89, 1.21, 1.9700000000000002, 6.5953369140625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a2ee1991-c0e7-4859-b0c3-45952c385f87" isExpanded="false" absoluteBounds="0.75, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_MDCDataContext/MDC_EXPORT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="07accfdd-e3f7-4a79-b816-04790bc17e28" absoluteBounds="0.765, 1.71, 1.9700000000000002, 17.364217122395832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b455405b-95d4-4a3a-a019-530be07dcbec" isExpanded="false" absoluteBounds="2.875, 1.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_MDCDataContext/MDC_MC" />
+      <nestedChildShapes>
+        <elementListCompartment Id="55ebcc1d-66d8-4835-99f7-30db07a4b311" absoluteBounds="2.89, 1.71, 1.9700000000000002, 13.902791341145832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5ee3383a-2e17-406b-8bd8-388e9c745aeb" isExpanded="false" absoluteBounds="0.75, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_MDCDataContext/MDC_MN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1a7b541a-6f05-4448-b481-880abbd9f374" absoluteBounds="0.765, 2.21, 1.9700000000000002, 13.902791341145832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e0ad0a58-107c-488b-89d3-19e34ebccfc0" isExpanded="false" absoluteBounds="2.875, 1.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_MDCDataContext/MDC_MR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e88fe457-2f6f-42d3-ab4d-3d6e8f9e10bd" absoluteBounds="2.89, 2.21, 1.9700000000000002, 13.902791341145832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4103fa85-3462-4538-b3be-f68106182a15" isExpanded="false" absoluteBounds="0.75, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_MDCDataContext/MDC_DIAGNOSED" />
+      <nestedChildShapes>
+        <elementListCompartment Id="67cb5a1f-1990-4b23-8037-fc246732f178" absoluteBounds="0.76500000000000012, 2.71, 1.9700000000000002, 12.172078450520832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c1388d29-e153-4c22-8512-b57b74439037" isExpanded="false" absoluteBounds="2.875, 2.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_MDCDataContext/MDC_EDIT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fd6bfc6b-07ec-4cbc-9e7d-979e350d5f67" absoluteBounds="2.8899999999999997, 2.71, 1.9700000000000002, 11.979777018229166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d3b47aa0-c590-426f-b3b3-ff115aaab9f9" isExpanded="false" absoluteBounds="0.75, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_MDCDataContext/MDC_CER" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1eb347e5-71ad-4fdb-916c-8df18f1b5faa" absoluteBounds="0.76500000000000012, 3.21, 1.9700000000000002, 14.0950927734375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="52aba9d1-3a36-41f6-8895-bfbaf001afba" isExpanded="false" absoluteBounds="2.875, 2.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_MDCDataContext/MDC_SUBSTITUTE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d3b4e064-90e0-4da5-a475-7db6df6dd341" absoluteBounds="2.89, 3.21, 1.9700000000000002, 10.6336669921875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e7cd4843-18ea-491c-aa1b-80ffd6e45df5" isExpanded="false" absoluteBounds="0.75, 3.25, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_FDA_MDCDataContext/IMPORT_OT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b0b67d47-0756-45de-ab78-1de2bf5e564e" absoluteBounds="0.76500000000000012, 3.71, 1.9700000000000002, 18.518025716145832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
