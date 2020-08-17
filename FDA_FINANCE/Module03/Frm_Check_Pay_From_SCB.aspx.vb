@@ -1025,7 +1025,7 @@ Public Class Frm_Check_Pay_From_SCB
             bgYear_re = CStr(dao22.fields.BUDGET_YEAR)
             querystr = feeno_re & "|" & dvcd_re & "|" & feebbr_re & "|" & bgYear_re
 
-            Dim url2 As String = "http://buisead.fda.moph.go.th/fda_budget/Module09/Report/Frm_Report_R9_003.aspx?feeno=" & querystr.EncodeBase64 'feeno=" & feeno_re & "&dvcd=" & dvcd_re & "&feeabbr=" & feebbr_re & "&myear=" & bgYear_re
+            Dim url2 As String = "https://buisead.fda.moph.go.th/fda_budget/Module09/Report/Frm_Report_R9_003.aspx?feeno=" & querystr.EncodeBase64 'feeno=" & feeno_re & "&dvcd=" & dvcd_re & "&feeabbr=" & feebbr_re & "&myear=" & bgYear_re
 
 
             'RadBarcode1.DataBind()
@@ -1039,10 +1039,10 @@ Public Class Frm_Check_Pay_From_SCB
             Dim img_byte As String = Cls_qr.QR_CODE_IMG(url2) ' ws_qrs.QR_CODE_B64(url2) '
 
 
-            Dim dao_i2 As New DAO_MAINTAIN.TB_RECEIVE_MONEY
-            dao_i2.Getdata_by_RECEIVE_MONEY_ID(re_id)
-            dao_i2.fields.QR_IMAGE_BYTE = img_byte
-            dao_i2.update()
+            'Dim dao_i2 As New DAO_MAINTAIN.TB_RECEIVE_MONEY
+            'dao_i2.Getdata_by_RECEIVE_MONEY_ID(re_id)
+            'dao_i2.fields.QR_IMAGE_BYTE = img_byte
+            'dao_i2.update()
 
             Dim dt_det As New DataTable
             Dim bao_dett As New BAO_FEE.FEE

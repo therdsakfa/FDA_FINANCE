@@ -4,7 +4,7 @@
 
 <%@ Register src="../../Module09/UserControl/UC_Report_Dept_Budget_Adjust_Sub.ascx" tagname="UC_Report_Dept_Budget_Adjust_Sub" tagprefix="uc3" %>
 
-<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845DCD8080CC91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script src="../../Scripts/jquery-1.7.1.js"></script>

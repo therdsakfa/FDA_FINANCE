@@ -208,10 +208,10 @@
   </wsdl:binding>
   <wsdl:service name="WS_UPDATE_STATUS_PAY">
     <wsdl:port name="WS_UPDATE_STATUS_PAYSoap" binding="tns:WS_UPDATE_STATUS_PAYSoap">
-      <soap:address location="http://10.111.28.129/ws_update_stat/WS_UPDATE.asmx" />
+      <soap:address location="http://10.111.28.161/ws_update_stat/WS_UPDATE.asmx" />
     </wsdl:port>
     <wsdl:port name="WS_UPDATE_STATUS_PAYSoap12" binding="tns:WS_UPDATE_STATUS_PAYSoap12">
-      <soap12:address location="http://10.111.28.129/ws_update_stat/WS_UPDATE.asmx" />
+      <soap12:address location="http://10.111.28.161/ws_update_stat/WS_UPDATE.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

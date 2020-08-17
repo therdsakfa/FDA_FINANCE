@@ -378,7 +378,13 @@ Public Class WebForm9
     Protected Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim ws_updates As New WS_UPDATE_PAY.WS_UPDATE_STATUS_PAY
         'ws_updates.Timeout = 120000
-        ws_updates.Update_Status_Pay("620031174925620102", "620201101202000177")
+        Dim bao As New BAO_BUDGET.Budget
+        Dim dt As New DataTable
+        dt = bao.ERROR_BAISANG()
+        For Each dr As DataRow In dt.Rows
+            ws_updates.Update_Status_Pay(dr("REF01"), dr("REF02"))
+        Next
+
     End Sub
 
     Protected Sub btn_update_qr_Click(sender As Object, e As EventArgs) Handles btn_update_qr.Click
@@ -423,4 +429,11 @@ Public Class WebForm9
 
         Dim b As String = ws_chk.Get_Link_Receipt_by_feeno_format("159191/63")
     End Sub
+
+    'Protected Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+
+
+    '    Dim ws_receipt As New WS_RECEIPT.WS_RECEIPT_AUTO
+    '    ws_receipt.Gen_Receipt(ref1, ref2)
+    'End Sub
 End Class

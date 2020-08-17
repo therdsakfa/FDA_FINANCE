@@ -9,7 +9,7 @@
       <Value Profile="(Default)">https://ephemeris.fda.moph.go.th/IDEM/Service/IDEMService.asmx</Value>
     </Setting>
     <Setting Name="FDA_FINANCE_WS_UPDATE_PAY_WS_UPDATE_STATUS_PAY" Type="(Web Service URL)" Scope="Application">
-      <Value Profile="(Default)">http://10.111.28.129/ws_update_stat/WS_UPDATE.asmx</Value>
+      <Value Profile="(Default)">http://10.111.28.161/ws_update_stat/WS_UPDATE.asmx</Value>
     </Setting>
     <Setting Name="FDA_FINANCE_WS_CMT_PAYS_WS_CMT_PAY" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://10.111.28.125/WS_CMT_PAY/WS_CMT_PAY.asmx</Value>

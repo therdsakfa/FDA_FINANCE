@@ -116,7 +116,7 @@
     Private Sub btn_runfee_Click(sender As Object, e As EventArgs) Handles btn_runfee.Click
         Dim dt As New DataTable
         Dim bao As New BAO_BUDGET.DISBURSE_BUDGET
-        dt = bao.ERROR_RECEIPT
+        dt = bao.ERROR_BAISANG
         'Dim bao As New BAO_SPECIAL_PAYMENT.FDA_SPECIAL_PAYMENT
         'dt = bao.SP_TEMP_UPDATE()
 
@@ -124,8 +124,8 @@
             '    Dim bao_pay As New BAO_SPECIAL_PAYMENT.FDA_SPECIAL_PAYMENT
             '    bao_pay.SP_UPDATE_STATUS_PAY_COMPLETE(dr("process_id"), dr("fk_id"))
 
-            Dim ws_updates As New WS_UPDATE_PAY.WS_UPDATE_STATUS_PAY
-            ws_updates.Update_Status_Pay(dr("ref01"), dr("ref02"))
+            'Dim ws_updates As New WS_UPDATE_PAY.WS_UPDATE_STATUS_PAY
+            'ws_updates.Update_Status_Pay(dr("ref01"), dr("ref02"))
 
             Try
                 Dim ws_receipt As New WS_RECEIPT_AUTO

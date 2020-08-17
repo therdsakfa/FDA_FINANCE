@@ -67,6 +67,14 @@ Namespace BAO_BUDGET
     '
 
     Public Class DISBURSE_BUDGET
+        Public Function ERROR_BAISANG() As DataTable
+            Dim dt As New DataTable
+            Dim command As String = " "
+            command = "select  a.REF01 , a.REF02 from [dbo].[LOG_H2H_ERROR] a left join [MAINTAINS].[RECEIVE_MONEY] b on a.ref01 = b.ref01 and a.ref02 = b.ref02 where cast([CREATE_DATE] as date) = '2020-06-23' and b.REF01 is null and a.ref01 is not null"
+
+            dt = Queryds(command)
+            Return dt
+        End Function
         Public Function ERROR_RECEIPT() As DataTable
             Dim dt As New DataTable
             Dim command As String = " "
@@ -357,7 +365,7 @@ Namespace BAO_BUDGET
         Public Function get_budget_receive_list_bt_group_V2_deka(ByVal bgyear As Integer, bguse As Integer, po As String, ByVal stat As Integer, ByVal g As Integer, ByVal bt As Integer) As DataTable
             Dim dt As New DataTable
             Dim command As String = " "
-            command = " exec [BUDGETS].[get_budget_receive_list_bt_group_V2_deka] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse & ",@po='" & po & "' " & _
+            command = " exec [BUDGETS].[get_budget_receive_list_bt_group_V2_deka] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse & ",@po='" & po & "' " &
                 ",@stat=" & stat & ",@bt=" & bt & ",@g=" & g
             dt = Queryds(command)
 
@@ -487,7 +495,7 @@ Namespace BAO_BUDGET
         Public Function get_budget_receive_list_bt_group_V3_2(ByVal bgyear As Integer, bguse As Integer, po As String, ByVal stat As Integer, ByVal g As Integer, ByVal bt As Integer) As DataTable
             Dim dt As New DataTable
             Dim command As String = " "
-            command = " exec [BUDGETS].[get_budget_receive_list_bt_group_V3_2] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse & ",@po='" & po & "' " & _
+            command = " exec [BUDGETS].[get_budget_receive_list_bt_group_V3_2] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse & ",@po='" & po & "' " &
                 ",@stat=" & stat & ",@bt=" & bt & ",@g=" & g
             dt = Queryds(command)
 
@@ -529,7 +537,7 @@ Namespace BAO_BUDGET
         Public Function get_budget_receive_list_bt_group_V3_Report(ByVal bgyear As Integer, bguse As Integer, po As String, ByVal stat As Integer, ByVal g As Integer, ByVal bt As Integer, ByVal ctzid As String) As DataTable
             Dim dt As New DataTable
             Dim command As String = " "
-            command = " exec [BUDGETS].[get_budget_receive_list_bt_group_V3_Report] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse & ",@po='" & po & "' " & _
+            command = " exec [BUDGETS].[get_budget_receive_list_bt_group_V3_Report] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse & ",@po='" & po & "' " &
                 ",@stat=" & stat & ",@bt=" & bt & ",@g=" & g & " ,@ctzid='" & ctzid & "'"
             dt = Queryds(command)
 
@@ -783,7 +791,7 @@ Namespace BAO_BUDGET
         Public Function get_budget_receive_list_bt_group(ByVal bgyear As Integer, bguse As Integer, po As String, ByVal stat As Integer, ByVal g As Integer, ByVal bt As Integer) As DataTable
             Dim dt As New DataTable
             Dim command As String = " "
-            command = " exec [BUDGETS].[get_budget_receive_list_bt_group] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse & ",@po=" & po & _
+            command = " exec [BUDGETS].[get_budget_receive_list_bt_group] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse & ",@po=" & po &
                 ",@stat=" & stat & ",@bt=" & bt & ",@g=" & g
             dt = Queryds(command)
 
@@ -793,7 +801,7 @@ Namespace BAO_BUDGET
         Public Function get_budget_receive_list_bt_group_V2(ByVal bgyear As Integer, bguse As Integer, po As String, ByVal stat As Integer, ByVal g As Integer, ByVal bt As Integer) As DataTable
             Dim dt As New DataTable
             Dim command As String = " "
-            command = " exec [BUDGETS].[get_budget_receive_list_bt_group_V2] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse & ",@po='" & po & "' " & _
+            command = " exec [BUDGETS].[get_budget_receive_list_bt_group_V2] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse & ",@po='" & po & "' " &
                 ",@stat=" & stat & ",@bt=" & bt & ",@g=" & g
             dt = Queryds(command)
 
@@ -803,7 +811,7 @@ Namespace BAO_BUDGET
         Public Function get_budget_receive_list_bt_group_V3(ByVal bgyear As Integer, bguse As Integer, po As String, ByVal stat As Integer, ByVal g As Integer, ByVal bt As Integer, ByVal ctzid As String) As DataTable
             Dim dt As New DataTable
             Dim command As String = " "
-            command = " exec [BUDGETS].[get_budget_receive_list_bt_group_V3] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse & ",@po='" & po & "' " & _
+            command = " exec [BUDGETS].[get_budget_receive_list_bt_group_V3] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse & ",@po='" & po & "' " &
                 ",@stat=" & stat & ",@bt=" & bt & ",@g=" & g & " ,@ctzid='" & ctzid & "'"
             dt = Queryds(command)
 
@@ -812,7 +820,7 @@ Namespace BAO_BUDGET
         Public Function get_budget_receive_list_PO(ByVal bgyear As Integer, bguse As Integer, ByVal stat As Integer, ByVal g As Integer, ByVal bt As Integer) As DataTable
             Dim dt As New DataTable
             Dim command As String = " "
-            command = " exec [BUDGETS].[get_budget_receive_list_PO] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse & _
+            command = " exec [BUDGETS].[get_budget_receive_list_PO] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse &
                 ",@stat=" & stat & ",@bt=" & bt & ",@g=" & g
             dt = Queryds(command)
 
@@ -822,7 +830,7 @@ Namespace BAO_BUDGET
         Public Function get_budget_receive_list_PO_V2(ByVal bgyear As Integer, bguse As Integer, ByVal stat As Integer, ByVal g As Integer, ByVal bt As Integer, ByVal ctzid As String) As DataTable
             Dim dt As New DataTable
             Dim command As String = " "
-            command = " exec [BUDGETS].[get_budget_receive_list_PO_V2] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse & _
+            command = " exec [BUDGETS].[get_budget_receive_list_PO_V2] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse &
                 ",@stat=" & stat & ",@bt=" & bt & ",@g=" & g & ", @ctzid='" & ctzid & "'"
             dt = Queryds(command)
 
@@ -831,7 +839,7 @@ Namespace BAO_BUDGET
         Public Function get_budget_receive_list_sub_po_bt_group(ByVal bgyear As Integer, bguse As Integer, po As String, ByVal stat As Integer, ByVal g As Integer, ByVal bt As Integer) As DataTable
             Dim dt As New DataTable
             Dim command As String = " "
-            command = " exec [BUDGETS].[get_budget_receive_list_sub_po_bt_group] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse & ",@po=" & po & _
+            command = " exec [BUDGETS].[get_budget_receive_list_sub_po_bt_group] @BUDGET_YEAR = " & bgyear & ", @bguse=" & bguse & ",@po=" & po &
                 ",@stat=" & stat & ",@bt=" & bt & ",@g=" & g
             dt = Queryds(command)
 
@@ -2080,7 +2088,7 @@ Namespace BAO_BUDGET
         Public Function get_bg_support_by_bg_year_bg_id(ByVal BUDGET_USE_ID As Integer, ByVal bgyear As Integer, ByVal bg_id As Integer, ByVal sub_bg As Integer) As DataTable
             Dim dt As New DataTable
             Dim command As String = " "
-            command = " exec [BUDGETS].[get_bg_support_by_bg_year_bg_id] @BUDGET_USE_ID = " & BUDGET_USE_ID & _
+            command = " exec [BUDGETS].[get_bg_support_by_bg_year_bg_id] @BUDGET_USE_ID = " & BUDGET_USE_ID &
                 " , @BUDGET_YEAR=" & bgyear & " , @BUDGET_PLAN_ID=" & bg_id & " ,@PATLIST_ID=" & sub_bg
             dt = Queryds(command)
 
@@ -2090,7 +2098,7 @@ Namespace BAO_BUDGET
         Public Function get_bg_support_by_year_bg_id(ByVal BUDGET_USE_ID As Integer, ByVal bgyear As Integer, ByVal bg_id As Integer, ByVal sub_bg As Integer) As DataTable
             Dim dt As New DataTable
             Dim command As String = " "
-            command = " exec [BUDGETS].[get_bg_support_by_year_bg_id] @BUDGET_USE_ID = " & BUDGET_USE_ID & _
+            command = " exec [BUDGETS].[get_bg_support_by_year_bg_id] @BUDGET_USE_ID = " & BUDGET_USE_ID &
                 " , @BUDGET_YEAR=" & bgyear & " , @BUDGET_PLAN_ID=" & bg_id & " ,@PATLIST_ID=" & sub_bg
             dt = Queryds(command)
 

@@ -28,6 +28,7 @@
         <asp:Button ID="Button3" runat="server" Text="re_update_status" />
         <asp:Button ID="btn_update_qr" runat="server" Text="UPDATE_QR" />
         <asp:Button ID="Button4" runat="server" Text="Button" />
+        <asp:Button ID="Button5" runat="server" Text="Button" />
         <br />
         <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
         <asp:Image ID="Image2" runat="server" />

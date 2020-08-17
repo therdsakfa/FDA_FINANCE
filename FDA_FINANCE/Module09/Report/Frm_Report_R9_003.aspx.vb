@@ -1549,6 +1549,41 @@ Public Class Frm_Report_R9_003
         Dim ref02 As String = ""
         Try
             ref02 = Request.QueryString("ref02")
+
+            If ref02 = "" Then
+                Dim query_str As String = Request.QueryString("feeno")
+                Dim decode_str As String = Request.QueryString("feeno").DecodeBase64
+                Dim arr_query As String() = decode_str.Split("|")
+
+                Dim fee_format As String = arr_query(0)
+                Dim dvcd As String = ""
+                Dim feeabbr As String = ""
+
+                Dim is_l44 As Integer = 0
+                Dim dao_re As New DAO_MAINTAIN.TB_RECEIVE_MONEY
+                Dim dao_rd As New DAO_MAINTAIN.TB_RECEIVE_MONEY_DETAIL2
+                Dim rcvno_txt As String = ""
+                Try
+                    dao_re.Getdata_by_feeno(fee_format)
+                    is_l44 = dao_re.fields.IS_L44
+
+                    dao_rd.Getdata_by_RECEIVE_MONEY_ID(dao_re.fields.RECEIVE_MONEY_ID)
+                    rcvno_txt = dao_rd.fields.rcvno
+                    ref02 = dao_re.fields.REF02
+                Catch ex As Exception
+
+                End Try
+                Try
+                    dvcd = arr_query(1)
+                Catch ex As Exception
+
+                End Try
+                Try
+                    feeabbr = arr_query(2)
+                Catch ex As Exception
+
+                End Try
+            End If
         Catch ex As Exception
 
         End Try
@@ -1821,7 +1856,31 @@ Public Class Frm_Report_R9_003
             Catch ex As Exception
 
             End Try
+
+            Dim dao22 As New DAO_MAINTAIN.TB_RECEIVE_MONEY
+            dao22.Getdata_by_feeno(fee_format)
+
+            Dim querystr As String = ""
+            Dim feeno_re As String = ""
+            feeno_re = dao22.fields.FEENO
+            Dim dvcd_re As String = ""
+            dvcd_re = CStr(dao22.fields.DVCD)
+            Dim feebbr_re As String = ""
+            feebbr_re = dao22.fields.FEEABBR
+            Dim bgYear_re As String = ""
+            bgYear_re = CStr(dao22.fields.BUDGET_YEAR)
+            querystr = feeno_re & "|" & dvcd_re & "|" & feebbr_re & "|" & bgYear_re
+
+            Dim url2 As String = "https://buisead.fda.moph.go.th/fda_budget/Module09/Report/Frm_Report_R9_003.aspx?feeno=" & querystr.EncodeBase64
+
+            Dim Cls_qr As New QR_CODE.GEN_QR_CODE
+
+            Dim ws_qrs As New WS_QR.WS_QR
+            Dim img_byte As String = Cls_qr.QR_CODE_IMG(url2) 'ws_qrs.QR_CODE_B64(url2) ' 
+
+            dr("QR_IMAGE_BYTE") = img_byte
         Next
+
         Return dt
     End Function
     Public Function getReportData_reciept_fda_v2_1()
@@ -1979,6 +2038,30 @@ Public Class Frm_Report_R9_003
                 Catch ex As Exception
 
                 End Try
+
+                Dim dao22 As New DAO_MAINTAIN.TB_RECEIVE_MONEY
+                dao22.Getdata_by_feeno(fee_format)
+
+                Dim querystr As String = ""
+                Dim feeno_re As String = ""
+                feeno_re = dao22.fields.FEENO
+                Dim dvcd_re As String = ""
+                dvcd_re = CStr(dao22.fields.DVCD)
+                Dim feebbr_re As String = ""
+                feebbr_re = dao22.fields.FEEABBR
+                Dim bgYear_re As String = ""
+                bgYear_re = CStr(dao22.fields.BUDGET_YEAR)
+                querystr = feeno_re & "|" & dvcd_re & "|" & feebbr_re & "|" & bgYear_re
+
+                Dim url2 As String = "https://buisead.fda.moph.go.th/fda_budget/Module09/Report/Frm_Report_R9_003.aspx?feeno=" & querystr.EncodeBase64
+
+                Dim Cls_qr As New QR_CODE.GEN_QR_CODE
+
+                Dim ws_qrs As New WS_QR.WS_QR
+                Dim img_byte As String = Cls_qr.QR_CODE_IMG(url2) 'ws_qrs.QR_CODE_B64(url2) ' 
+
+                dr("QR_IMAGE_BYTE") = img_byte
+
             Next
 
         End If

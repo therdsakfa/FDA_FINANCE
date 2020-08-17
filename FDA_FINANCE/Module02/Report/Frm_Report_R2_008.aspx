@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/BG_Master2.Master" CodeBehind="Frm_Report_R2_008.aspx.vb" Inherits="FDA_FINANCE.Frm_Report_R2_008" %>
 
-<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845DCD8080CC91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 
 <%@ Register Src="~/Module09/UserControl/UC_Report_SelectUser_NAME_AD_NAME.ascx" TagPrefix="uc1" TagName="UC_Report_SelectUser_NAME_AD_NAME" %>
 

@@ -369,8 +369,8 @@ Public Class Frm_Maintain_Receive_Money_V3_Insert
 
                     If Request.QueryString("law") = "" Then
                         If dept = 2 Then
-                            Dim bao2 As New BAO_NCT2.LGT_NCT2
-                            dt = bao2.SP_get_receipt_by_feeabbr_and_feeno_group_sum(feeno, ddl_department.SelectedValue)
+                            'Dim bao2 As New BAO_NCT2.LGT_NCT2
+                            dt = bao.SP_get_receipt_by_feeabbr_and_feeno_group_sum(feeno, ddl_department.SelectedValue)
                         Else
                             dt = bao.SP_get_receipt_by_feeabbr_and_feeno_group_sum2(feeno, ddl_department.SelectedValue)
                         End If

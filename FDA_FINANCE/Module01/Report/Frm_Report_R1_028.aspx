@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="vb" AutoEventWireup="false" MasterPageFile="~/BG_Master2.Master" CodeBehind="Frm_Report_R1_028.aspx.vb" Inherits="FDA_FINANCE.Frm_Report_R1_028" %>
 <%@ Register src="../../Module09/UserControl/UC_Report_Dept_Budget_Adjust.ascx" tagname="UC_Report_Dept_Budget_Adjust" tagprefix="uc2" %>
-<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845DCD8080CC91" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
 <%@ Register src="../../Module09/UserControl/UC_Report_Dept_Budget_Adjust_Sub.ascx" tagname="UC_Report_Dept_Budget_Adjust_Sub" tagprefix="uc3" %>
 <%@ Register src="../../Module09/UserControl/UC_Report_SelectDate_Single.ascx" tagname="UC_Report_SelectDate_Single" tagprefix="uc4" %>
 <%@ Register src="../../Module09/UserControl/UC_Report_SelectDate_Between.ascx" tagname="UC_Report_SelectDate_Between" tagprefix="uc1" %>
