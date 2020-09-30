@@ -32,6 +32,27 @@
         <br />
         <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
         <asp:Image ID="Image2" runat="server" />
+
+    <table width="100%">
+        <tr>
+            <td align="right" width="30%">
+                Ref01 หรือเลขใบสั่งชำระ
+            </td>
+            <td>
+                <asp:TextBox ID="txt_ref01" runat="server" CssClass="input-sm" Width="250px"></asp:TextBox>
+                &nbsp; &nbsp;&nbsp;(ตัวอย่างการกรอกเลขใบสั่งชำระ 79555/60)</td>
+        </tr>
+        <tr>
+            <td align="right">
+                Ref02</td>
+            <td>
+                <asp:TextBox ID="txt_ref02" runat="server" CssClass="input-sm" Width="250px"></asp:TextBox>
+                &nbsp;<br />
+                <asp:Button ID="Button6" runat="server" Text="ส่ง REF แก้ไขไม่มีชื่อผปก." />
+                <asp:Button ID="Button7" runat="server" Text="ส่งข้อมูลเลขใบสั่ง แก้ไขไม่มีชื่อผปก." />
+            </td>
+        </tr>
+    </table>
     </div>
     </form>
 </body>

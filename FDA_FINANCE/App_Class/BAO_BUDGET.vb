@@ -7554,6 +7554,20 @@ Namespace BAO_BUDGET
 
             Return dt
         End Function
+        '
+        Public Function get_Report_R3_017_old(ByVal dateBegin As Date, ByVal dateEnd As Date) As DataTable
+            Dim dt As New DataTable
+            Dim command As String = " "
+            Dim dayBegin As Integer = convertDateToInteger(dateBegin)
+            Dim dayEnd As Integer = convertDateToInteger(dateEnd)
+            Dim strDateBegin As String = convertDateToString(dateBegin)
+            Dim strDateEnd As String = convertDateToString(dateEnd)
+            command = " exec [BUDGETS].[get_Report_R3_017_old] @dateBegin = " & dayBegin & ",@dateEnd=" & dayEnd
+            command += ", @dateBeginName= '" & strDateBegin & "', @dateEndName= '" & strDateEnd & "'"
+            dt = Queryds_Report(command)
+
+            Return dt
+        End Function
         Public Function GET_Check_Pay_From_SCB(ByVal dateBegin As Date) As DataTable
             Dim dt As New DataTable
             Dim command As String = " "
@@ -7586,6 +7600,20 @@ Namespace BAO_BUDGET
 
             Return dt
         End Function
+        'get_Report_R3_017_V2_old
+        Public Function get_Report_R3_017_V2_old(ByVal dateBegin As Date, ByVal dateEnd As Date, ByVal recieve As String) As DataTable
+            Dim dt As New DataTable
+            Dim command As String = " "
+            Dim dayBegin As Integer = convertDateToInteger(dateBegin)
+            Dim dayEnd As Integer = convertDateToInteger(dateEnd)
+            Dim strDateBegin As String = convertDateToString(dateBegin)
+            Dim strDateEnd As String = convertDateToString(dateEnd)
+            command = " exec [BUDGETS].[get_Report_R3_017_V2_old] @dateBegin = " & dayBegin & ",@dateEnd=" & dayEnd & " ,@RECEIVER_MONEY_ID='" & recieve & "'"
+            command += ", @dateBeginName= '" & strDateBegin & "', @dateEndName= '" & strDateEnd & "'"
+            dt = Queryds_Report(command)
+
+            Return dt
+        End Function
         Public Function get_Report_R3_017_normal_law(ByVal dateBegin As Date, ByVal dateEnd As Date) As DataTable
             Dim dt As New DataTable
             Dim command As String = " "
@@ -7600,6 +7628,19 @@ Namespace BAO_BUDGET
             Return dt
         End Function
         '
+        Public Function get_Report_R3_017_normal_law_old(ByVal dateBegin As Date, ByVal dateEnd As Date) As DataTable
+            Dim dt As New DataTable
+            Dim command As String = " "
+            Dim dayBegin As Integer = convertDateToInteger(dateBegin)
+            Dim dayEnd As Integer = convertDateToInteger(dateEnd)
+            Dim strDateBegin As String = convertDateToString(dateBegin)
+            Dim strDateEnd As String = convertDateToString(dateEnd)
+            command = " exec [BUDGETS].[get_Report_R3_017_normal_law_old] @dateBegin = " & dayBegin & ",@dateEnd=" & dayEnd
+            command += ", @dateBeginName= '" & strDateBegin & "', @dateEndName= '" & strDateEnd & "'"
+            dt = Queryds_Report(command)
+
+            Return dt
+        End Function
         Public Function get_Report_R3_017_normal_law_V2(ByVal dateBegin As Date, ByVal dateEnd As Date, ByVal recieve As String) As DataTable
             Dim dt As New DataTable
             Dim command As String = " "
@@ -7608,6 +7649,20 @@ Namespace BAO_BUDGET
             Dim strDateBegin As String = convertDateToString(dateBegin)
             Dim strDateEnd As String = convertDateToString(dateEnd)
             command = " exec [BUDGETS].[get_Report_R3_017_normal_law_V2] @dateBegin = " & dayBegin & ",@dateEnd=" & dayEnd & " ,@RECEIVER_MONEY_ID='" & recieve & "'"
+            command += ", @dateBeginName= '" & strDateBegin & "', @dateEndName= '" & strDateEnd & "'"
+            dt = Queryds_Report(command)
+
+            Return dt
+        End Function
+        '
+        Public Function get_Report_R3_017_normal_law_V2_old(ByVal dateBegin As Date, ByVal dateEnd As Date, ByVal recieve As String) As DataTable
+            Dim dt As New DataTable
+            Dim command As String = " "
+            Dim dayBegin As Integer = convertDateToInteger(dateBegin)
+            Dim dayEnd As Integer = convertDateToInteger(dateEnd)
+            Dim strDateBegin As String = convertDateToString(dateBegin)
+            Dim strDateEnd As String = convertDateToString(dateEnd)
+            command = " exec [BUDGETS].[get_Report_R3_017_normal_law_V2_old] @dateBegin = " & dayBegin & ",@dateEnd=" & dayEnd & " ,@RECEIVER_MONEY_ID='" & recieve & "'"
             command += ", @dateBeginName= '" & strDateBegin & "', @dateEndName= '" & strDateEnd & "'"
             dt = Queryds_Report(command)
 

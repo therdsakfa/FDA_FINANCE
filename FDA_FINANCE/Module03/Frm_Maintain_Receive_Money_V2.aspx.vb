@@ -150,8 +150,8 @@ Public Class Frm_Maintain_Receive_Money_V2
         If Date.Now = "2019-09-30" Then
 
         End If
-        'dd_BudgetYear.DropDownSelectData(curent_year)
-        'dd_BudgetYear.Items.Insert(0, New ListItem(2563, 2563)) 'เพิ่มใหม่
+        dd_BudgetYear.DropDownSelectData(curent_year)
+        dd_BudgetYear.Items.Insert(0, New ListItem(2564, 2564)) 'เพิ่มใหม่
 
         'dd_BudgetYear.SelectedValue = 2557
         'dd_BudgetYear.DropDownSelectData(2557)

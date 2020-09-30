@@ -133,6 +133,15 @@
             </td>
         </tr>
         <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                <asp:Button ID="Button1" runat="server" Text="ส่ง REF แก้ไขไม่มีชื่อผปก." />
+                <asp:Button ID="Button2" runat="server" Text="ส่งข้อมูลเลขใบสั่ง แก้ไขไม่มีชื่อผปก." />
+            
+            </td>
+        </tr>
+        <tr>
 
             <td colspan="2">
                 <telerik:RadGrid ID="RadGrid1" runat="server" AllowFilteringByColumn="true" AllowMultiRowSelection="true" AllowPaging="true" AutoGenerateColumns="False" PageSize="20">

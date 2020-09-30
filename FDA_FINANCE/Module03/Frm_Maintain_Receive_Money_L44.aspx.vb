@@ -138,8 +138,9 @@ Public Class Frm_Maintain_Receive_Money_L44
 
         dd_BudgetYear.DataSource = dt
         dd_BudgetYear.DataBind()
-        'dd_BudgetYear.DropDownSelectData(curent_year)
-        'dd_BudgetYear.Items.Insert(0, New ListItem(2558, 2558)) 'เพิ่มใหม่
+
+        dd_BudgetYear.DropDownSelectData(curent_year)
+        dd_BudgetYear.Items.Insert(0, New ListItem(2564, 2564)) 'เพิ่มใหม่
 
         'dd_BudgetYear.SelectedValue = 2557
         'dd_BudgetYear.DropDownSelectData(2557)

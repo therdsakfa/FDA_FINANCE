@@ -32,17 +32,37 @@ Public Class Frm_Report_R3_017
         'get_Report_R3_017_Amount
         If Request.QueryString("n") = "" Then
             If ddl_receiver.SelectedValue = "0" Then
-                dt = bao.get_Report_R3_017(UC_Report_SelectDate_Between1.dateBegin, UC_Report_SelectDate_Between1.dateEnd)
+                If CDate(UC_Report_SelectDate_Between1.dateBegin) >= CDate("2563-09-01") Then
+                    dt = bao.get_Report_R3_017(UC_Report_SelectDate_Between1.dateBegin, UC_Report_SelectDate_Between1.dateEnd)
+                Else
+                    dt = bao.get_Report_R3_017_old(UC_Report_SelectDate_Between1.dateBegin, UC_Report_SelectDate_Between1.dateEnd)
+                End If
+
             Else
-                dt = bao.get_Report_R3_017_V2(UC_Report_SelectDate_Between1.dateBegin, UC_Report_SelectDate_Between1.dateEnd, ddl_receiver.SelectedValue)
+                If CDate(UC_Report_SelectDate_Between1.dateBegin) >= CDate("2563-09-01") Then
+                    dt = bao.get_Report_R3_017_V2(UC_Report_SelectDate_Between1.dateBegin, UC_Report_SelectDate_Between1.dateEnd, ddl_receiver.SelectedValue)
+                Else
+                    dt = bao.get_Report_R3_017_V2_old(UC_Report_SelectDate_Between1.dateBegin, UC_Report_SelectDate_Between1.dateEnd, ddl_receiver.SelectedValue)
+                End If
+
             End If
 
         Else
             If ddl_receiver.SelectedValue = "0" Then
-                dt = bao.get_Report_R3_017_normal_law(UC_Report_SelectDate_Between1.dateBegin, UC_Report_SelectDate_Between1.dateEnd)
+                If CDate(UC_Report_SelectDate_Between1.dateBegin) >= CDate("2563-09-01") Then
+                    dt = bao.get_Report_R3_017_normal_law(UC_Report_SelectDate_Between1.dateBegin, UC_Report_SelectDate_Between1.dateEnd)
+                Else
+                    dt = bao.get_Report_R3_017_normal_law_old(UC_Report_SelectDate_Between1.dateBegin, UC_Report_SelectDate_Between1.dateEnd)
+                End If
+
 
             Else
-                dt = bao.get_Report_R3_017_normal_law_V2(UC_Report_SelectDate_Between1.dateBegin, UC_Report_SelectDate_Between1.dateEnd, ddl_receiver.SelectedValue)
+                If CDate(UC_Report_SelectDate_Between1.dateBegin) >= CDate("2563-09-01") Then
+                    dt = bao.get_Report_R3_017_normal_law_V2(UC_Report_SelectDate_Between1.dateBegin, UC_Report_SelectDate_Between1.dateEnd, ddl_receiver.SelectedValue)
+                Else
+                    dt = bao.get_Report_R3_017_normal_law_V2_old(UC_Report_SelectDate_Between1.dateBegin, UC_Report_SelectDate_Between1.dateEnd, ddl_receiver.SelectedValue)
+                End If
+
 
             End If
         End If

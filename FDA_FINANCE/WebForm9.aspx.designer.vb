@@ -174,4 +174,40 @@ Partial Public Class WebForm9
     '''To modify move field declaration from designer file to code-behind file.
     '''</remarks>
     Protected WithEvents Image2 As Global.System.Web.UI.WebControls.Image
+    
+    '''<summary>
+    '''txt_ref01 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_ref01 As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''txt_ref02 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_ref02 As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
+    '''Button6 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button6 As Global.System.Web.UI.WebControls.Button
+    
+    '''<summary>
+    '''Button7 control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents Button7 As Global.System.Web.UI.WebControls.Button
 End Class

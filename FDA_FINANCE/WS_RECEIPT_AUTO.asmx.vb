@@ -387,8 +387,26 @@ Public Class WS_RECEIPT_AUTO
                         FULL_RECEIVE_NUMBER = "2-E-" & Right(Get_BUDGET_YEAR(), 2) & "-" & str_num
                     End If
 
-                    dao_i.fields.E_RUNNING_RECEIPT = max_id_new
-                    dao_i.fields.FULL_RECEIVE_NUMBER = FULL_RECEIVE_NUMBER
+                    bools = CHK_MAX_NO_INSERT(FULL_RECEIVE_NUMBER)
+                    If bools = True Then
+                        dao_i.fields.E_RUNNING_RECEIPT = max_id_new
+                        dao_i.fields.FULL_RECEIVE_NUMBER = FULL_RECEIVE_NUMBER
+
+                    Else
+                        max_id_new = Get_Max_NO(is_m44, Get_BUDGET_YEAR())
+                        max_id_new = max_id_new + 1
+
+                        str_num = String.Format("{0:0000000000}", max_id_new.ToString("0000000000"))
+
+                        If is_m44 = False Then
+                            FULL_RECEIVE_NUMBER = "1-E-" & Right(Get_BUDGET_YEAR(), 2) & "-" & str_num
+                        Else
+                            FULL_RECEIVE_NUMBER = "2-E-" & Right(Get_BUDGET_YEAR(), 2) & "-" & str_num
+                        End If
+                        dao_i.fields.E_RUNNING_RECEIPT = max_id_new
+                        dao_i.fields.FULL_RECEIVE_NUMBER = FULL_RECEIVE_NUMBER
+                    End If
+
                 End If
             End If
 
