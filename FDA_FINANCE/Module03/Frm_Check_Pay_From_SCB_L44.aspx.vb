@@ -148,6 +148,10 @@ Public Class Frm_Check_Pay_From_SCB_L44
                             dao_fee.GetDataby_ref1_ref2(item("ref01").Text, item("ref02").Text)
                             dao_fee.fields.rcptst = 1
                             dao_fee.update()
+
+
+                            Dim cls_update As New CLS_SV_UPDATE_SYS.SV_UPDATE
+                            cls_update.Update_Sys(dvcd, item("ref02").Text, item("ref01").Text, is_repeat:=True)
                         End If
 
                     End If
@@ -188,8 +192,7 @@ Public Class Frm_Check_Pay_From_SCB_L44
 
 
 
-                        Dim cls_update As New CLS_SV_UPDATE_SYS.SV_UPDATE
-                        cls_update.Update_Sys(dvcd, item("ref02").Text, item("ref01").Text, is_repeat:=True)
+
 
                     Catch ex As Exception
 
@@ -765,12 +768,12 @@ Public Class Frm_Check_Pay_From_SCB_L44
 
                         dao.update()
 
-                        If fee_stat = 0 Then
-                            Dim dao_fee As New DAO_FEE.TB_fee
-                            dao_fee.GetDataby_ref1_ref2(item("ref01").Text, item("ref02").Text)
-                            dao_fee.fields.rcptst = 1
-                            dao_fee.update()
-                        End If
+                        'If fee_stat = 0 Then
+                        '    Dim dao_fee As New DAO_FEE.TB_fee
+                        '    dao_fee.GetDataby_ref1_ref2(item("ref01").Text, item("ref02").Text)
+                        '    dao_fee.fields.rcptst = 1
+                        '    dao_fee.update()
+                        'End If
 
 
                         '--------------------------update ให้ระบบอื่นๆ กรณี key in-----------------------------------------------------
@@ -781,14 +784,17 @@ Public Class Frm_Check_Pay_From_SCB_L44
                                 dao_fee.GetDataby_ref1_ref2(item("ref01").Text, item("ref02").Text)
                                 dao_fee.fields.rcptst = 1
                                 dao_fee.update()
+
+                                Dim ws_updates As New WS_UPDATE_PAY.WS_UPDATE_STATUS_PAY
+                                ws_updates.Update_Status_Pay(item("ref01").Text, item("ref02").Text)
+
+                                Dim ws_updates2 As New WS_UPDATE_PAY_HERB.WS_UPDATE_STATUS_PAY
+                                ws_updates2.Update_Status_Pay(item("ref01").Text, item("ref02").Text)
                             End If
-                            'Dim ws_updates As New WS_UPDATE_PAY.WS_UPDATE_STATUS_PAY
-                            'ws_updates.Update_Status_Pay(item("ref01").Text, item("ref02").Text)
 
 
-
-                            Dim cls_update As New CLS_SV_UPDATE_SYS.SV_UPDATE
-                            cls_update.Update_Sys(dvcd, item("ref02").Text, item("ref01").Text, is_repeat:=True)
+                            'Dim cls_update As New CLS_SV_UPDATE_SYS.SV_UPDATE
+                            'cls_update.Update_Sys(dvcd, item("ref02").Text, item("ref01").Text, is_repeat:=True)
 
                         Catch ex As Exception
 

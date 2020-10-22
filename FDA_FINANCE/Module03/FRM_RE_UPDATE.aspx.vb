@@ -77,6 +77,9 @@ Public Class FRM_RE_UPDATE
                 End If
                 Dim ws_updates As New WS_UPDATE_PAY.WS_UPDATE_STATUS_PAY
                 ws_updates.Update_Status_Pay_Repeat(ref01, ref02, True)
+
+                Dim ws_updates2 As New WS_UPDATE_PAY_HERB.WS_UPDATE_STATUS_PAY
+                ws_updates2.Update_Status_Pay_Repeat(ref01, ref02, True)
                 'ws_updates.Update_Status_Pay(ref01, ref02)
                 Try
                     Dim dao_log As New DAO_MAS.TB_LOG_RE_UPDATE
@@ -88,7 +91,14 @@ Public Class FRM_RE_UPDATE
                     End With
                     dao_log.insert()
                 Catch ex As Exception
-
+                    Dim dao_log As New DAO_MAS.TB_LOG_RE_UPDATE
+                    With dao_log.fields
+                        .CITIZEN_ID_RE_UPDATE = _CLS.CITIZEN_ID
+                        .CREATE_DATE = Date.Now
+                        .REF01 = txt_ref01.Text
+                        .REF02 = txt_ref02.Text
+                    End With
+                    dao_log.insert()
                 End Try
                 Try
 

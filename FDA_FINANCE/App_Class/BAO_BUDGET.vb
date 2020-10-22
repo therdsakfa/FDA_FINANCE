@@ -5577,6 +5577,24 @@ Namespace BAO_BUDGET
     End Class
     Public Class MASS
         Inherits ConnectDatabass
+
+        '
+        Public Function GET_DETAIL_RECEIPT(ByVal ref01 As String, ByVal ref02 As String) As DataTable
+            Dim dt As New DataTable
+            Dim command As String = " "
+            command = " exec [BUDGETS].[GET_DETAIL_RECEIPT] @ref01='" & ref01 & "' , @ref02='" & ref02 & "'"
+            dt = Queryds(command)
+
+            Return dt
+        End Function
+        Public Function Get_LOG_WAIT_RECEIPT() As DataTable
+            Dim dt As New DataTable
+            Dim command As String = " "
+            command = " exec [BUDGETS].[Get_LOG_WAIT_RECEIPT]"
+            dt = Queryds(command)
+
+            Return dt
+        End Function
         Public Function get_HEAD_BUDGET_NAME() As DataTable
             Dim dt As New DataTable
             Dim command As String = " "

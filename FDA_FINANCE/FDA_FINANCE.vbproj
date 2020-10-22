@@ -261,6 +261,7 @@
     <Content Include="FRM_FIX_RECEIPT.aspx" />
     <Content Include="Frm_Main.aspx" />
     <Content Include="Frm_Main_User.aspx" />
+    <Content Include="FRM_RUNNING_RECEIPT.aspx" />
     <Content Include="FRM_SEARCH_REF.aspx" />
     <Content Include="Frm_Send_Mail_Receipt.aspx" />
     <Content Include="FRM_XML.aspx" />
@@ -1351,9 +1352,15 @@
     </None>
     <None Include="Web References\WS_Update_Payment_CER_LOCATION\WS_Update_Payment_CER_LOCATION.disco" />
     <Content Include="Web References\WS_UPDATE_PAYMENT_CERS\WS_UPDATE_PAYMENT_CER.disco" />
+    <Content Include="Web References\WS_UPDATE_PAY_HERB\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
+    <None Include="Web References\WS_UPDATE_PAY_HERB\WS_UPDATE.disco" />
     <Content Include="WS_CHK_PAY_CONFIRM.asmx" />
     <Content Include="WS_OLD_DT.asmx" />
     <Content Include="WS_RECEIPT_AUTO.asmx" />
+    <Content Include="WS_RECEIPT_DETAIL.asmx" />
     <Content Include="WS_RUN_PDF_RECEIPT.asmx" />
     <None Include="My Project\PublishProfiles\bg2.pubxml" />
     <None Include="Web References\FDA_MAIL\FDA_MAIL.disco" />
@@ -1543,6 +1550,7 @@
     <Compile Include="App_Class\CLS_MASTER.vb" />
     <Compile Include="App_Class\CLS_QR.vb" />
     <Compile Include="App_Class\cls_reportfield.vb" />
+    <Compile Include="App_Class\CLS_RETURN_MONEY.vb" />
     <Compile Include="App_Class\CLS_SESSION.vb" />
     <Compile Include="App_Class\CLS_SHOW.vb" />
     <Compile Include="App_Class\CLS_SV_UPDATE_SYS.vb" />
@@ -1632,6 +1640,13 @@
     </Compile>
     <Compile Include="Frm_Main_User.aspx.vb">
       <DependentUpon>Frm_Main_User.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="FRM_RUNNING_RECEIPT.aspx.designer.vb">
+      <DependentUpon>FRM_RUNNING_RECEIPT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_RUNNING_RECEIPT.aspx.vb">
+      <DependentUpon>FRM_RUNNING_RECEIPT.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="FRM_SEARCH_REF.aspx.designer.vb">
@@ -8022,6 +8037,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\WS_UPDATE_PAY_HERB\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\WS_UPDATE_RCVNO\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -8093,6 +8113,10 @@
     </Compile>
     <Compile Include="WS_RECEIPT_AUTO.asmx.vb">
       <DependentUpon>WS_RECEIPT_AUTO.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WS_RECEIPT_DETAIL.asmx.vb">
+      <DependentUpon>WS_RECEIPT_DETAIL.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="WS_RUN_PDF_RECEIPT.asmx.vb">
@@ -8319,6 +8343,7 @@
     <Content Include="Web References\WS_UPDATE_RCVNO\UPDATE_RCVNO.wsdl" />
     <None Include="Web References\WS_UPDATE_DATE_MDC\SV_UPDATE_DATE.wsdl" />
     <None Include="Web References\WS_UPDATE_PAY\WS_UPDATE.wsdl" />
+    <None Include="Web References\WS_UPDATE_PAY_HERB\WS_UPDATE.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -8615,6 +8640,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>FDA_FINANCE_WS_UPDATE_RCVNO_UPDATE_RCVNO</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://164.115.28.161/ws_update_stat_herb/WS_UPDATE.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_UPDATE_PAY_HERB\</RelPath>
+      <UpdateFromURL>http://164.115.28.161/ws_update_stat_herb/WS_UPDATE.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FDA_FINANCE_WS_UPDATE_PAY_HERB_WS_UPDATE_STATUS_PAY</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://172.17.0.100/FDA_INSERT_XML/WS_INSERT_XML/NCT_INSERT_XML_LCN.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>

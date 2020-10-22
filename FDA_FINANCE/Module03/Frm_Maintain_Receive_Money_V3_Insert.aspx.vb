@@ -1200,6 +1200,10 @@ Public Class Frm_Maintain_Receive_Money_V3_Insert
                                 Dim ws_updates As New WS_UPDATE_PAY.WS_UPDATE_STATUS_PAY
                                 'ws_updates.Timeout = 120000
                                 ws_updates.Update_Status_Pay(ref01, ref02)
+
+                                Dim ws_updates2 As New WS_UPDATE_PAY_HERB.WS_UPDATE_STATUS_PAY
+                                'ws_updates.Timeout = 120000
+                                ws_updates2.Update_Status_Pay(ref01, ref02)
                             End If
 
                             Dim dao_log_con As New DAO_MAS.TB_LOG_CONFIRM
@@ -1331,6 +1335,10 @@ Public Class Frm_Maintain_Receive_Money_V3_Insert
                                     Dim ws_updates As New WS_UPDATE_PAY.WS_UPDATE_STATUS_PAY
                                     'ws_updates.Timeout = 120000
                                     ws_updates.Update_Status_Pay(ref01, ref02)
+
+                                    Dim ws_updates2 As New WS_UPDATE_PAY_HERB.WS_UPDATE_STATUS_PAY
+                                    'ws_updates.Timeout = 120000
+                                    ws_updates2.Update_Status_Pay(ref01, ref02)
                                 End If
 
                                 Dim dao_log_con As New DAO_MAS.TB_LOG_CONFIRM

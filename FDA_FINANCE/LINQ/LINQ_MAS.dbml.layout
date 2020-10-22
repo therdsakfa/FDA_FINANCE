@@ -387,5 +387,11 @@
         <elementListCompartment Id="40d21f4c-6e40-4879-ba6a-87d529bda9e8" absoluteBounds="9.39, 3.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="0688bf0e-ae4f-412b-b81c-c43c5e96e9a4" isExpanded="false" absoluteBounds="2.625, 9.75, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_MASDataContext/LOG_WAIT_RECEIPT" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5a1d557f-9925-40b6-a58d-2c0466659704" absoluteBounds="2.64, 10.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

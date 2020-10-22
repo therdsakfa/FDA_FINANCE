@@ -10,7 +10,7 @@ Imports System.ComponentModel
 Public Class WS_RECEIPT_AUTO
     Inherits System.Web.Services.WebService
 
-    <WebMethod()> _
+    <WebMethod()>
     Public Sub Gen_Receipt(ByVal ref01 As String, ByVal ref02 As String)
         Try
             Dim dao_fee As New DAO_FEE.TB_fee
@@ -48,8 +48,11 @@ Public Class WS_RECEIPT_AUTO
             Dim CurrentTime As DateTime = Convert.ToDateTime(DateTime.Now)
 
             'If CurrentTime.Ticks >= t1.Ticks And CurrentTime.Ticks <= t2.Ticks Then
+
+
+
             If CurrentTime.Hour = 23 Then
-                INSERT_LOG(ref01, ref02)
+                'INSERT_LOG(ref01, ref02)
             Else
                 insert_e_bill(dao_fee.fields.dvcd, dao_fee.fields.feeno, dao_fee.fields.feeabbr, acc_type, ref01, ref02, "")
                 send_mail_mini(ref01, ref02)
@@ -68,6 +71,68 @@ Public Class WS_RECEIPT_AUTO
             Insert_log_error(ref01, ref02, "ส่วน ดึงข้อมูลออกใบเสร็จ : " & ex.Message, 0)
         End Try
     End Sub
+
+    Public Function Gen_Receipt_Wait(ByVal ref01 As String, ByVal ref02 As String) As String
+        Dim Str_Return As String = ""
+        Try
+            Dim dao_fee As New DAO_FEE.TB_fee
+            dao_fee.GetDataby_ref1_ref2(ref01, ref02)
+            Dim acc_type As Boolean
+            If dao_fee.fields.acc_type = "1" Then
+                acc_type = False
+            Else
+                acc_type = True
+            End If
+
+            'Dim StartTime As Date = #11:00:00 PM#
+            'Dim EndTime As Date = #11:59:59 PM#
+            'Dim CurrentTime As Date = Date.Now
+
+            'If EndTime.Ticks < StartTime.Ticks Then
+            '    If (CurrentTime.Ticks >= StartTime.Ticks And CurrentTime.Ticks >= EndTime.Ticks) Or _
+            '        (CurrentTime.Ticks <= StartTime.Ticks And CurrentTime.Ticks <= EndTime.Ticks) Then
+
+            '        insert_e_bill(dao_fee.fields.dvcd, dao_fee.fields.feeno, dao_fee.fields.feeabbr, acc_type, ref01, ref02, "")
+            '        send_mail_mini(ref01, ref02)
+            '    Else
+            '        INSERT_LOG(ref01, ref02)
+            '    End If
+            'Else
+            'If CurrentTime.Ticks >= StartTime.Ticks And CurrentTime.Ticks <= EndTime.Ticks Then
+            '    INSERT_LOG(ref01, ref02)
+            'Else
+            '    insert_e_bill(dao_fee.fields.dvcd, dao_fee.fields.feeno, dao_fee.fields.feeabbr, acc_type, ref01, ref02, "")
+            '    send_mail_mini(ref01, ref02)
+
+            'End If
+            'End If
+
+            Dim CurrentTime As DateTime = Convert.ToDateTime(DateTime.Now)
+
+            'If CurrentTime.Ticks >= t1.Ticks And CurrentTime.Ticks <= t2.Ticks Then
+            'If CurrentTime.Hour = 23 Then
+            '    INSERT_LOG(ref01, ref02)
+            'Else
+            insert_e_bill(dao_fee.fields.dvcd, dao_fee.fields.feeno, dao_fee.fields.feeabbr, acc_type, ref01, ref02, "")
+                send_mail_mini(ref01, ref02)
+
+                Dim dao_log As New DAO_MAS.TB_LOG_CONFIRM
+                With dao_log.fields
+                    .CREATEDATE = Date.Now
+                    .REF01 = ref01
+                    .REF02 = ref02
+                    .STATUS_ID = 999
+                End With
+                dao_log.insert()
+                Str_Return = "success"
+            'End If
+
+        Catch ex As Exception
+            Str_Return = "fail"
+            Insert_log_error(ref01, ref02, "ออกใบเสร็จเจนตามเวลา : " & ex.Message, 0)
+        End Try
+        Return Str_Return
+    End Function
     Private Sub INSERT_LOG(ByVal ref01 As String, ByVal ref02 As String)
         Dim dao As New DAO_MAS.TB_LOG_11PM
         dao.fields.CREATE_DATE = Date.Now
@@ -351,14 +416,60 @@ Public Class WS_RECEIPT_AUTO
                 FULL_RECEIVE_NUMBER = "2-E-" & Right(Get_BUDGET_YEAR(), 2) & "-" & str_num
             End If
 
-            Dim bools As Boolean
+            Dim bools As Boolean = False
             bools = CHK_MAX_NO_INSERT(FULL_RECEIVE_NUMBER)
 
             If bools = True Then
-                dao_i.fields.E_RUNNING_RECEIPT = max_id_new
-                dao_i.fields.FULL_RECEIVE_NUMBER = FULL_RECEIVE_NUMBER
 
-            Else 'กรณีซ้ำ รันใหม่
+                max_id_new = Get_Max_NO(is_m44, Get_BUDGET_YEAR())
+                max_id_new = max_id_new + 1
+
+                str_num = String.Format("{0:0000000000}", max_id_new.ToString("0000000000"))
+
+                If is_m44 = False Then
+                    FULL_RECEIVE_NUMBER = "1-E-" & Right(Get_BUDGET_YEAR(), 2) & "-" & str_num
+                Else
+                    FULL_RECEIVE_NUMBER = "2-E-" & Right(Get_BUDGET_YEAR(), 2) & "-" & str_num
+                End If
+                bools = CHK_MAX_NO_INSERT(FULL_RECEIVE_NUMBER)
+
+                If bools = True Then
+                    max_id_new = Get_Max_NO(is_m44, Get_BUDGET_YEAR())
+                    max_id_new = max_id_new + 1
+
+                    str_num = String.Format("{0:0000000000}", max_id_new.ToString("0000000000"))
+
+                    If is_m44 = False Then
+                        FULL_RECEIVE_NUMBER = "1-E-" & Right(Get_BUDGET_YEAR(), 2) & "-" & str_num
+                    Else
+                        FULL_RECEIVE_NUMBER = "2-E-" & Right(Get_BUDGET_YEAR(), 2) & "-" & str_num
+                    End If
+                    bools = CHK_MAX_NO_INSERT(FULL_RECEIVE_NUMBER)
+
+                    If bools = True Then
+                        dao_i.fields.E_RUNNING_RECEIPT = max_id_new
+                        dao_i.fields.FULL_RECEIVE_NUMBER = FULL_RECEIVE_NUMBER
+
+                    End If
+
+                Else
+
+                    max_id_new = Get_Max_NO(is_m44, Get_BUDGET_YEAR())
+                    max_id_new = max_id_new + 1
+
+                    str_num = String.Format("{0:0000000000}", max_id_new.ToString("0000000000"))
+
+                    If is_m44 = False Then
+                        FULL_RECEIVE_NUMBER = "1-E-" & Right(Get_BUDGET_YEAR(), 2) & "-" & str_num
+                    Else
+                        FULL_RECEIVE_NUMBER = "2-E-" & Right(Get_BUDGET_YEAR(), 2) & "-" & str_num
+                    End If
+
+                    dao_i.fields.E_RUNNING_RECEIPT = max_id_new
+                    dao_i.fields.FULL_RECEIVE_NUMBER = FULL_RECEIVE_NUMBER
+                End If
+
+            ElseIf bools = False Then 'กรณีซ้ำ รันใหม่
                 max_id_new = Get_Max_NO(is_m44, Get_BUDGET_YEAR())
                 max_id_new = max_id_new + 1
 
@@ -375,7 +486,7 @@ Public Class WS_RECEIPT_AUTO
                     dao_i.fields.E_RUNNING_RECEIPT = max_id_new
                     dao_i.fields.FULL_RECEIVE_NUMBER = FULL_RECEIVE_NUMBER
 
-                Else
+                ElseIf bools = False Then
                     max_id_new = Get_Max_NO(is_m44, Get_BUDGET_YEAR())
                     max_id_new = max_id_new + 1
 
@@ -392,7 +503,7 @@ Public Class WS_RECEIPT_AUTO
                         dao_i.fields.E_RUNNING_RECEIPT = max_id_new
                         dao_i.fields.FULL_RECEIVE_NUMBER = FULL_RECEIVE_NUMBER
 
-                    Else
+                    ElseIf bools = False Then
                         max_id_new = Get_Max_NO(is_m44, Get_BUDGET_YEAR())
                         max_id_new = max_id_new + 1
 
@@ -696,4 +807,28 @@ Public Class WS_RECEIPT_AUTO
 
         Return max_id
     End Function
+
+    <WebMethod()>
+    Public Sub INSERT_WAIT_REF(ByVal ref01 As String, ByVal ref02 As String)
+        Dim CurrentTime As DateTime = Convert.ToDateTime(DateTime.Now)
+
+        'If CurrentTime.Ticks >= t1.Ticks And CurrentTime.Ticks <= t2.Ticks Then
+        If CurrentTime.Hour = 23 Then
+            INSERT_LOG(ref01, ref02)
+        Else
+            Dim dao As New DAO_MAS.TB_LOG_WAIT_RECEIPT
+            dao.fields.REF01 = ref01
+            dao.fields.REF02 = ref02
+            dao.fields.CREATE_DATE = Date.Now
+            dao.insert()
+        End If
+
+    End Sub
+
+    Public Sub UPDATE_STATUS_REF(ByVal ref01 As String, ByVal ref02 As String)
+        Dim dao As New DAO_MAS.TB_LOG_WAIT_RECEIPT
+        dao.Getdata_by_ref01_ref02(ref01, ref02)
+        dao.fields.STATUS_RECEIPT = 1
+        dao.update()
+    End Sub
 End Class

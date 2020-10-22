@@ -708,4 +708,13 @@
       <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.LOG_WAIT_RECEIPT" Member="LOG_WAIT_RECEIPTs">
+    <Type Name="LOG_WAIT_RECEIPT">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="REF01" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="REF02" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CREATE_DATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="STATUS_RECEIPT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

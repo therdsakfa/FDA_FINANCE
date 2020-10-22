@@ -144,6 +144,30 @@ Public Class Frm_Check_Pay_From_SCB
                         dao_fee.GetDataby_ref1_ref2(item("ref01").Text, item("ref02").Text)
                         dao_fee.fields.rcptst = 1
                         dao_fee.update()
+
+                        Try
+                            Dim ws_updates As New WS_UPDATE_PAY.WS_UPDATE_STATUS_PAY
+                            ws_updates.Update_Status_Pay(item("ref01").Text, item("ref02").Text)
+
+                            Dim ws_updates2 As New WS_UPDATE_PAY_HERB.WS_UPDATE_STATUS_PAY
+                            ws_updates2.Update_Status_Pay(item("ref01").Text, item("ref02").Text)
+
+                            Dim cls_update As New CLS_SV_UPDATE_SYS.SV_UPDATE
+                            cls_update.Update_Sys(dvcd, item("ref02").Text, item("ref01").Text, is_repeat:=True)
+
+
+
+
+                            'Dim dao_fee As New DAO_FEE.TB_fee
+                            'dao_fee.GetDataby_ref1_ref2(item("ref02").Text, item("ref01").Text)
+                            'dao_fee.update()
+
+                            'Dim ws_updates As New WS_UPDATE_PAY.WS_UPDATE_STATUS_PAY
+                            'ws_updates.Timeout = 120000
+                            'ws_updates.Update_Status_Pay(item("ref02").Text, item("ref01").Text)
+                        Catch ex As Exception
+
+                        End Try
                     End If
                 Catch ex As Exception
 
@@ -168,115 +192,97 @@ Public Class Frm_Check_Pay_From_SCB
                 End Try
 
                 '--------------------------update ให้ระบบอื่นๆ กรณี key in-----------------------------------------------------
-                'If fee_stat = 0 Then
-                Try
-                    Dim ws_updates As New WS_UPDATE_PAY.WS_UPDATE_STATUS_PAY
-                    ws_updates.Update_Status_Pay(item("ref01").Text, item("ref02").Text)
-                    Dim cls_update As New CLS_SV_UPDATE_SYS.SV_UPDATE
-                    cls_update.Update_Sys(dvcd, item("ref02").Text, item("ref01").Text, is_repeat:=True)
+                If fee_stat = 0 Then
 
 
-
-
-                    'Dim dao_fee As New DAO_FEE.TB_fee
-                    'dao_fee.GetDataby_ref1_ref2(item("ref02").Text, item("ref01").Text)
-                    'dao_fee.update()
-
-                    'Dim ws_updates As New WS_UPDATE_PAY.WS_UPDATE_STATUS_PAY
-                    'ws_updates.Timeout = 120000
-                    'ws_updates.Update_Status_Pay(item("ref02").Text, item("ref01").Text)
-                Catch ex As Exception
-
-                End Try
-
-                'Else
-                '    Dim ws_updates As New WS_UPDATE_PAY.WS_UPDATE_STATUS_PAY
-                '    ws_updates.Update_Status_Pay(item("ref01").Text, item("ref02").Text)
-                'End If
+                    'Else
+                    '    Dim ws_updates As New WS_UPDATE_PAY.WS_UPDATE_STATUS_PAY
+                    '    ws_updates.Update_Status_Pay(item("ref01").Text, item("ref02").Text)
+                End If
                 '----------------------------------------จบอัพเดท-
 
                 'Else
                 Dim feeabbr_u As String = ""
-                Dim acc_type As Integer = 0
-                Dim citizen_fee As String = ""
+                    Dim acc_type As Integer = 0
+                    Dim citizen_fee As String = ""
 
-                Dim dao_fee5 As New DAO_FEE.TB_fee
-                dao_fee5.GetDataby_ref1_ref2(item("ref01").Text, item("ref02").Text)
-                Try
-                    feeabbr_u = dao_fee5.fields.feeabbr
-                Catch ex As Exception
+                    Dim dao_fee5 As New DAO_FEE.TB_fee
+                    dao_fee5.GetDataby_ref1_ref2(item("ref01").Text, item("ref02").Text)
+                    Try
+                        feeabbr_u = dao_fee5.fields.feeabbr
+                    Catch ex As Exception
 
-                End Try
-                Try
+                    End Try
+                    Try
 
-                Catch ex As Exception
-                    acc_type = dao_fee5.fields.acc_type
-                End Try
-                Try
-                    citizen_fee = dao_fee5.fields.create_identify
-                Catch ex As Exception
+                    Catch ex As Exception
+                        acc_type = dao_fee5.fields.acc_type
+                    End Try
+                    Try
+                        citizen_fee = dao_fee5.fields.create_identify
+                    Catch ex As Exception
 
-                End Try
-                Dim dao_fee_det2 As New DAO_FEE.TB_feedtl
-                dao_fee_det2.Getdata_by_fee_id(dao_fee5.fields.IDA)
-                'For Each dao_fee_det2.fields In dao_fee_det2.datas
-                'If acc_type = 2 Then
+                    End Try
+                    Dim dao_fee_det2 As New DAO_FEE.TB_feedtl
+                    dao_fee_det2.Getdata_by_fee_id(dao_fee5.fields.IDA)
+                    'For Each dao_fee_det2.fields In dao_fee_det2.datas
+                    'If acc_type = 2 Then
 
-                Dim email As String = ""
-                Dim Title As String = ""
-                Dim Content As String = ""
-                Dim dao_mail As New DAO_CPN.TB_sysemail
-                'Dim dao_sp As New dao
-                'Dim citizen As String = ""
-                Dim dao_spay As New DAO_FDA_SPECIAL_PAYMENT.TB_SYSTEMS_PAYMENT_DETAIL
-                Dim dao_pay As New DAO_FDA_SPECIAL_PAYMENT.TB_PAYMENT_DETAIL
+                    Dim email As String = ""
+                    Dim Title As String = ""
+                    Dim Content As String = ""
+                    Dim dao_mail As New DAO_CPN.TB_sysemail
+                    'Dim dao_sp As New dao
+                    'Dim citizen As String = ""
+                    Dim dao_spay As New DAO_FDA_SPECIAL_PAYMENT.TB_SYSTEMS_PAYMENT_DETAIL
+                    Dim dao_pay As New DAO_FDA_SPECIAL_PAYMENT.TB_PAYMENT_DETAIL
 
-                Try
-                    dao_spay.GetDataby_IDA(dao_fee_det2.fields.fk_id)
-                Catch ex As Exception
+                    Try
+                        dao_spay.GetDataby_IDA(dao_fee_det2.fields.fk_id)
+                    Catch ex As Exception
 
-                End Try
-                Try
-                    dao_pay.GetDataby_IDA(dao_fee_det2.fields.fk_id)
-                Catch ex As Exception
+                    End Try
+                    Try
+                        dao_pay.GetDataby_IDA(dao_fee_det2.fields.fk_id)
+                    Catch ex As Exception
 
-                End Try
+                    End Try
 
-                Try
-
-
-                Catch ex As Exception
-
-                End Try
+                    Try
 
 
-                Try
-                    dao_mail.GetDataby_identify(citizen_fee)
-                    email = dao_mail.fields.EMAIL_EGA
-                Catch ex As Exception
+                    Catch ex As Exception
 
-                End Try
-
-                Try
-                    If email <> "" Then
-                        email = email
-                        Title = "ใบเสร็จอิเล็กทรอนิกส์ชำระเงิน_" & TimeStampNow()
-                        Content = "ลิ้งค์สำหรับใบเสร็จอิเล็กทรอนิกส์ http://buisead.fda.moph.go.th/fda_budget/Module09/Report/Frm_Report_R9_003.aspx?ref01=" & item("ref01").Text & "&ref02=" & item("ref02").Text
-
-                        SendMail(Content, email, Title, email, "", "")
-                    End If
-                Catch ex As Exception
-                    Insert_log_error(item("ref01").Text, item("ref02").Text, "SendMail " & ex.Message, 0)
-                End Try
+                    End Try
 
 
-                'End If
+                    Try
+                        dao_mail.GetDataby_identify(citizen_fee)
+                        email = dao_mail.fields.EMAIL_EGA
+                    Catch ex As Exception
 
-                'Next
+                    End Try
+
+                    Try
+                        If email <> "" Then
+                            email = email
+                            Title = "ใบเสร็จอิเล็กทรอนิกส์ชำระเงิน_" & TimeStampNow()
+                            Content = "ลิ้งค์สำหรับใบเสร็จอิเล็กทรอนิกส์ http://buisead.fda.moph.go.th/fda_budget/Module09/Report/Frm_Report_R9_003.aspx?ref01=" & item("ref01").Text & "&ref02=" & item("ref02").Text
+
+                            SendMail(Content, email, Title, email, "", "")
+                        End If
+                    Catch ex As Exception
+                        Insert_log_error(item("ref01").Text, item("ref02").Text, "SendMail " & ex.Message, 0)
+                    End Try
+
+
+                    'End If
+
+                    'Next
 
 
 
-            End If
+                End If
 
         Next
         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ตรวจสอบข้อมูลเรียบร้อย');", True)
@@ -331,12 +337,12 @@ Public Class Frm_Check_Pay_From_SCB
 
                         dao.update()
 
-                        If fee_stat = 0 Then
-                            Dim dao_fee As New DAO_FEE.TB_fee
-                            dao_fee.GetDataby_ref1_ref2(item("ref01").Text, item("ref02").Text)
-                            dao_fee.fields.rcptst = 1
-                            dao_fee.update()
-                        End If
+                        'If fee_stat = 0 Then
+                        '    Dim dao_fee As New DAO_FEE.TB_fee
+                        '    dao_fee.GetDataby_ref1_ref2(item("ref01").Text, item("ref02").Text)
+                        '    dao_fee.fields.rcptst = 1
+                        '    dao_fee.update()
+                        'End If
 
 
                         '--------------------------update ให้ระบบอื่นๆ กรณี key in-----------------------------------------------------
@@ -347,14 +353,17 @@ Public Class Frm_Check_Pay_From_SCB
                                 dao_fee.GetDataby_ref1_ref2(item("ref01").Text, item("ref02").Text)
                                 dao_fee.fields.rcptst = 1
                                 dao_fee.update()
+                                Dim ws_updates As New WS_UPDATE_PAY.WS_UPDATE_STATUS_PAY
+                                ws_updates.Update_Status_Pay(item("ref01").Text, item("ref02").Text)
+
+                                Dim ws_updates2 As New WS_UPDATE_PAY_HERB.WS_UPDATE_STATUS_PAY
+                                ws_updates2.Update_Status_Pay(item("ref01").Text, item("ref02").Text)
+
                             End If
-                            'Dim ws_updates As New WS_UPDATE_PAY.WS_UPDATE_STATUS_PAY
-                            'ws_updates.Update_Status_Pay(item("ref01").Text, item("ref02").Text)
 
 
-
-                            Dim cls_update As New CLS_SV_UPDATE_SYS.SV_UPDATE
-                            cls_update.Update_Sys(dvcd, item("ref02").Text, item("ref01").Text, is_repeat:=True)
+                            'Dim cls_update As New CLS_SV_UPDATE_SYS.SV_UPDATE
+                            'cls_update.Update_Sys(dvcd, item("ref02").Text, item("ref01").Text, is_repeat:=True)
 
                         Catch ex As Exception
 

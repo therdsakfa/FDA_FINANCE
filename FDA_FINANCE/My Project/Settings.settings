@@ -92,5 +92,8 @@
     <Setting Name="FDA_FINANCE_Authentication_118_Authentication" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://10.111.28.65/WS_AUTHEN4/Authentication.asmx</Value>
     </Setting>
+    <Setting Name="FDA_FINANCE_WS_UPDATE_PAY_HERB_WS_UPDATE_STATUS_PAY" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://164.115.28.161/ws_update_stat_herb/WS_UPDATE.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -409,6 +409,12 @@ Partial Public Class LINQ_MASDataContext
     End Sub
   Partial Private Sub DeleteLOG_CONFIRM_SCB(instance As LOG_CONFIRM_SCB)
     End Sub
+  Partial Private Sub InsertLOG_WAIT_RECEIPT(instance As LOG_WAIT_RECEIPT)
+    End Sub
+  Partial Private Sub UpdateLOG_WAIT_RECEIPT(instance As LOG_WAIT_RECEIPT)
+    End Sub
+  Partial Private Sub DeleteLOG_WAIT_RECEIPT(instance As LOG_WAIT_RECEIPT)
+    End Sub
   #End Region
 	
 	Public Sub New()
@@ -811,6 +817,12 @@ Partial Public Class LINQ_MASDataContext
 	Public ReadOnly Property LOG_CONFIRM_SCBs() As System.Data.Linq.Table(Of LOG_CONFIRM_SCB)
 		Get
 			Return Me.GetTable(Of LOG_CONFIRM_SCB)
+		End Get
+	End Property
+	
+	Public ReadOnly Property LOG_WAIT_RECEIPTs() As System.Data.Linq.Table(Of LOG_WAIT_RECEIPT)
+		Get
+			Return Me.GetTable(Of LOG_WAIT_RECEIPT)
 		End Get
 	End Property
 End Class
@@ -13359,6 +13371,156 @@ Partial Public Class LOG_CONFIRM_SCB
 				Me._CREATEDATE = value
 				Me.SendPropertyChanged("CREATEDATE")
 				Me.OnCREATEDATEChanged
+			End If
+		End Set
+	End Property
+	
+	Public Event PropertyChanging As PropertyChangingEventHandler Implements System.ComponentModel.INotifyPropertyChanging.PropertyChanging
+	
+	Public Event PropertyChanged As PropertyChangedEventHandler Implements System.ComponentModel.INotifyPropertyChanged.PropertyChanged
+	
+	Protected Overridable Sub SendPropertyChanging()
+		If ((Me.PropertyChangingEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanging(Me, emptyChangingEventArgs)
+		End If
+	End Sub
+	
+	Protected Overridable Sub SendPropertyChanged(ByVal propertyName As [String])
+		If ((Me.PropertyChangedEvent Is Nothing)  _
+					= false) Then
+			RaiseEvent PropertyChanged(Me, New PropertyChangedEventArgs(propertyName))
+		End If
+	End Sub
+End Class
+
+<Global.System.Data.Linq.Mapping.TableAttribute(Name:="dbo.LOG_WAIT_RECEIPT")>  _
+Partial Public Class LOG_WAIT_RECEIPT
+	Implements System.ComponentModel.INotifyPropertyChanging, System.ComponentModel.INotifyPropertyChanged
+	
+	Private Shared emptyChangingEventArgs As PropertyChangingEventArgs = New PropertyChangingEventArgs(String.Empty)
+	
+	Private _IDA As Integer
+	
+	Private _REF01 As String
+	
+	Private _REF02 As String
+	
+	Private _CREATE_DATE As System.Nullable(Of Date)
+	
+	Private _STATUS_RECEIPT As System.Nullable(Of Integer)
+	
+    #Region "Extensibility Method Definitions"
+    Partial Private Sub OnLoaded()
+    End Sub
+    Partial Private Sub OnValidate(action As System.Data.Linq.ChangeAction)
+    End Sub
+    Partial Private Sub OnCreated()
+    End Sub
+    Partial Private Sub OnIDAChanging(value As Integer)
+    End Sub
+    Partial Private Sub OnIDAChanged()
+    End Sub
+    Partial Private Sub OnREF01Changing(value As String)
+    End Sub
+    Partial Private Sub OnREF01Changed()
+    End Sub
+    Partial Private Sub OnREF02Changing(value As String)
+    End Sub
+    Partial Private Sub OnREF02Changed()
+    End Sub
+    Partial Private Sub OnCREATE_DATEChanging(value As System.Nullable(Of Date))
+    End Sub
+    Partial Private Sub OnCREATE_DATEChanged()
+    End Sub
+    Partial Private Sub OnSTATUS_RECEIPTChanging(value As System.Nullable(Of Integer))
+    End Sub
+    Partial Private Sub OnSTATUS_RECEIPTChanged()
+    End Sub
+    #End Region
+	
+	Public Sub New()
+		MyBase.New
+		OnCreated
+	End Sub
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_IDA", AutoSync:=AutoSync.OnInsert, DbType:="Int NOT NULL IDENTITY", IsPrimaryKey:=true, IsDbGenerated:=true)>  _
+	Public Property IDA() As Integer
+		Get
+			Return Me._IDA
+		End Get
+		Set
+			If ((Me._IDA = value)  _
+						= false) Then
+				Me.OnIDAChanging(value)
+				Me.SendPropertyChanging
+				Me._IDA = value
+				Me.SendPropertyChanged("IDA")
+				Me.OnIDAChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REF01", DbType:="NVarChar(50)")>  _
+	Public Property REF01() As String
+		Get
+			Return Me._REF01
+		End Get
+		Set
+			If (String.Equals(Me._REF01, value) = false) Then
+				Me.OnREF01Changing(value)
+				Me.SendPropertyChanging
+				Me._REF01 = value
+				Me.SendPropertyChanged("REF01")
+				Me.OnREF01Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_REF02", DbType:="NVarChar(50)")>  _
+	Public Property REF02() As String
+		Get
+			Return Me._REF02
+		End Get
+		Set
+			If (String.Equals(Me._REF02, value) = false) Then
+				Me.OnREF02Changing(value)
+				Me.SendPropertyChanging
+				Me._REF02 = value
+				Me.SendPropertyChanged("REF02")
+				Me.OnREF02Changed
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_CREATE_DATE", DbType:="DateTime")>  _
+	Public Property CREATE_DATE() As System.Nullable(Of Date)
+		Get
+			Return Me._CREATE_DATE
+		End Get
+		Set
+			If (Me._CREATE_DATE.Equals(value) = false) Then
+				Me.OnCREATE_DATEChanging(value)
+				Me.SendPropertyChanging
+				Me._CREATE_DATE = value
+				Me.SendPropertyChanged("CREATE_DATE")
+				Me.OnCREATE_DATEChanged
+			End If
+		End Set
+	End Property
+	
+	<Global.System.Data.Linq.Mapping.ColumnAttribute(Storage:="_STATUS_RECEIPT", DbType:="Int")>  _
+	Public Property STATUS_RECEIPT() As System.Nullable(Of Integer)
+		Get
+			Return Me._STATUS_RECEIPT
+		End Get
+		Set
+			If (Me._STATUS_RECEIPT.Equals(value) = false) Then
+				Me.OnSTATUS_RECEIPTChanging(value)
+				Me.SendPropertyChanging
+				Me._STATUS_RECEIPT = value
+				Me.SendPropertyChanged("STATUS_RECEIPT")
+				Me.OnSTATUS_RECEIPTChanged
 			End If
 		End Set
 	End Property

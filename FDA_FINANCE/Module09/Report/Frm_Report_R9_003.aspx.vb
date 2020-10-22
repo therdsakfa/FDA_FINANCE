@@ -871,6 +871,13 @@ Public Class Frm_Report_R9_003
                     Catch ex As Exception
 
                     End Try
+
+                ElseIf dao3.fields.RECEIVE_MONEY_TYPE = 6 Then
+                    Try
+                        dr("row3") &= " (บัตรเครดิต)"
+                    Catch ex As Exception
+
+                    End Try
                 End If
 
             Catch ex As Exception
@@ -1304,21 +1311,27 @@ Public Class Frm_Report_R9_003
                 Try
                     dao3.Getdata_by_RECEIVE_MONEY_ID(Request.QueryString("id_feeno"))
 
-                    If dao3.fields.RECEIVE_MONEY_TYPE = 2 Then
-                        Dim dao_b As New DAO_MAS.TB_MAS_BANK
-                        Try
-                            dao_b.Getdata_by_BANK_ID(dao3.fields.BANK_ID)
+                If dao3.fields.RECEIVE_MONEY_TYPE = 2 Then
+                    Dim dao_b As New DAO_MAS.TB_MAS_BANK
+                    Try
+                        dao_b.Getdata_by_BANK_ID(dao3.fields.BANK_ID)
                         BANK_SHORT_NAME = dao_b.fields.BANK_SHORT_NAME
-                        Catch ex As Exception
+                    Catch ex As Exception
 
-                        End Try
+                    End Try
 
                     Try
                         dr("row3") &= " (เช็คธนาคาร " & BANK_SHORT_NAME & " เลขที่ " & dao3.fields.CHECK_NUMBER & " )"
                     Catch ex As Exception
 
                     End Try
-                    End If
+                ElseIf dao3.fields.RECEIVE_MONEY_TYPE = 6 Then
+                    Try
+                        dr("row3") &= " (บัตรเครดิต)"
+                    Catch ex As Exception
+
+                    End Try
+                End If
 
                 Catch ex As Exception
 
@@ -1465,7 +1478,12 @@ Public Class Frm_Report_R9_003
                     Catch ex As Exception
 
                     End Try
+                ElseIf dao.fields.RECEIVE_MONEY_TYPE = 6 Then
+                    Try
+                        dr("row3") &= " (บัตรเครดิต)"
+                    Catch ex As Exception
 
+                    End Try
                 End If
 
             Catch ex As Exception
@@ -1850,7 +1868,12 @@ Public Class Frm_Report_R9_003
                     Catch ex As Exception
 
                     End Try
+                ElseIf dao3.fields.RECEIVE_MONEY_TYPE = 6 Then
+                    Try
+                        dr("row3") &= " (บัตรเครดิต)"
+                    Catch ex As Exception
 
+                    End Try
                 End If
 
             Catch ex As Exception
@@ -2032,7 +2055,12 @@ Public Class Frm_Report_R9_003
                         Catch ex As Exception
 
                         End Try
+                    ElseIf dao3.fields.RECEIVE_MONEY_TYPE = 6 Then
+                        Try
+                            dr("row3") &= " (บัตรเครดิต)"
+                        Catch ex As Exception
 
+                        End Try
                     End If
 
                 Catch ex As Exception
