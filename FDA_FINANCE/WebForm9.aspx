@@ -18,6 +18,7 @@
         <asp:FileUpload ID="FileUpload1" runat="server" />
         <asp:Button ID="btn_read" runat="server" Text="READ" />
         <asp:Button ID="btn_test_ps" runat="server" Text="test_ps" />
+        <asp:Button ID="Button8" runat="server" Text="run ใบเสร็จ" />
         <br />
         <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label><asp:Image ID="Image1" runat="server" />
         <br />

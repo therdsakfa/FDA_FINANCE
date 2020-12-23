@@ -5579,6 +5579,12 @@ Namespace BAO_BUDGET
         Inherits ConnectDatabass
 
         '
+        Public Sub INSERT_WAIT_QUEUE_LIST(ByVal ref01 As String, ByVal ref02 As String)
+            Dim dt As New DataTable
+            Dim command As String = " "
+            command = " exec [dbo].[INSERT_WAIT_QUEUE_LIST] @ref01='" & ref01 & "' , @ref02='" & ref02 & "'"
+            dt = Queryds(command)
+        End Sub
         Public Function GET_DETAIL_RECEIPT(ByVal ref01 As String, ByVal ref02 As String) As DataTable
             Dim dt As New DataTable
             Dim command As String = " "
@@ -5591,6 +5597,24 @@ Namespace BAO_BUDGET
             Dim dt As New DataTable
             Dim command As String = " "
             command = " exec [BUDGETS].[Get_LOG_WAIT_RECEIPT]"
+            dt = Queryds(command)
+
+            Return dt
+        End Function
+        '
+        Public Function Get_Queue_Error() As DataTable
+            Dim dt As New DataTable
+            Dim command As String = " "
+            command = " exec [BUDGETS].[Get_Queue_Error]"
+            dt = Queryds(command)
+
+            Return dt
+        End Function
+
+        Public Function Get_LOG_QUEUE_LIST() As DataTable
+            Dim dt As New DataTable
+            Dim command As String = " "
+            command = " exec [dbo].[Get_LOG_QUEUE_LIST]"
             dt = Queryds(command)
 
             Return dt

@@ -717,4 +717,19 @@
       <Column Name="STATUS_RECEIPT" Type="System.Int32" DbType="Int" CanBeNull="true" />
     </Type>
   </Table>
+  <Table Name="dbo.LOG_WAIT_QUEUE_LIST" Member="LOG_WAIT_QUEUE_LISTs">
+    <Type Name="LOG_WAIT_QUEUE_LIST">
+      <Column Name="IDA" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="REF01" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="REF02" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CREATEDATE" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ROW_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_FDL_IDA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FK_ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DVCD" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PROCESS_ID" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FK_REF_STATUS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="STATUS_SEND" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
 </Database>

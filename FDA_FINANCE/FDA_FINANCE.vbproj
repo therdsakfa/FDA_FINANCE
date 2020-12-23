@@ -44,6 +44,16 @@
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.95.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.95.3\lib\net40\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.7.2\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\FDA_DRUG\customer\FDA_DRUG\FDA_DRUG\FDA_DRUG\bin\Microsoft.ReportViewer.Common.dll</HintPath>
@@ -92,6 +102,7 @@
       <HintPath>..\packages\QRCoder.1.2.8\lib\net40\UnityEngine.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="WindowsBase" />
     <Reference Include="zxing, Version=0.15.0.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
       <HintPath>..\packages\ZXing.Net.0.15.0\lib\net40\zxing.dll</HintPath>
       <Private>True</Private>
@@ -259,11 +270,14 @@
     <Content Include="FRM_CHECK_PAY.aspx" />
     <Content Include="FRM_DOWNLOAD_RECEIPT.aspx" />
     <Content Include="FRM_FIX_RECEIPT.aspx" />
+    <Content Include="FRM_IMPORT_QUEUE_RECEIPT.aspx" />
     <Content Include="Frm_Main.aspx" />
     <Content Include="Frm_Main_User.aspx" />
     <Content Include="FRM_RUNNING_RECEIPT.aspx" />
     <Content Include="FRM_SEARCH_REF.aspx" />
     <Content Include="Frm_Send_Mail_Receipt.aspx" />
+    <Content Include="Frm_Send_Queue_Error.aspx" />
+    <Content Include="FRM_SEND_UPDATE_STATUS.aspx" />
     <Content Include="FRM_XML.aspx" />
     <Content Include="GEN_DH.aspx" />
     <Content Include="Gen_Proj.aspx" />
@@ -1295,6 +1309,12 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </Content>
     <Content Include="Web References\WS_ERROR_CENTERS\WS_ERROR_CENTER.disco" />
+    <Content Include="Web References\WS_INSERT_LOGS_SAI\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
+    <None Include="Web References\WS_INSERT_LOGS_SAI\WS_INSERT_LOGS.disco" />
+    <Content Include="WS_WAIT_QUEQE_LIST.asmx" />
     <None Include="Web References\WS_FLATTEN\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
@@ -1326,6 +1346,7 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
     </Content>
+    <None Include="Web References\WS_INSERT_LOGS_SAI\WS_INSERT_LOGS.wsdl" />
     <None Include="Web References\WS_QR\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.vb</LastGenOutput>
@@ -1628,6 +1649,13 @@
       <DependentUpon>FRM_FIX_RECEIPT.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
+    <Compile Include="FRM_IMPORT_QUEUE_RECEIPT.aspx.designer.vb">
+      <DependentUpon>FRM_IMPORT_QUEUE_RECEIPT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_IMPORT_QUEUE_RECEIPT.aspx.vb">
+      <DependentUpon>FRM_IMPORT_QUEUE_RECEIPT.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
     <Compile Include="Frm_Main.aspx.designer.vb">
       <DependentUpon>Frm_Main.aspx</DependentUpon>
     </Compile>
@@ -1661,6 +1689,20 @@
     </Compile>
     <Compile Include="Frm_Send_Mail_Receipt.aspx.vb">
       <DependentUpon>Frm_Send_Mail_Receipt.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="Frm_Send_Queue_Error.aspx.designer.vb">
+      <DependentUpon>Frm_Send_Queue_Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Send_Queue_Error.aspx.vb">
+      <DependentUpon>Frm_Send_Queue_Error.aspx</DependentUpon>
+      <SubType>ASPXCodebehind</SubType>
+    </Compile>
+    <Compile Include="FRM_SEND_UPDATE_STATUS.aspx.designer.vb">
+      <DependentUpon>FRM_SEND_UPDATE_STATUS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_SEND_UPDATE_STATUS.aspx.vb">
+      <DependentUpon>FRM_SEND_UPDATE_STATUS.aspx</DependentUpon>
       <SubType>ASPXCodebehind</SubType>
     </Compile>
     <Compile Include="FRM_XML.aspx.designer.vb">
@@ -7972,6 +8014,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\WS_INSERT_LOGS_SAI\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\WS_NCT_INSERT\Reference.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -8121,6 +8168,10 @@
     </Compile>
     <Compile Include="WS_RUN_PDF_RECEIPT.asmx.vb">
       <DependentUpon>WS_RUN_PDF_RECEIPT.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WS_WAIT_QUEQE_LIST.asmx.vb">
+      <DependentUpon>WS_WAIT_QUEQE_LIST.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
@@ -8376,6 +8427,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>FDA_FINANCE_Authentication_104_Authentication</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://10.111.28.107/WS_LOGS_DATA/WS_INSERT_LOGS.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_INSERT_LOGS_SAI\</RelPath>
+      <UpdateFromURL>http://10.111.28.107/WS_LOGS_DATA/WS_INSERT_LOGS.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FDA_FINANCE_WS_INSERT_LOGS_SAI_WS_INSERT_LOGS</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://10.111.28.108/ws_edoc/Service1.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>

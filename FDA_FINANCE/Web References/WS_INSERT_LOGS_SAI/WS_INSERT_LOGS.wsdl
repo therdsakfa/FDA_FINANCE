@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="insert_log">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FK_IDA" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FC_NAME" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DIVISION" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_logResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="insert_logResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="insert_logSoapIn">
+    <wsdl:part name="parameters" element="tns:insert_log" />
+  </wsdl:message>
+  <wsdl:message name="insert_logSoapOut">
+    <wsdl:part name="parameters" element="tns:insert_logResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WS_INSERT_LOGSSoap">
+    <wsdl:operation name="insert_log">
+      <wsdl:input message="tns:insert_logSoapIn" />
+      <wsdl:output message="tns:insert_logSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WS_INSERT_LOGSSoap" type="tns:WS_INSERT_LOGSSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert_log">
+      <soap:operation soapAction="http://tempuri.org/insert_log" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WS_INSERT_LOGSSoap12" type="tns:WS_INSERT_LOGSSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="insert_log">
+      <soap12:operation soapAction="http://tempuri.org/insert_log" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WS_INSERT_LOGS">
+    <wsdl:port name="WS_INSERT_LOGSSoap" binding="tns:WS_INSERT_LOGSSoap">
+      <soap:address location="http://10.111.28.107/WS_LOGS_DATA/WS_INSERT_LOGS.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WS_INSERT_LOGSSoap12" binding="tns:WS_INSERT_LOGSSoap12">
+      <soap12:address location="http://10.111.28.107/WS_LOGS_DATA/WS_INSERT_LOGS.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

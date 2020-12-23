@@ -3232,6 +3232,14 @@
             Next
 
         End Sub
+        Public Function CountData_by_ref01_ref02(ByVal ref01 As String, ByVal ref02 As String) As Integer
+            Dim i As Integer = 0
+            datas = From p In DB.LOG_WAIT_RECEIPTs Where p.REF01 = ref01 And p.REF02 = ref02 Select p
+            For Each Me.fields In datas
+                i += 1
+            Next
+            Return i
+        End Function
         ''' <summary>
         ''' เพิ่มข้อมูล
         ''' </summary>
@@ -3253,6 +3261,70 @@
         ''' <remarks></remarks>
         Public Sub delete()
             DB.LOG_WAIT_RECEIPTs.DeleteOnSubmit(fields)
+            DB.SubmitChanges()
+        End Sub
+    End Class
+    Public Class TB_LOG_WAIT_QUEUE_LIST
+
+        Inherits MainContext
+        ''' <summary>
+        ''' รายชื่อ Fields ของตาราง MAS_CUSTOMER
+        ''' </summary>
+        ''' <remarks></remarks>
+        Public fields As New LOG_WAIT_QUEUE_LIST
+
+
+        Public Sub GetDataby_All()
+
+            datas = (From p In DB.LOG_WAIT_QUEUE_LISTs Select p)
+            For Each Me.fields In datas
+            Next
+        End Sub
+        'Public Sub GetDataby_All_NO()
+
+        '    datas = (From p In DB.LOG_WAIT_QUEUE_LISTs Where p.STATUS_RECEIPT Is Nothing Select p)
+        '    For Each Me.fields In datas
+        '    Next
+        'End Sub
+        ''' <summary>
+        ''' แสดงข้อมูลแบบมีเงื่อนไข
+        ''' </summary>
+        ''' <remarks></remarks>
+        Public Sub Getdata_by_ID(ByVal IDA As Integer)
+            datas = From p In DB.LOG_WAIT_QUEUE_LISTs Where p.IDA = IDA Select p
+            For Each Me.fields In datas
+
+            Next
+
+        End Sub
+        Public Sub Getdata_by_ref01_ref02(ByVal ref01 As String, ByVal ref02 As String)
+            datas = From p In DB.LOG_WAIT_QUEUE_LISTs Where p.REF01 = ref01 And p.REF02 = ref02 Select p
+            For Each Me.fields In datas
+
+            Next
+
+        End Sub
+        ''' <summary>
+        ''' เพิ่มข้อมูล
+        ''' </summary>
+        ''' <remarks></remarks>
+        Public Sub insert()
+            DB.LOG_WAIT_QUEUE_LISTs.InsertOnSubmit(fields)
+            DB.SubmitChanges()
+        End Sub
+        ''' <summary>
+        ''' แก้ไข
+        ''' </summary>
+        ''' <remarks></remarks>
+        Public Sub update()
+            DB.SubmitChanges()
+        End Sub
+        ''' <summary>
+        ''' ลบข้อมูล
+        ''' </summary>
+        ''' <remarks></remarks>
+        Public Sub delete()
+            DB.LOG_WAIT_QUEUE_LISTs.DeleteOnSubmit(fields)
             DB.SubmitChanges()
         End Sub
     End Class

@@ -363,6 +363,16 @@ Namespace My
                 Return CType(Me("FDA_FINANCE_WS_UPDATE_PAY_HERB_WS_UPDATE_STATUS_PAY"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.WebServiceUrl),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("http://10.111.28.107/WS_LOGS_DATA/WS_INSERT_LOGS.asmx")>  _
+        Public ReadOnly Property FDA_FINANCE_WS_INSERT_LOGS_SAI_WS_INSERT_LOGS() As String
+            Get
+                Return CType(Me("FDA_FINANCE_WS_INSERT_LOGS_SAI_WS_INSERT_LOGS"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

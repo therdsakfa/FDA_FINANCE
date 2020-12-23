@@ -41,6 +41,8 @@ Namespace WS_UPDATE_PAY
         
         Private Update_Status_Pay_by_Ref01OperationCompleted As System.Threading.SendOrPostCallback
         
+        Private Update_byIDOperationCompleted As System.Threading.SendOrPostCallback
+        
         Private useDefaultCredentialsSetExplicitly As Boolean
         
         '''<remarks/>
@@ -93,6 +95,9 @@ Namespace WS_UPDATE_PAY
         
         '''<remarks/>
         Public Event Update_Status_Pay_by_Ref01Completed As Update_Status_Pay_by_Ref01CompletedEventHandler
+        
+        '''<remarks/>
+        Public Event Update_byIDCompleted As Update_byIDCompletedEventHandler
         
         '''<remarks/>
         <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Update_Status_Pay", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
@@ -225,6 +230,32 @@ Namespace WS_UPDATE_PAY
         End Sub
         
         '''<remarks/>
+        <System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Update_byID", RequestNamespace:="http://tempuri.org/", ResponseNamespace:="http://tempuri.org/", Use:=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle:=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)>  _
+        Public Sub Update_byID(ByVal dvcd As Integer, ByVal process_id As String, ByVal ref_status As Integer, ByVal IDA As Integer, ByVal ref02 As String, ByVal ref01 As String, ByVal IDA_Det As Integer)
+            Me.Invoke("Update_byID", New Object() {dvcd, process_id, ref_status, IDA, ref02, ref01, IDA_Det})
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub Update_byIDAsync(ByVal dvcd As Integer, ByVal process_id As String, ByVal ref_status As Integer, ByVal IDA As Integer, ByVal ref02 As String, ByVal ref01 As String, ByVal IDA_Det As Integer)
+            Me.Update_byIDAsync(dvcd, process_id, ref_status, IDA, ref02, ref01, IDA_Det, Nothing)
+        End Sub
+        
+        '''<remarks/>
+        Public Overloads Sub Update_byIDAsync(ByVal dvcd As Integer, ByVal process_id As String, ByVal ref_status As Integer, ByVal IDA As Integer, ByVal ref02 As String, ByVal ref01 As String, ByVal IDA_Det As Integer, ByVal userState As Object)
+            If (Me.Update_byIDOperationCompleted Is Nothing) Then
+                Me.Update_byIDOperationCompleted = AddressOf Me.OnUpdate_byIDOperationCompleted
+            End If
+            Me.InvokeAsync("Update_byID", New Object() {dvcd, process_id, ref_status, IDA, ref02, ref01, IDA_Det}, Me.Update_byIDOperationCompleted, userState)
+        End Sub
+        
+        Private Sub OnUpdate_byIDOperationCompleted(ByVal arg As Object)
+            If (Not (Me.Update_byIDCompletedEvent) Is Nothing) Then
+                Dim invokeArgs As System.Web.Services.Protocols.InvokeCompletedEventArgs = CType(arg,System.Web.Services.Protocols.InvokeCompletedEventArgs)
+                RaiseEvent Update_byIDCompleted(Me, New System.ComponentModel.AsyncCompletedEventArgs(invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState))
+            End If
+        End Sub
+        
+        '''<remarks/>
         Public Shadows Sub CancelAsync(ByVal userState As Object)
             MyBase.CancelAsync(userState)
         End Sub
@@ -262,4 +293,8 @@ Namespace WS_UPDATE_PAY
     '''<remarks/>
     <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
     Public Delegate Sub Update_Status_Pay_by_Ref01CompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
+    
+    '''<remarks/>
+    <System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.3761.0")>  _
+    Public Delegate Sub Update_byIDCompletedEventHandler(ByVal sender As Object, ByVal e As System.ComponentModel.AsyncCompletedEventArgs)
 End Namespace

@@ -393,5 +393,11 @@
         <elementListCompartment Id="5a1d557f-9925-40b6-a58d-2c0466659704" absoluteBounds="2.64, 10.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="7db18227-931c-4e62-bb46-543fb7c8bf01" isExpanded="false" absoluteBounds="7.25, 7.875, 2, 0.45">
+      <DataClassMoniker Name="/LINQ_MASDataContext/LOG_WAIT_QUEUE_LIST" />
+      <nestedChildShapes>
+        <elementListCompartment Id="85d09fc9-0dfd-460b-aa9e-fedadb587a89" absoluteBounds="7.2650000000000006, 8.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

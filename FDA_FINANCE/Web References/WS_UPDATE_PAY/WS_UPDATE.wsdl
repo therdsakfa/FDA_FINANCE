@@ -56,6 +56,22 @@
       <s:element name="Update_Status_Pay_by_Ref01Response">
         <s:complexType />
       </s:element>
+      <s:element name="Update_byID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dvcd" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="process_id" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ref_status" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDA" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ref02" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ref01" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IDA_Det" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_byIDResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="Update_Status_PaySoapIn">
@@ -88,6 +104,12 @@
   <wsdl:message name="Update_Status_Pay_by_Ref01SoapOut">
     <wsdl:part name="parameters" element="tns:Update_Status_Pay_by_Ref01Response" />
   </wsdl:message>
+  <wsdl:message name="Update_byIDSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_byID" />
+  </wsdl:message>
+  <wsdl:message name="Update_byIDSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_byIDResponse" />
+  </wsdl:message>
   <wsdl:portType name="WS_UPDATE_STATUS_PAYSoap">
     <wsdl:operation name="Update_Status_Pay">
       <wsdl:input message="tns:Update_Status_PaySoapIn" />
@@ -108,6 +130,10 @@
     <wsdl:operation name="Update_Status_Pay_by_Ref01">
       <wsdl:input message="tns:Update_Status_Pay_by_Ref01SoapIn" />
       <wsdl:output message="tns:Update_Status_Pay_by_Ref01SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_byID">
+      <wsdl:input message="tns:Update_byIDSoapIn" />
+      <wsdl:output message="tns:Update_byIDSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WS_UPDATE_STATUS_PAYSoap" type="tns:WS_UPDATE_STATUS_PAYSoap">
@@ -157,6 +183,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Update_byID">
+      <soap:operation soapAction="http://tempuri.org/Update_byID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WS_UPDATE_STATUS_PAYSoap12" type="tns:WS_UPDATE_STATUS_PAYSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -198,6 +233,15 @@
     </wsdl:operation>
     <wsdl:operation name="Update_Status_Pay_by_Ref01">
       <soap12:operation soapAction="http://tempuri.org/Update_Status_Pay_by_Ref01" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_byID">
+      <soap12:operation soapAction="http://tempuri.org/Update_byID" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
