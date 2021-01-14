@@ -435,14 +435,18 @@ Public Class WebForm9
         Dim chk_permiss As Boolean = False
 
         Try
-            chk_permiss = CHK_PERMISSION("1710500118665")
+            'chk_permiss = CHK_PERMISSION("1710500118665")
         Catch ex As Exception
 
         End Try
-        If chk_permiss = True Then
+        'If chk_permiss = True Then
+        Dim bao As New BAO_BUDGET.MASS
+        Dim dt As New DataTable
+        dt = bao.GET_NO_NAME()
+        For Each dr As DataRow In dt.Rows
             Dim dao_chk_fee As New DAO_FEE.TB_fee
             Dim dao_fee_m44 As New DAO_FEE.TB_fee
-            dao_fee_m44.GetDataby_ref1_ref2(txt_ref01.Text, txt_ref02.Text)
+            dao_fee_m44.GetDataby_ref1_ref2(dr("ref01"), dr("ref02"))
 
             Dim lcnname As String = ""
             Dim e_receipt As String = ""
@@ -450,25 +454,27 @@ Public Class WebForm9
                 lcnname = set_name_company(dao_fee_m44.fields.identify)
 
                 Dim dao_re As New DAO_MAINTAIN.TB_RECEIVE_MONEY
-                dao_re.Getdata_by_ref01_ref02(txt_ref01.Text, txt_ref02.Text)
+                dao_re.Getdata_by_ref01_ref02(dr("ref01"), dr("ref02"))
                 dao_re.fields.FULLNAME = lcnname
                 e_receipt = dao_re.fields.FULL_RECEIVE_NUMBER
                 dao_re.update()
 
                 Dim util As New Report_Utility
-                If e_receipt.Contains("E") Then
-                    runpdf(getReportData_reciept_fda_v2(), util.root & "Module09\Report_R9_003_V3_01.rdlc", "Fields_Report_R9_003", txt_ref01.Text, txt_ref02.Text)
-                End If
+                'If e_receipt.Contains("E") Then
+                '    runpdf(getReportData_reciept_fda_v2(), util.root & "Module09\Report_R9_003_V3_01.rdlc", "Fields_Report_R9_003", txt_ref01.Text, txt_ref02.Text)
+                'End If
 
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ส่งข้อมูลเรียบร้อย');", True)
             Catch ex As Exception
 
             End Try
+        Next
 
-        Else
 
-            System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไม่มีสิทธิใช้งานระบบ');", True)
-        End If
+        'Else
+
+        '    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไม่มีสิทธิใช้งานระบบ');", True)
+        'End If
     End Sub
     Function CHK_PERMISSION(ByVal citien As String) As Boolean
         Dim bool As Boolean = False

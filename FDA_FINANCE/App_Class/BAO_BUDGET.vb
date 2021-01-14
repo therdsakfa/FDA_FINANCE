@@ -5601,6 +5601,16 @@ Namespace BAO_BUDGET
 
             Return dt
         End Function
+        Public Function GET_NO_NAME() As DataTable
+            Dim dt As New DataTable
+            Dim command As String = " "
+            command = "Select ref01 , ref02 FROM [FDA_BG].[MAINTAINS].[RECEIVE_MONEY] where rtrim(ltrim(FULLNAME)) = '' and BUDGET_YEAR=2564 and ref01 is not null"
+            dt = Queryds(command)
+
+            Return dt
+        End Function
+
+
         '
         Public Function Get_Queue_Error() As DataTable
             Dim dt As New DataTable
