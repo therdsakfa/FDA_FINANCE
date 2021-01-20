@@ -98,5 +98,8 @@
     <Setting Name="FDA_FINANCE_WS_INSERT_LOGS_SAI_WS_INSERT_LOGS" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://10.111.28.107/WS_LOGS_DATA/WS_INSERT_LOGS.asmx</Value>
     </Setting>
+    <Setting Name="FDA_FINANCE_WS_WAIT_QUEQE_LISTS_WS_WAIT_QUEQE_LIST" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.111.28.161/WS_INSERT_QUEUE_LIST/WS_WAIT_QUEQE_LIST.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

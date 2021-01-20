@@ -1314,6 +1314,11 @@
       <LastGenOutput>Reference.vb</LastGenOutput>
     </Content>
     <None Include="Web References\WS_INSERT_LOGS_SAI\WS_INSERT_LOGS.disco" />
+    <Content Include="Web References\WS_WAIT_QUEQE_LISTS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </Content>
+    <None Include="Web References\WS_WAIT_QUEQE_LISTS\WS_WAIT_QUEQE_LIST.disco" />
     <Content Include="WS_WAIT_QUEQE_LIST.asmx" />
     <None Include="Web References\WS_FLATTEN\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -8094,6 +8099,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\WS_WAIT_QUEQE_LISTS\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="WebForm1.aspx.designer.vb">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
@@ -8395,6 +8405,7 @@
     <None Include="Web References\WS_UPDATE_DATE_MDC\SV_UPDATE_DATE.wsdl" />
     <None Include="Web References\WS_UPDATE_PAY\WS_UPDATE.wsdl" />
     <None Include="Web References\WS_UPDATE_PAY_HERB\WS_UPDATE.wsdl" />
+    <None Include="Web References\WS_WAIT_QUEQE_LISTS\WS_WAIT_QUEQE_LIST.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -8504,6 +8515,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>FDA_FINANCE_WS_CMT_PAYS_WS_CMT_PAY</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://10.111.28.161/WS_INSERT_QUEUE_LIST/WS_WAIT_QUEQE_LIST.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS_WAIT_QUEQE_LISTS\</RelPath>
+      <UpdateFromURL>http://10.111.28.161/WS_INSERT_QUEUE_LIST/WS_WAIT_QUEQE_LIST.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>MySettings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>FDA_FINANCE_WS_WAIT_QUEQE_LISTS_WS_WAIT_QUEQE_LIST</CachedSettingsPropName>
     </WebReferenceUrl>
     <WebReferenceUrl Include="http://10.111.28.161/ws_update_stat/WS_UPDATE.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
