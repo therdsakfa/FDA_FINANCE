@@ -864,4 +864,66 @@ Public Class WebForm9
         Next
 
     End Sub
+
+    Protected Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        Dim dao_fee2 As New DAO_FEE.TB_fee
+        Dim dao As New DAO_MAINTAIN.TB_RECEIVE_MONEY
+        Try
+            dao.Getdata_by_feeno_feeabbr("64254553", "9005")
+            ' ddl_department.DropDownSelectData(dao.fields.DVCD)
+        Catch ex As Exception
+
+        End Try
+        Try
+
+            dao_fee2.Getdata_by_feeno_and_feeabbr("64254553", "9005")
+            'str_dvcd_old = dao_fee2.fields.dvcd
+        Catch ex As Exception
+
+        End Try
+
+        Dim dao_dl As New DAO_FEE.TB_feedtl
+
+        Try
+            dao_dl.GetDataby_fk_fee(dao_fee2.fields.IDA)
+            Dim process_dl As String = ""
+            process_dl = dao_dl.fields.process_id
+            If process_dl = "7701" Or process_dl = "7702" Or process_dl = "7703" Or process_dl = "7704" Or
+                process_dl = "7705" Or process_dl = "7706" Or process_dl = "7707" Then
+                'cb_sinbon.Checked = True
+                Dim persent As String = ""
+                'ddl_department.DropDownSelectData(7)
+                persent = dao_dl.fields.REMARK
+                If persent = "60" Then
+                    'DropDownList1.DropDownSelectData(1)
+                ElseIf persent = "80" Then
+                    'DropDownList1.DropDownSelectData(2)
+                End If
+                'ddl_Income.DropDownSelectData(4)
+            End If
+
+
+        Catch ex As Exception
+
+        End Try
+        Dim panelty_val As String = ""
+        Try
+            For Each dao_dl.fields In dao_dl.datas
+                If dao_dl.fields.process_id = "555555" Then
+                    panelty_val = Right(Left(dao_dl.fields.lcnno_convert, 14), 10)
+                End If
+            Next
+
+        Catch ex As Exception
+
+        End Try
+        If panelty_val = "4990000001" Or panelty_val = "4990000002" Then
+            Try
+                'ddl_Income.DropDownSelectData(5)
+                panelty_val = ""
+            Catch ex As Exception
+
+            End Try
+        End If
+    End Sub
 End Class

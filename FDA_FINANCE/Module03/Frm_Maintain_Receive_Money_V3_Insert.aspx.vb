@@ -29,7 +29,11 @@ Public Class Frm_Maintain_Receive_Money_V3_Insert
     End Sub
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
         runQuery()
+
         If Not IsPostBack Then
+            cb_sinbon.Checked = False
+            ddl_Income.ClearSelection()
+            DropDownList1.ClearSelection()
             Try
                 Dim dao_re As New DAO_MAS.TB_MAS_MONEY_RECEIVER
                 dao_re.Getdata_by_RECEIVER_MONEY_ID(_receiver_id)
@@ -133,7 +137,7 @@ Public Class Frm_Maintain_Receive_Money_V3_Insert
             dao_dl.GetDataby_fk_fee(dao_fee2.fields.IDA)
             Dim process_dl As String = ""
             process_dl = dao_dl.fields.process_id
-            If process_dl = "7701" Or process_dl = "7702" Or process_dl = "7703" Or process_dl = "7704" Or _
+            If process_dl = "7701" Or process_dl = "7702" Or process_dl = "7703" Or process_dl = "7704" Or
                 process_dl = "7705" Or process_dl = "7706" Or process_dl = "7707" Then
                 cb_sinbon.Checked = True
                 Dim persent As String = ""
@@ -145,12 +149,20 @@ Public Class Frm_Maintain_Receive_Money_V3_Insert
                     DropDownList1.DropDownSelectData(2)
                 End If
                 ddl_Income.DropDownSelectData(4)
+
+            Else
+                cb_sinbon.Checked = False
+                ddl_Income.ClearSelection()
+                DropDownList1.ClearSelection()
             End If
 
 
         Catch ex As Exception
 
         End Try
+
+
+
         Dim panelty_val As String = ""
         Try
             For Each dao_dl.fields In dao_dl.datas
@@ -247,6 +259,14 @@ Public Class Frm_Maintain_Receive_Money_V3_Insert
             '------------------เช็คว่ามีรายการนี้มั้ย----------------
             Dim count_fee As Integer = 0
             count_fee = dao_fee.Countby_ref1_ref2(ref1, ref2)
+
+            Dim chk_repeat As Integer = 0
+            Try
+                Dim dao_fee99 As New DAO_FEE.TB_fee
+                chk_repeat = dao_fee.Countby_ref1_ref2V2(ref1, ref2)
+            Catch ex As Exception
+
+            End Try
             '-----------------------------------------------
             'If count_fee = 0 Then
             '    dt = bao.SP_get_receipt_by_feeabbr_and_feeno_group_sum_old(feeno, ddl_department.SelectedValue)
@@ -291,81 +311,81 @@ Public Class Frm_Maintain_Receive_Money_V3_Insert
             End If
             If chk_expdate(ref1, ref2) = True Then
                 If count_fee = 0 Then
-                    Try
-                        txt_FullNAME.Text = str_fullname
+                    'Try
+                    '    txt_FullNAME.Text = str_fullname
 
-                        'txt_FullNAME.Text = dt(0)("fullname")
-                    Catch ex As Exception
+                    '    'txt_FullNAME.Text = dt(0)("fullname")
+                    'Catch ex As Exception
 
-                    End Try
-                    Try
-                        txt_customer.Text = dt(0)("lcnsid")
-                    Catch ex As Exception
+                    'End Try
+                    'Try
+                    '    txt_customer.Text = dt(0)("lcnsid")
+                    'Catch ex As Exception
 
-                    End Try
-                    Try
+                    'End Try
+                    'Try
 
-                    Catch ex As Exception
+                    'Catch ex As Exception
 
-                    End Try
-                    Try
-                        dao_dl.GetDataby_fk_fee(dao_fee2.fields.IDA)
-                        Dim process_dl As String = ""
-                        process_dl = dao_dl.fields.process_id
-                        If process_dl = "7701" Or process_dl = "7702" Or process_dl = "7703" Or process_dl = "7704" Or _
-                        process_dl = "7705" Or process_dl = "7706" Or process_dl = "7707" Then
-                            Dim dt99 As New DataTable
-                            Dim bao99 As New BAO_BUDGET.Maintain
-                            Try
-                                'dt99 = bao99.SP_get_receipt_data_det_feeno_V2_9005(Request.QueryString("id_feeno"))
-                                'txt_description.Text = dt99(0)("feetpnm")
-                                Dim dao_fee_fine As New DAO_FEE.TB_FEE_FINE
-                                dao_fee_fine.Getdata_by_fk_fee(dao_fee2.fields.IDA)
-                                Dim first_txt As String = ""
-                                Dim second_txt As String = ""
-                                first_txt = dao_fee_fine.fields.process_name.Replace("ใบสั่งชำระ", "")
-                                For Each dao_fee_fine.fields In dao_fee_fine.datas
-                                    If second_txt = "" Then
-                                        second_txt = dao_fee_fine.fields.descriptions
-                                    Else
-                                        second_txt &= " ," & dao_fee_fine.fields.descriptions
-                                    End If
-                                Next
-                                txt_description.Text = first_txt & " " & second_txt ' dt99(0)("feetpnm")
-                            Catch ex As Exception
-                                txt_description.Text = Regex.Replace(dt(0)("feetpnm"), "<.*?>", String.Empty)
-                            End Try
+                    'End Try
+                    'Try
+                    '    dao_dl.GetDataby_fk_fee(dao_fee2.fields.IDA)
+                    '    Dim process_dl As String = ""
+                    '    process_dl = dao_dl.fields.process_id
+                    '    If process_dl = "7701" Or process_dl = "7702" Or process_dl = "7703" Or process_dl = "7704" Or
+                    '    process_dl = "7705" Or process_dl = "7706" Or process_dl = "7707" Then
+                    '        Dim dt99 As New DataTable
+                    '        Dim bao99 As New BAO_BUDGET.Maintain
+                    '        Try
+                    '            'dt99 = bao99.SP_get_receipt_data_det_feeno_V2_9005(Request.QueryString("id_feeno"))
+                    '            'txt_description.Text = dt99(0)("feetpnm")
+                    '            Dim dao_fee_fine As New DAO_FEE.TB_FEE_FINE
+                    '            dao_fee_fine.Getdata_by_fk_fee(dao_fee2.fields.IDA)
+                    '            Dim first_txt As String = ""
+                    '            Dim second_txt As String = ""
+                    '            first_txt = dao_fee_fine.fields.process_name.Replace("ใบสั่งชำระ", "")
+                    '            For Each dao_fee_fine.fields In dao_fee_fine.datas
+                    '                If second_txt = "" Then
+                    '                    second_txt = dao_fee_fine.fields.descriptions
+                    '                Else
+                    '                    second_txt &= " ," & dao_fee_fine.fields.descriptions
+                    '                End If
+                    '            Next
+                    '            txt_description.Text = first_txt & " " & second_txt ' dt99(0)("feetpnm")
+                    '        Catch ex As Exception
+                    '            txt_description.Text = Regex.Replace(dt(0)("feetpnm"), "<.*?>", String.Empty)
+                    '        End Try
 
-                        Else
-                            txt_description.Text = Regex.Replace(dt(0)("feetpnm"), "<.*?>", String.Empty)
-                        End If
+                    '    Else
+                    '        txt_description.Text = Regex.Replace(dt(0)("feetpnm"), "<.*?>", String.Empty)
+                    '    End If
 
-                    Catch ex As Exception
+                    'Catch ex As Exception
 
-                    End Try
-                    Try
+                    'End Try
+                    'Try
 
-                        'ddl_department.DataBind()
-                        'ddl_department.DropDownSelectData(dt(0)("dvcd"))
+                    '    'ddl_department.DataBind()
+                    '    'ddl_department.DropDownSelectData(dt(0)("dvcd"))
 
-                        Dim pvncd As Integer = 0
-                        Try
-                            pvncd = dt(0)("pvncd")
-                        Catch ex As Exception
-                            pvncd = 10
-                        End Try
-                        '------------------------------------------------------------------
-                        Dim bao_det As New BAO_BUDGET.FDA_FEE
-                        'dt_rg = bao_det.SP_GET_FEEDTL_OLD(feeno, dt(0)("dvcd"), pvncd, dt(0)("feeabbr"))
+                    '    Dim pvncd As Integer = 0
+                    '    Try
+                    '        pvncd = dt(0)("pvncd")
+                    '    Catch ex As Exception
+                    '        pvncd = 10
+                    '    End Try
+                    '    '------------------------------------------------------------------
+                    '    Dim bao_det As New BAO_BUDGET.FDA_FEE
+                    '    'dt_rg = bao_det.SP_GET_FEEDTL_OLD(feeno, dt(0)("dvcd"), pvncd, dt(0)("feeabbr"))
 
-                        '-------------แก้ลบ elo
-                        'dt_rg = ws_dt.SP_GET_FEEDTL_OLD(feeno, dt(0)("dvcd"), pvncd, dt(0)("feeabbr"))
-                    Catch ex As Exception
-                        System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไม่พบข้อมูล');", True)
-                    End Try
+                    '    '-------------แก้ลบ elo
+                    '    'dt_rg = ws_dt.SP_GET_FEEDTL_OLD(feeno, dt(0)("dvcd"), pvncd, dt(0)("feeabbr"))
+                    'Catch ex As Exception
+                    '    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไม่พบข้อมูล');", True)
+                    'End Try
 
-
-                Else
+                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไม่พบข้อมูล');", True)
+                ElseIf count_fee = 1 And chk_repeat = 0 Then
 
                     If Request.QueryString("law") = "" Then
                         If dept = 2 Then
@@ -398,7 +418,7 @@ Public Class Frm_Maintain_Receive_Money_V3_Insert
                             dao_dl.GetDataby_fk_fee(dao_fee2.fields.IDA)
                             Dim process_dl As String = ""
                             process_dl = dao_dl.fields.process_id
-                            If process_dl = "7701" Or process_dl = "7702" Or process_dl = "7703" Or process_dl = "7704" Or _
+                            If process_dl = "7701" Or process_dl = "7702" Or process_dl = "7703" Or process_dl = "7704" Or
                             process_dl = "7705" Or process_dl = "7706" Or process_dl = "7707" Then
                                 Dim dt99 As New DataTable
                                 Dim bao99 As New BAO_BUDGET.Maintain
@@ -433,6 +453,9 @@ Public Class Frm_Maintain_Receive_Money_V3_Insert
                     Else
                         System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ไม่พบข้อมูล');", True)
                     End If
+
+                Else
+                    System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ใบสั่งนี้ถูกขำระไปแล้ว');", True)
                 End If
 
                 rg_receive.Rebind()

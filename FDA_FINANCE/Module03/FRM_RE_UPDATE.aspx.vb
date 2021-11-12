@@ -279,12 +279,24 @@ Public Class FRM_RE_UPDATE
 
     Protected Sub btn_search111_Click(sender As Object, e As EventArgs) Handles btn_search111.Click
         Search_fee(txt_ref01.Text, txt_ref02.Text)
+        Try
+            Dim dao As New DAO_MAINTAIN.TB_RECEIVE_MONEY
+            dao.Getdata_by_ref01_ref02(txt_ref01.Text, txt_ref02.Text)
+            txt_name.Text = dao.fields.FULLNAME
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Sub Search_fee(ByVal ref01 As String, ByVal ref02 As String)
         Dim dt As New DataTable
         Dim bao As New BAO_BUDGET.Maintain
         dt = bao.Get_FEE_BY_REF01_AND_REF02(ref01, ref02)
+        Try
+
+        Catch ex As Exception
+
+        End Try
         RadGrid1.DataSource = dt
         RadGrid1.DataBind()
     End Sub
@@ -321,7 +333,13 @@ Public Class FRM_RE_UPDATE
         Catch ex As Exception
 
         End Try
+        Try
+            Dim dao As New DAO_MAINTAIN.TB_RECEIVE_MONEY
+            dao.Getdata_by_feeno(feeno)
+            txt_name.Text = dao.fields.FULLNAME
+        Catch ex As Exception
 
+        End Try
         Try
             Dim dao As New DAO_FEE.TB_fee
             dao.GetDataby_feeno(feeno)
@@ -347,11 +365,11 @@ Public Class FRM_RE_UPDATE
             Dim lcnname As String = ""
 
             Try
-                lcnname = set_name_company(dao_fee_m44.fields.identify)
+                'lcnname = set_name_company(dao_fee_m44.fields.identify)
 
                 Dim dao_re As New DAO_MAINTAIN.TB_RECEIVE_MONEY
                 dao_re.Getdata_by_ref01_ref02(txt_ref01.Text, txt_ref02.Text)
-                dao_re.fields.FULLNAME = lcnname
+                dao_re.fields.FULLNAME = txt_name.Text
                 dao_re.update()
                 System.Web.UI.ScriptManager.RegisterStartupScript(Page, GetType(Page), "ใส่ไรก็ได้", "alert('ส่งข้อมูลเรียบร้อย');", True)
             Catch ex As Exception
@@ -407,11 +425,11 @@ Public Class FRM_RE_UPDATE
             Dim lcnname As String = ""
             Dim e_receipt As String = ""
             Try
-                lcnname = set_name_company(dao.fields.identify)
+                'lcnname = set_name_company(dao.fields.identify)
 
                 Dim dao_re As New DAO_MAINTAIN.TB_RECEIVE_MONEY
                 dao_re.Getdata_by_ref01_ref02(txt_ref01.Text, txt_ref02.Text)
-                dao_re.fields.FULLNAME = lcnname
+                dao_re.fields.FULLNAME = txt_name.Text 'lcnname
                 e_receipt = dao_re.fields.FULL_RECEIVE_NUMBER
 
                 dao_re.update()

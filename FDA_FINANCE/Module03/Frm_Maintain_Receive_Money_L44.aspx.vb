@@ -122,7 +122,7 @@ Public Class Frm_Maintain_Receive_Money_L44
         If CDate(System.DateTime.Now) >= CDate("1/10/" & Year(System.DateTime.Now)) Then
             byearMax = byearMax + 1
         End If
-        Dim curent_year As Integer = byearMax
+        Dim curent_year As Integer = 2565 '= byearMax
 
 
         For i As Integer = 2555 To curent_year '+ 3

@@ -111,6 +111,13 @@
         </tr>
         <tr>
             <td align="right">
+                แก้ไขชื่อบนใบเสร็จ</td>
+            <td>
+                <asp:TextBox ID="txt_name" runat="server" CssClass="input-sm" Width="250px"></asp:TextBox>
+                </td>
+        </tr>
+        <tr>
+            <td align="right">
                 &nbsp;</td>
             <td>
                 <asp:Button ID="btn_search111" runat="server" Text="ค้นหาตาม Ref" CssClass="btn-lg" />

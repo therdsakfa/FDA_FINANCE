@@ -130,7 +130,7 @@ Public Class Frm_Maintain_Receive_Money_V2
 
             byearMax = byearMax + 1
         End If
-        Dim curent_year As Integer = byearMax
+        Dim curent_year As Integer = 2565 'byearMax
 
 
         For i As Integer = 2555 To curent_year '+ 1 '+ 3
@@ -147,9 +147,6 @@ Public Class Frm_Maintain_Receive_Money_V2
         dd_BudgetYear.DataSource = dt
         dd_BudgetYear.DataBind()
 
-        If Date.Now = "2019-09-30" Then
-
-        End If
         'dd_BudgetYear.DropDownSelectData(curent_year)
         'dd_BudgetYear.Items.Insert(0, New ListItem(2563, 2563)) 'เพิ่มใหม่
 

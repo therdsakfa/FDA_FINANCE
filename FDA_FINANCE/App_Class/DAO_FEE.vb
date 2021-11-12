@@ -67,6 +67,14 @@
             Next
             Return i
         End Function
+        Public Function Countby_ref1_ref2V2(ByVal ref1 As String, ByVal ref2 As String) As Integer
+            Dim i As Integer = 0
+            datas = (From p In DB.fees Where p.ref01 = ref1 And p.ref02 = ref2 And p.rcptst = 1 Select p)
+            For Each Me.fields In datas
+                i += 1
+            Next
+            Return i
+        End Function
         Public Sub Getdata_by_feeno_and_dvcd(ByVal feeno As String, ByVal dvcd As Integer)
             datas = From p In DB.fees Where p.feeno = feeno And p.dvcd = dvcd Select p
             For Each Me.fields In datas

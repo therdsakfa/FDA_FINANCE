@@ -41,6 +41,15 @@ Partial Public Class FRM_RE_UPDATE
     Protected WithEvents txt_ref02 As Global.System.Web.UI.WebControls.TextBox
     
     '''<summary>
+    '''txt_name control.
+    '''</summary>
+    '''<remarks>
+    '''Auto-generated field.
+    '''To modify move field declaration from designer file to code-behind file.
+    '''</remarks>
+    Protected WithEvents txt_name As Global.System.Web.UI.WebControls.TextBox
+    
+    '''<summary>
     '''btn_search111 control.
     '''</summary>
     '''<remarks>

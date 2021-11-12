@@ -72,6 +72,7 @@ Public Class WS_RECEIPT_AUTO
         End Try
     End Sub
 
+    <WebMethod()>
     Public Function Gen_Receipt_Wait(ByVal ref01 As String, ByVal ref02 As String) As String
         Dim Str_Return As String = ""
         Try
@@ -696,7 +697,7 @@ Public Class WS_RECEIPT_AUTO
                 If email <> "" Then
                     email = email
                     Title = "ใบเสร็จอิเล็กทรอนิกส์ชำระเงิน_" & TimeStampNow()
-                    Content = "ลิ้งค์สำหรับใบเสร็จอิเล็กทรอนิกส์ http://buisead.fda.moph.go.th/fda_budget/Module09/Report/Frm_Report_R9_003.aspx?ref01=" & ref01 & "&ref02=" & ref02
+                    Content = "ลิ้งค์สำหรับใบเสร็จอิเล็กทรอนิกส์ https://buisead.fda.moph.go.th/fda_budget/Module09/Report/Frm_Report_R9_003.aspx?ref01=" & ref01 & "&ref02=" & ref02
 
                     SendMail(Content, email, Title, email, "", "")
                 End If
